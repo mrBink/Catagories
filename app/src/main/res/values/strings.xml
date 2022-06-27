@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Categories</string>
+    <string name="bgScene">bgScene</string>
+    <string name="scribe_e3">scribe_e3</string>
+    <string name="scribe_t3">scribe_t3</string>
+    <string name="writeEnglish">writeEnglish</string>
+    <string name="writeThai">writeThai</string>
+    <string name="fruitBtn">fruitBtn</string>
+    <string name="catBtns">catBtns</string>
+    <string name="toFruits">toFruits</string>
+    <string name="bg_fruitPics">bg_fruitPics</string>
+    <string name="appleShot">appleShot</string>
+    <string name="enter_english_here">Enter English here</string>
+    <string name="dynamic">dynamic</string>
+    <string name="Use_the_letters_below">Use_the_letters_below</string>
+    <string name="use_the_letters_below">use the letters below</string>
+    <string name="enter_thai_here">enter_thai_here</string>
+    <string name="i_am_here">i_am_here</string>
+    <string name="myHint">Use the letters below</string>
+    <string name="use_the_thai_letters_below">Use the Thai letters below</string>
+
+
+</resources>

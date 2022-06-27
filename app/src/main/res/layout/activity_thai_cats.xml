@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThaiCats">
+    <ImageView
+        android:id="@+id/bg_fruitPics"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/bg_fruitPics"
+        android:scaleType="fitXY"
+        android:src="@drawable/goldbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/appleShot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:contentDescription="@string/appleShot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg_fruitPics"
+        app:srcCompat="@drawable/durian" />
+
+    <EditText
+    android:id="@+id/userEntert"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:imeOptions="actionDone"
+    android:layout_marginTop="48dp"
+    android:hint="@string/enter_thai_here"
+    android:inputType="textNoSuggestions"
+    android:textAlignment="center"
+    android:textSize="34sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.503"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/appleShot"
+    tools:ignore="TextContrastCheck"
+    android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/useHintT"
+        android:layout_width="0dp"
+        android:layout_height="11dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="#930404"
+        android:textSize="20sp"
+        android:text="@string/use_the_thai_letters_below"
+        app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEntert" />
+
+    <TextView
+        android:id="@+id/scrambledFieldt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/dynamic"
+        android:importantForAutofill="no"
+        android:inputType="none"
+        android:textColor="#FFEB3B"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/useHintT"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+    android:id="@+id/dispEnglish_word"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="48dp"
+    android:hint="@string/dynamic"
+    android:importantForAutofill="no"
+    android:textAlignment="center"
+    android:textColor="@color/black"
+    android:textSize="48sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
+    tools:ignore="TextContrastCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
