@@ -18,6 +18,8 @@
     <string name="i_am_here">i_am_here</string>
     <string name="myHint">Use the letters below</string>
     <string name="use_the_thai_letters_below">Use the Thai letters below</string>
+    <string name="reportCard">reportCard</string>
+    <string name="this_is_right_fucked">this is right fucked</string>
 
 
 </resources>
