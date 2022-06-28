@@ -1,47 +1,63 @@
 package com.mango.catagories
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import java.io.Serializable
 
-class GradeForEnglish : AppCompatActivity() {
+class GradeForEnglish :AppCompatActivity  () {
     private lateinit var  element:String
     private lateinit var  delim:String
-    private lateinit var  delimT:String
     private lateinit var  misspelledEng:List<String>
-    private lateinit var  misspelledThai:List<String>
     private lateinit var  anElement:String
+    private lateinit var  elementTh:String
+    private lateinit var  delimT:String
+    private lateinit var  misspelledThai:List<String>
     private lateinit var  anElementTh:String
+    private lateinit var  reportCard:TextView
+
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grade_for_english)
-        val incorrecteList = intent .getSerializableExtra( "key" )
-        val incorrecteListTh = intent .getSerializableExtra( "key2" )
+        reportCard = findViewById(R.id.reportCard)
+        val unSerial = Deserializer ()
+        val incorrecteList = intent.getSerializableExtra("key")
+        val incorrecteListTh = intent.getSerializableExtra("key2")
         val myMarks = intent.getStringExtra("key3")
         println(incorrecteList)
         println(incorrecteListTh)
         println(myMarks)
-        serializeToString(incorrecteList)
-        serializeToStringThai(incorrecteListTh)
-
-    }
-    private fun serializeToString(any: Serializable?){
-        element = any.toString()//Serializable to String
-        println(element)
+        reportCard.setText("This is your mark\n           $myMarks%")
+        element =unSerial.unDoThis(incorrecteList)
+         //element = incorrecteList.toString()
+        println(element).toString()
+        elementTh =unSerial.unDoThis(incorrecteListTh)
+        println(elementTh).toString()
+        /*
         delim = ","            //delimiter for split()
         misspelledEng = element.split(delim)//Serialized to List
         anElement = misspelledEng[1]       //access element from list
         println(misspelledEng)
         println(anElement)
-    }
-    private fun serializeToStringThai(any: Serializable?){
-        element = any.toString()//Serializable to String
-        println(element)
+        //serializeToStringThai(incorrecteListTh)
+
+         */
+    } // end of constructor
+    ///////////////////////////////////////////////
+    fun serializeToStringThai(any: Serializable?){
+        elementTh  = any.toString()//Serializable to String
+        println(elementTh )
         delimT = ","          //delimiter for split()
-        misspelledThai = element.split(delimT)//Serialized to List
-        anElementTh = misspelledThai[1]         //access element from list
+        misspelledThai = elementTh.split(delimT)//Serialized to List
+        anElementTh = misspelledThai[1]       //access element from list
         println(misspelledThai)
         println(anElementTh)
     }
+        ///////////////////////////////////////////
+
+    }// end of class
+
     //////////////////////////////////////////////////////////////////////
-}// end of class
