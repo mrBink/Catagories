@@ -2,6 +2,7 @@ package com.mango.catagories
 
 import android.app.Activity
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -17,23 +18,26 @@ class FruitCat : AppCompatActivity() {
         R.drawable.lemon,R.drawable.mango,R.drawable.orange,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
     /////////////////////////////////////////////////////////////////////
-    private lateinit var appleShot:ImageView         //images of fruit in View:
+    private lateinit var mPlayer:MediaPlayer
+    private lateinit var myErrorSounds:ArrayList<Int>      //images of fruit in View:
+    private lateinit var appleShot:ImageView        //images of fruit in View:
     private lateinit var userEnterE:EditText        //user editText
     private lateinit var scrambledFieldE:TextView   //scrambled text
-    private lateinit var useHint:TextView         //instruction foe letter use
-    private lateinit var dispThaiword:TextView        //user Thai Word
+    private lateinit var useHint:TextView           //instruction foe letter use
+    private lateinit var dispThaiword:TextView      //user Thai Word
     private lateinit var wordInEArray:String        //reference
-    private lateinit var marksString:String        //reference
+    private lateinit var marksString:String         //reference
     private var  wrongEng: ArrayList<String> = ArrayList()
     private var wrongThai: ArrayList<String> = ArrayList()
     private  var sizeOfArray = fruitPhotos.size
-    private var numToInc:Int = 0        //num for incrementing array
+    private var numToInc:Int = 0         //num for incrementing array
     private var numOfErrorsE:Int = 0     //num for errors
-    private var numOfAttempts:Int = 0  //num for number of attempts
+    private var wrongAnswersE:Int = 0     //num for errors
+    private var numOfAttempts:Int = 0    //num for number of attempts
     private var myGrades:Double = 0.0
+    private var theSndFile:Int = 0
     private var adjustedMark:Double = 0.0
-
-    private val myArrays = TheArrays()
+    private val myArrays = TheArrays()   //instantciate custom class
     /////////////////////////////////////////////////////////////////////
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +54,8 @@ class FruitCat : AppCompatActivity() {
         scrambledFieldE.alpha =0.toFloat()
         useHint.alpha =0.toFloat()
         wordInEArray = userEnterE.toString()
-        println("$sizeOfArray  this is the size of the array")
+        mPlayer = MediaPlayer()
+        myErrorSounds = myArrays.errorSndArr
         userEnterE.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 checkWords()
@@ -61,10 +66,15 @@ class FruitCat : AppCompatActivity() {
     } //end of constructor
     /////////////////////////////////////////////////////////////////////
     private fun checkWords(){
-        if(userEnterE.text.toString() == myArrays.efruitTxt[numToInc]){
-            reSetFruit()
+        if(userEnterE.text.toString() == myArrays.efruitTxt[numToInc] && numToInc < sizeOfArray ){
+            numToInc +=1     // if spelling correct increments arrays
+            numOfMistakes()  //  if spelling correct changes to new activity "GradeForEnglish"  gives 100%
+            reSetFruit()     // if spelling correct uses numToInc to reset next image
         }
         else{
+            numOfAttempts +=1
+            numOfErrorsE +=1
+            accumulateErrors(numOfErrorsE)//returns var from numOfErrorsE/one var for grades/one var reset = 0 for corrections
             respondToErrors()
         }
     }
@@ -77,76 +87,56 @@ class FruitCat : AppCompatActivity() {
     }
     ///////////////////////////////////////////////////////////////////
     private fun respondToErrors(){
-        numOfAttempts +=1    //actual number of attempts
-        accumulateErrors(numOfAttempts)
-        adjustedMark = lessThanZero(getGrade())
-        marksString = markToPass(getGrade())
-        println(" $adjustedMark  this is adjustedMark")
-        println(" $marksString  this is the result of my math")
-        println(" $numOfErrorsE this is number of errors" )
-        println(" $numOfAttempts this is number of attempts" )
-        println(myGrades.toString())
+        numOfAttempts +=1                         //actual number of attempts
+        adjustedMark = lessThanZero(getGrade())   //numbers below 0 reset to 0.0% for your grade
+        marksString = markToPass(getGrade())      //"marksString" used in "intent" in endOfArray()
+        passPeram()                               //calls threeWrong().. if errors = 3 - 6 - 9 etc
         whenWrongAnswer()
-        errorsAdvance(numOfErrorsE)
     }
     ///////////////////////////////////////////////////////////////////
     private fun whenWrongAnswer(){
-        createArraysForWrongAnswers()
-        userEnterE.setText("")
-        useHint.alpha =1.toFloat()
-        scrambledFieldE.alpha =1.toFloat()
+        createArraysForWrongAnswers()             //creates arrays for wrong answers
+        cleanUpToContinue()                       //sets up scrambled field clears incorrect user entry
     }
     ////////////////////////////////////////////////////////////////////
     private fun reSetFruit(){
-    numToInc +=1
+     numOfErrorsE = 0
      endOfArray()
     appleShot.setImageResource(fruitPhotos[numToInc])
-        dispThaiword.text = myArrays.tthaiFruit[numToInc]
-        with(scrambledFieldE) { text = myArrays.escrambledFruits[numToInc] }
-        userEnterE.setText("")
+    dispThaiword.text = myArrays.tthaiFruit[numToInc]
+    with(scrambledFieldE) { text = myArrays.escrambledFruits[numToInc] }
+    userEnterE.setText("")
     scrambledFieldE.alpha =0.toFloat()
-        0.toFloat().also { useHint.alpha = it }
+    0.toFloat().also { useHint.alpha = it }
     }
     ////////////////////////////////////////////////////////////////////
-    private fun endOfArray(){
-        if(numToInc == myArrays.efruitTxt.size ){
+
+    private fun endOfArray() {    //when array done pass intents and change activities "GradeForEnglish"
+        if (numToInc == sizeOfArray) {
             println("this is where you switch activities... from FruitCat")
             val intent = Intent(this, GradeForEnglish::class.java)
             intent.putExtra("key", wrongEng)
             intent.putExtra("key2", wrongThai)
-            intent.putExtra("key3",marksString)
+            intent.putExtra("key3", marksString)
             startActivity(intent)
         }
     }
-    ////////////////////////////////////////////////////////////////////
-    private fun threeErrors (){
-        whenWrongAnswer()
+    ////////////////////////////////////////////////////////////////////(this, myArrays.errorSndArr[1])
+    private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
+        // theSndFile = (0..3).random()
+
+        mPlayer = MediaPlayer.create(this, myArrays.errorSndArr[4])
+        mPlayer.setVolume(1.0f , 1.0f)
+        println(" $numOfErrorsE this is number of errors called  threeErrors ()()" )
+        mPlayer.start()
+        numToInc +=1 //whenWrongAnswer() (0..3).random()
         reSetFruit()
+        numOfAttempts = 0
     }
-    /////////////////////////////////////////////////////////////////////
-    private fun errorsAdvance(mistakes:Int) {
-        when (mistakes) {
-            3 -> threeErrors()
-            6 -> threeErrors()
-            9 -> threeErrors()
-            12 -> threeErrors()
-            15 -> threeErrors()
-            18 -> threeErrors()
-            21 -> threeErrors()
-            24 -> threeErrors()
-            27 -> threeErrors()
-            30 -> threeErrors()
-            33 -> threeErrors()
-            36 -> threeErrors()
-            39 -> threeErrors()
-            42 -> threeErrors()
-            45-> threeErrors()
-            48-> threeErrors()
-            51-> threeErrors()
-            54-> threeErrors()
-            57-> threeErrors()
-            60-> threeErrors()
-        }
+    //////////////////////////////////////////////
+    private fun passPeram() // comes from HelperFunctions deals with turnover at 3.6..9.
+    {
+        HelperFunctions.errorsAdvance(numOfErrorsE, ::threeErrors)
     }
     /////////////////////////////////////////////////////////////////////
     private fun createArraysForWrongAnswers(){
@@ -166,16 +156,17 @@ class FruitCat : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////
     private fun getGrade():Double{
-        var numOfCorrect = sizeOfArray - numOfErrorsE
+        val numToSubtract = accumulateErrors(numOfErrorsE)
+        val numOfCorrect = sizeOfArray - numToSubtract
         myGrades = (numOfCorrect.toDouble()/sizeOfArray)*100
         return myGrades
-
     }
     ////////////////////////////////////////////////////////////////////
-    private fun accumulateErrors(numAttempts:Int) {
-        when (numAttempts) {
-            in 1..100 -> numOfErrorsE += 1
+    private fun accumulateErrors(incorrect:Int):Int {
+        when (incorrect) {
+            in 1..100 -> wrongAnswersE += 1
         }
+        return wrongAnswersE
     }
     //////////////////////////////////////////////////////////////////////
     private fun lessThanZero(allWrong:Double):Double {
@@ -186,81 +177,119 @@ class FruitCat : AppCompatActivity() {
     }
     /////////////////////////////////////////////////////////////////////
     private fun markToPass(allWrong:Double):String {
-        if (allWrong >= 0.0){
-            myGrades = getGrade()
+        myGrades = if (allWrong >= 0.0){
+            getGrade()
+        } else{
+            adjustedMark
         }
-        else{
-            myGrades = adjustedMark
-    }
     return myGrades.toString()
-}
+    }
     //////////////////////////////////////////////////////////////////////
+    private fun numOfMistakes()
+    {
+        if (numOfErrorsE == 0 && numToInc == sizeOfArray) {
+            marksString = markToPass(getGrade())
+            println(" $marksString this is marksString" )
+            val intent = Intent(this, GradeForEnglish::class.java)
+            intent.putExtra("key3", marksString)
+            startActivity(intent)
+        }
+    }
+    ///////////////////////////////////////////////////////////
+    private fun cleanUpToContinue()
+    {
+        if (numToInc <= sizeOfArray) {
+            userEnterE.setText("")
+            useHint.alpha =1.toFloat()
+            scrambledFieldE.alpha =1.toFloat()
+        }
+    }
+    /////////////////////////////////////////////////////////
 
 }//end of class
+
 /*
-private fun markToPass(allWrong:Double):String {
-        if (allWrong > 0.0){
-            myGrades = getGrade().toString()
+          println(" $numToInc this is numToInc" )
+          println(" threeErrors () is called" )
+          println("accumulateErrors is called" )
+          //println("$myArrays.efruitTxt.size")
+          //println("${numOfErrorsE.toString()} this is numOf Errors from respondToErrors")
+          println(" $numOfErrorsE this is numOfErrorsE" )
+        //println(" $adjustedMark  this is adjustedMark")
+        //println(" $marksString  this is the result of my math")
+        //println(" $numOfErrorsE this is number of errors" )
+        //println(" $numOfAttempts this is number of attempts" )
+        //println(myGrades.toString()) //createListsNoErrorMessage()
+        //println(wrongEng).toString()
+        // println(" IF in numOfMistakesIs3 is elected...  $numToInc this is numToInc after inc" )
+        //println("cleanUpToContinue is called" )
+        //println("${numOfErrorsE.toString()} this is numOfErrorsE called from accumulateErrors" )
+         //println("Branch the next talk about transition of image" )
+        //println(" $numOfErrorsE this is number of errors called from passPeram()" )
+        //println(" $numOfAttempts this is number of attempts called from passPeram()" )
+        //println("$numOfErrorsE) this is numOfErrorsE from endOfArray")
+         println("$numOfAttempts this is number of attempts called from reSetNumOfAttempts")
+         //println(" $numOfErrorsE this is number of errors called from whenWrongAnswer" )
+         // println("$sizeOfArray  this is the size of the array")
+
+                 //accumulateErrors(numOfAttempts)
+
+
+
+
+
+            println("numOfMistakesIs3 this is called" )
+            val intent = Intent(this, GradeForEnglish::class.java)
+            intent.putExtra("key", wrongEng)
+            intent.putExtra("key2", wrongThai)
+            intent.putExtra("key3", marksString)
+            startActivity(intent)
+
+              private fun reSetNumOfAttempts()
+    {
+        if (numOfAttempts == 3) {
+            numOfAttempts = 1
+            println("$numOfAttempts this is number of attempts called from reSetNumOfAttempts")
         }
-        else
-        myGrades = adjustedMark.toString
-        }
-        return myGrades
     }
+     ///////////////////////////////////////////////////////////////
+     private fun numOfMistakesIs3()
+    {
+        if (numOfErrorsE == 3) {
+           // println(" IF in numOfErrorsE is elected...  $numToInc this is numToInc" )
+           // println(" IF in numOfMistakesIs3 is elected...reSetFruit() is called")
 
-
-
-
-
-
-
-
-
-lessThanZero(getGrade())
-     fun getGrade():Double{
-       numOfCorrect = sizeOfArray - numOfErrorsE
-      myGrades = (numOfCorrect.toDouble()/sizeOfArray)*100
-      return myGrades
-       println(numOfCorrect.toString())
-       println(myGrades.toString())
-    }
-      private fun threeErrors (){
-            whenWrongAnswer()
+            numToInc =1
             reSetFruit()
-     }
-     fun main(args: Array<String>) {
-    val a = 100
-    when (a) {
-        in 1..100 -> numOfErrorsE += 1
+
+        }
     }
-    ////////////////////
-    private fun accumulateErrors(mistakes:Int) {
-             when (mistakes) {
-                  3 -> threeErrors()
-                  6 -> threeErrors()
-                  9 -> threeErrors()
-                  12 -> threeErrors()
-                  15 -> threeErrors()
-                  18 -> threeErrors()
-                  21 -> threeErrors()
-                  24 -> threeErrors()
-                  27 -> threeErrors()
-                  30 -> threeErrors()
-                  33 -> threeErrors()
-                  36 -> threeErrors()
-                  39 -> threeErrors()
-                  42 -> threeErrors()
-                  45-> threeErrors()
-                  48-> threeErrors()
-                  51-> threeErrors()
-                  54-> threeErrors()
-                  57-> threeErrors()
-                  60-> threeErrors()
-            }
-       }
-}
 
 
- */
+
+ private fun reSetNumOfAttempts()
+    {
+        if (numOfAttempts == 3) {
+        numOfAttempts = 1
+        println(" $numOfAttempts this is number of attempts" )
+        }
+    }
+    private fun createListsNoErrorMessage()
+    {
+        if (numOfErrorsE == 0) {
+            wrongEng.add("There are no mistakes")
+            wrongThai.add("There are no mistakes")
+            println(wrongEng).toString()
+            //I am thinking this will resolve the "intent"
+            // not passing an emptyArrayList
+        }
+    }
+    ///////////////////////////////////////////////////////
+
+*/
+
+
+
+
 
 

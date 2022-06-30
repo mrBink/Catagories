@@ -1,6 +1,9 @@
 package com.mango.catagories
 
 class TheArrays {
+    var errorSndArr = arrayListOf( R.raw.domdomsnd,R.raw.errorsnd,R.raw.fart,R.raw.yart,R.raw.water)
+
+
                     //LESSON ONE
      var efruitTxt=arrayOf("watermelon","apple"/*,"avocado","banana",
         "blueberry","cantaloupe","cherry","grape","jackfruit",
