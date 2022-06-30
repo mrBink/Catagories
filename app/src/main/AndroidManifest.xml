@@ -19,12 +19,7 @@
         <activity
             android:name=".GradeForEnglish"
             android:exported="false" />
-        <activity
-            android:name=".MarksEngWriting"
-            android:exported="false" />
-        <activity
-            android:name=".MarksThaiWriting"
-            android:exported="false" />
+
         <activity
             android:name=".ThaiCats"
             android:exported="false" />
