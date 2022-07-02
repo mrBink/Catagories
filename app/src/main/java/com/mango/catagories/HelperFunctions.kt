@@ -1,8 +1,5 @@
 package com.mango.catagories
 
-import java.io.Serializable
-import kotlin.Function as KotlinFunction
-
 class HelperFunctions {
     companion object {
 
@@ -30,7 +27,6 @@ class HelperFunctions {
                 57 -> reactErrors()
                 60 -> reactErrors()
             }
-
         }
         ///////////////////////////////////////////////////
     }//end of Companion Object
