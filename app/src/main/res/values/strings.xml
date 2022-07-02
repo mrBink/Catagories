@@ -20,6 +20,8 @@
     <string name="use_the_thai_letters_below">Use the Thai letters below</string>
     <string name="reportCard">reportCard</string>
     <string name="this_is_right_fucked">this is right fucked</string>
+    <string name="disp_thai_word"> dispThaiWord</string>
+    <string name="disp_English_word"> dispEnglishWord</string>
 
 
 </resources>
