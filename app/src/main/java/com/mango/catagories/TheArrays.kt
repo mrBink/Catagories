@@ -1,11 +1,11 @@
 package com.mango.catagories
 
 class TheArrays {
-    var errorSndArr = arrayListOf( R.raw.domdomsnd,R.raw.errorsnd,R.raw.fart,R.raw.yart,R.raw.water)
+    var errorSndArr = arrayListOf( R.raw.domdomsnd,R.raw.errorsnd,R.raw.fart,R.raw.yart)
 
 
                     //LESSON ONE
-     var efruitTxt=arrayOf("watermelon","apple"/*,"avocado","banana",
+     var efruitTxt=arrayOf("water","apple"/*,"avocado","banana",
         "blueberry","cantaloupe","cherry","grape","jackfruit",
         "lemon","mango","orange","papaya","plum","pumpkin",
         "strawberry","tomato","coconut","mangosteen","rambutan"*/)

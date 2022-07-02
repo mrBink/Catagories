@@ -9,11 +9,7 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var element: String
     private lateinit var elementTh: String
     private lateinit var delim: String
-    private lateinit var misspelledEng: List<String>
-    private lateinit var anElement: String
     private lateinit var delimT: String
-    private lateinit var misspelledThai: List<String>
-    private lateinit var anElementTh: String
     private lateinit var reportCard: TextView
 
     ///////////////////////////////////////////////////////////

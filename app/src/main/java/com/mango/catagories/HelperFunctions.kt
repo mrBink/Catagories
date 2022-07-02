@@ -5,15 +5,8 @@ import kotlin.Function as KotlinFunction
 
 class HelperFunctions {
     companion object {
-        fun getMark(numberPlayed: Int, numberOfAttempts: Int): Double {
-            var percent = 0.0
-            percent = (numberPlayed.toDouble() / numberOfAttempts) * 100
 
-            return percent
-        }
-
-        ///////////////////////////////////////////////////////
-        //this will have numOfErrors as "mistakes" parameter it will have "three errors()" as the function parameter
+        //this will have numOfAttempts as "mistakes" parameter it will have "three errors()" as the function parameter
         fun errorsAdvance(mistakes: Int, reactErrors: () -> Unit) {
             when (mistakes) {
                 3 -> reactErrors()
@@ -40,25 +33,8 @@ class HelperFunctions {
 
         }
         ///////////////////////////////////////////////////
-        fun getGrade(arraySize:Int,numErrors:Int,theGrades:Double):Double{
-            var marks = theGrades
-            var numOfCorrect = arraySize - numErrors
-            numOfCorrect = arraySize - numErrors
-            marks=(numOfCorrect.toDouble()/arraySize)*100
-            return marks
-
-            //val numOfCorrect = sizeOfArray - numOfErrorsE
-           // myGrades = (numOfCorrect.toDouble()/sizeOfArray)*100
-            //return myGrades
-        }
-
     }//end of Companion Object
       ///////////////////////////////////////////////
-
-
-
-
-    //////////////////////////////////////////////////////
 }  //end of Class
 
 /*
@@ -76,4 +52,23 @@ class HelperFunctions {
         println(missEng2)
         println(eleOne2)
     }
+     fun getGrade(arraySize:Int,numErrors:Int,theGrades:Double):Double{
+            var marks = theGrades
+            var numOfCorrect = arraySize - numErrors
+            numOfCorrect = arraySize - numErrors
+            marks=(numOfCorrect.toDouble()/arraySize)*100
+            return marks
+
+            //val numOfCorrect = sizeOfArray - numOfErrorsE
+           // myGrades = (numOfCorrect.toDouble()/sizeOfArray)*100
+            //return myGrades
+        }
+        fun getMark(numberPlayed: Int, numberOfAttempts: Int): Double {
+            var percent = 0.0
+            percent = (numberPlayed.toDouble() / numberOfAttempts) * 100
+
+            return percent
+        }
+
+        ///////////////////////////////////////////////////////
  */
