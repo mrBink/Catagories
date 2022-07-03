@@ -11,13 +11,70 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var delim: String
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
+    private lateinit var correctionField: TextView
 
-    ///////////////////////////////////////////////////////////
+
+    ///////////////////////////////////val newThaiArray: Array<String> = arrayOf()
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grade_for_english)
         reportCard = findViewById(R.id.reportCard)
+        correctionField = findViewById(R.id.correctionField)
+        val unSerial = Deserializer()
+        val incorrecteList = intent.getSerializableExtra("key")
+        val incorrecteListTh = intent.getSerializableExtra("key2")
+        val myMarks = intent.getStringExtra("key3")
+        reportCard.text = "This is your mark\n           $myMarks%"
+        element = unSerial.unDoThis(incorrecteList)
+        elementTh = unSerial.unDoThis(incorrecteListTh)
+        delim = ","
+        delimT = ","
+       val arr = element.split(delim)
+        val text = arr[0].replace("[", "").replace("]", "")
+        val arrTh = elementTh.split(delimT)
+        val text2 = arrTh[0].replace("[", "").replace("]", "")
+        println("$text this is after unserialize")
+        println("$text2 this is after unserialize")
+        correctionField.text = "These are the correction\n${text}   =   ${text2}"
+
+       }// end of constructor
+      // /////////////////////////////////////////////
+
+    }// end of class
+
+
+
+
+/*
+
+println("$incorrecteList  this is incorrecteList" )
+        println("$incorrecteListTh  this is incorrecteListTh" )
+        println(myMarks)
+// var text = arr[0].toString()
+//println(arr.contentToString())
+ //text = arr.toString().replace("[", "apple").replace("]", "");
+        //val text2 = arr2.toString().replace("[", "").replace("]", "");
+val w = s.replace("sunny", "rainy")
+    println(w)
+arr2[0].replace("[", "").replace("]", "")
+        println("${arr2[0]} this is typed Array Thai")
+println("${text[0]} this is typed Array English")
+val text = arr[0].toString().replace("[", "").replace("]", "");
+ fun newStrArrayT(): Array<String> {
+              for (item in element) {
+                  var indexer = 0
+                  newThaiArray[indexer] = item.toString()
+                  indexer +=1
+              }
+              return newThaiArray
+          }
+           newStrArrayT()
+        println("${newStrArrayT()} this is newStrArrayT")
+         private  var newThaiArray: Array<String> = arrayOf()
+
+  fun fillCorrectionField()
+    {
         val unSerial = Deserializer()
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")
@@ -33,36 +90,34 @@ class GradeForEnglish :AppCompatActivity  () {
         val arr = element.split(delim).toTypedArray()
         println("${arr[0]} this is typed Array English")
         println(arr.contentToString())
-       val arr2 = elementTh.split(delimT).toTypedArray()
+        val arr2 = elementTh.split(delimT).toTypedArray()
         println("${arr2[0]} this is typed Array Thai")
         println(arr.contentToString())
-       }// end of constructor
-      // /////////////////////////////////////////////
 
-      /////////////////////////////////////////////
-    }// end of class
-
-
-
-
-/*
-
-  fun ifPossibleToSplitString(theElement:String,delimer:String,theElementT:String,delimerT:String,)
-    {
-        if(theElement.isNotEmpty())
+        correctionField.text = "These are the correction\n${arr[0]}   =   ${arr2[0]}"
+    }
+     fun newStrArrayT():Array<String>{
+     var newThaiArray: Array<String> = arrayOf()
+        for(item in element)
         {
-            val arr = theElement.split(delimer).toTypedArray()
-            println("${arr[0]} this is typed Array English")
-            println(theElement)
-        }else{
-            println("all good no  error element is Empty ")}
-        if(theElementT.isNotEmpty())
+           newThaiArray
+        }
+        return newThaiArray
+    }
+    ///////////////////////////////////////////////////////////////'
+    fun newStrArrayE():Array<String>{
+     var newEngArray: Array<String> = arrayOf()
+        for(item in element)
         {
-            val arr2 = theElementT.split(delimerT).toTypedArray()
-            println("${arr2[0]} this is typed Array Thai")
-            println(theElementT)
-        }else{
-            println("all good no  error elementTh is Empty ")}
+           newEngArray.add(item)
+        }
+        return newEngArray
+    }
+    ///////////////////////////////////////////////////////////////'
+    fun strArrayToJoin():Array<String>{
+     var joinedArray: Array<String> = arrayOf()
+        newStrArrayE().concat(newStrArrayT())
+        return joinedArray
     }
 
     fun stringToList(anyLang:String,langList:List<String>,oneElem:String){
