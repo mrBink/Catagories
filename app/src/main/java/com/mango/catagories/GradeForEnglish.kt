@@ -1,9 +1,14 @@
 package com.mango.catagories
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+
 
 class GradeForEnglish :AppCompatActivity  () {
     private lateinit var element: String
@@ -13,8 +18,7 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
 
-
-    ///////////////////////////////////val newThaiArray: Array<String> = arrayOf()
+    ///////////////////////////////////////////////////////////////////////////////////////
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,26 +31,88 @@ class GradeForEnglish :AppCompatActivity  () {
         val myMarks = intent.getStringExtra("key3")
         reportCard.text = "This is your mark\n           $myMarks%"
         element = unSerial.unDoThis(incorrecteList)
+            println("$element  this is element  a string from unSerial" )
         elementTh = unSerial.unDoThis(incorrecteListTh)
         delim = ","
         delimT = ","
        val arr = element.split(delim)
-        val text = arr[0].replace("[", "").replace("]", "")
+        println("{$arr[1] } this is arr[1]  a string from arr last thing done this round I want water" )
+        arr[0].replace("[", "").replace("]", "")
         val arrTh = elementTh.split(delimT)
-        val text2 = arrTh[0].replace("[", "").replace("]", "")
-        println("$text this is after unserialize")
-        println("$text2 this is after unserialize")
-        correctionField.text = "These are the correction\n${text}   =   ${text2}"
-
+        arrTh[0].replace("[", "").replace("]", "")
+        val noESquareBrace = arrangeEngTextForMarks(arr)
+        arrangeEngTextForMarks(arr)
+        val noTSquareBrace = arrangeThaiTextForMarks(arrTh)
+        iterateForMarks(arr, noESquareBrace, noTSquareBrace)
        }// end of constructor
-      // /////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////
+      private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
+          val length = eng.size - 1
+          val engNoBracket: ArrayList<String> = ArrayList()
+          for (i in 0..length) {
+              val newEngArranged = eng[i].replace("[", "").replace("]", "")
+              engNoBracket.add(newEngArranged)
+          }
+          return engNoBracket
+      }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+      private fun arrangeThaiTextForMarks(thai:List<String>):ArrayList<String>{
+          val length = thai.size - 1
+          val thaiNoBracket: ArrayList<String> = ArrayList()
+        for (i in 0..length) {
+            val newThaiArranged = thai[i].replace("[", "").replace("]", "")
+            thaiNoBracket.add(newThaiArranged)
+        }
+       return thaiNoBracket
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
+    @SuppressLint("SetTextI18n")
+    fun iterateForMarks(sizeArray:List<String>, engRight:List<String>, thaiRight:List<String>){
+        val correctSize =sizeArray.size - 1
+
+        correctionField.text = "These are the corrections\n"
+        for (i in 0..correctSize){
+            correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+
+        }
+        val ssb = SpannableStringBuilder(correctionField.text)
+        val fcsGreen = ForegroundColorSpan(Color.RED)
+        ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        correctionField.setText(ssb)
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
     }// end of class
 
 
 
 
 /*
+        println("${noTSquareBrace[1]} this is noTSquareBrace[1] element")
+println("${noESquareBrace[1]} this is noESquareBrace[1] element")
+//println("${arrangeEngTextForMarks(arr)} this is the  arrangeEngTextForMarks function")
+//println("${arrangeThaiTextForMarks(arrTh)} this is the arrangeThaiTextForMarks(arrTh) function")
+        //println("$text this is after unserialize")
+        //println("$text2 this is after unserialize")
+        //correctionField.text = "These are the correction\n${text}   =   ${text2}"
+     fun arrangeEngTextForMarks(eng:Array<String>):Array<String>{
+        for (i in eng){
+            val textEng =eng[1].replace("[", "").replace("]", "")
+        }
+        return textEng
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+      fun iterateForMarks(){
+      val correctSize =arr.size - 1
+        for (i in correctSize downTo 0){
+           correctionField.text = "These are the correction\n${noESquareBrace[i]}   =   ${noTSquareBrace[i]\n}"
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
 
 println("$incorrecteList  this is incorrecteList" )
         println("$incorrecteListTh  this is incorrecteListTh" )
@@ -79,7 +145,7 @@ val text = arr[0].toString().replace("[", "").replace("]", "");
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")
         val myMarks = intent.getStringExtra("key3")
-        println("$incorrecteList  this is incorrecteList" )
+        println("$incorrecteList.size  this is incorrecteList.size" )
         println("$incorrecteListTh  this is incorrecteListTh" )
         println(myMarks)
         reportCard.text = "This is your mark\n           $myMarks%"
@@ -105,14 +171,7 @@ val text = arr[0].toString().replace("[", "").replace("]", "");
         return newThaiArray
     }
     ///////////////////////////////////////////////////////////////'
-    fun newStrArrayE():Array<String>{
-     var newEngArray: Array<String> = arrayOf()
-        for(item in element)
-        {
-           newEngArray.add(item)
-        }
-        return newEngArray
-    }
+
     ///////////////////////////////////////////////////////////////'
     fun strArrayToJoin():Array<String>{
      var joinedArray: Array<String> = arrayOf()

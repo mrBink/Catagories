@@ -12,6 +12,9 @@ class GradesForThai : AppCompatActivity() {
     private lateinit var delim: String
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
+    private lateinit var correctionField: TextView
+
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +32,52 @@ class GradesForThai : AppCompatActivity() {
         elementTh = unSerial.unDoThis(incorrecteListTh)
         delim = ","
         delimT = ","
-        val arr = element.split(delim).toTypedArray()
-        println("${arr[0]} this is typed Array English")
-        println(arr.contentToString())
-        val arr2 = elementTh.split(delimT).toTypedArray()
-        println("${arr2[0]} this is typed Array Thai")
-        println(arr.contentToString())
+        val arr = element.split(delim)
+        println("{$arr[1] } this is arr[1]  a string from arr last thing done this round I want water" )
+        arr[0].replace("[", "").replace("]", "")
+        val arrTh = elementTh.split(delimT)
+        arrTh[0].replace("[", "").replace("]", "")
+        val noESquareBrace = arrangeEngTextForMarks(arr)
+        arrangeEngTextForMarks(arr)
+        val noTSquareBrace = arrangeThaiTextForMarks(arrTh)
+        iterateForMarks(arr, noESquareBrace, noTSquareBrace)
+
+
     }// end of constructor
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
+        val length = eng.size - 1
+        val engNoBracket: ArrayList<String> = ArrayList()
+        for (i in 0..length) {
+            val newEngArranged = eng[i].replace("[", "").replace("]", "")
+            engNoBracket.add(newEngArranged)
+        }
+        return engNoBracket
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    private fun arrangeThaiTextForMarks(thai:List<String>):ArrayList<String>{
+        val length = thai.size - 1
+        val thaiNoBracket: ArrayList<String> = ArrayList()
+        for (i in 0..length) {
+            val newThaiArranged = thai[i].replace("[", "").replace("]", "")
+            thaiNoBracket.add(newThaiArranged)
+        }
+        return thaiNoBracket
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    /////////////////////////////////////////////////////////////////////
+    @SuppressLint("SetTextI18n")
+    fun iterateForMarks(sizeArray:List<String>, engRight:List<String>,thaiRight:List<String>){
+        val correctSize =sizeArray.size - 1
+        correctionField.text = "These are the corrections\n"
+        for (i in 0..correctSize){
+            correctionField.append("${thaiRight[i]}    =   ${engRight[i]}\n")
+        }
+    }
+//
+    //////////////////////////////////////////////////////////////////////////////////////////////
+}// end of class
 
-}//end of class
+
+
+

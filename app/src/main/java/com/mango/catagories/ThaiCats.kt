@@ -14,9 +14,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 
 class ThaiCats : AppCompatActivity() {
-    private var fruitPhotos=arrayOf(R.drawable.watermelon,R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
+    private var fruitPhotos=arrayOf(R.drawable.orange,R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
         R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
-        R.drawable.lemon,R.drawable.mango,R.drawable.orange,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
+        R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
     /////////////////////////////////////////////////////////////////////
     private lateinit var mPlayer: MediaPlayer
