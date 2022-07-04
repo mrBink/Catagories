@@ -25,35 +25,35 @@
         android:id="@+id/appleShot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/appleShot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bg_fruitPics"
-        app:srcCompat="@drawable/durian" />
+        app:srcCompat="@drawable/apple" />
 
     <EditText
-    android:id="@+id/userEntert"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:imeOptions="actionDone"
-    android:layout_marginTop="48dp"
-    android:hint="@string/enter_thai_here"
-    android:inputType="textNoSuggestions"
-    android:textAlignment="center"
-    android:textSize="34sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.503"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/appleShot"
-    tools:ignore="TextContrastCheck"
-    android:importantForAutofill="no" />
+        android:id="@+id/userEntert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/enter_thai_here"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appleShot"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/useHintT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:text="@string/use_the_thai_letters_below"
         android:textAlignment="center"
         android:textColor="#930404"
@@ -67,7 +67,7 @@
         android:id="@+id/scrambledFieldt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:hint="@string/dynamic"
         android:importantForAutofill="no"
         android:inputType="none"
@@ -81,19 +81,19 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-    android:id="@+id/dispThaiWord"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="48dp"
-    android:hint="@string/dynamic"
-    android:importantForAutofill="no"
-    android:textAlignment="center"
-    android:textColor="@color/black"
-    android:textSize="48sp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
-    tools:ignore="TextContrastCheck" />
+        android:id="@+id/dispThaiWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/dynamic"
+        android:importantForAutofill="no"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
+        tools:ignore="TextContrastCheck" />
 
 
 
