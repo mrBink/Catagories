@@ -2,6 +2,7 @@ package com.mango.catagories
 
 import android.app.Activity
 import android.content.Intent
+import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
@@ -9,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
@@ -21,7 +23,8 @@ class FruitCat : AppCompatActivity() {
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/
     )
     /////////////////////////////////////////////////////////////////////
-
+    private var soundPool: SoundPool? = null
+    private var sound1 = 1
     private lateinit var appleShot:ImageView        //images of fruit in View:
     private lateinit var userEnterE:EditText        //user editText
     private lateinit var scrambledFieldE:TextView   //scrambled text
@@ -36,10 +39,9 @@ class FruitCat : AppCompatActivity() {
     private var numOfErrorsE:Int = 0     //num for errors
     private var numOfCorrectE:Int = 0     //num for correct
     private var arrayIndex:Int = 0     //num for correct
-    private var wrongAnswersE:Int = 0     //num for errors
+    //private var wrongAnswersE:Int = 0     //num for errors
     private var numOfAttempts:Int = 0    //num for number of attempts
     private var myGrades:Double = 0.0
-    private var theSndFile:Int = 0
     private var adjustedMark:Double = 0.0
     private val myArrays = TheArrays()
 
@@ -50,19 +52,16 @@ class FruitCat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fruit_cat)
-            /*
-            private var soundPool: SoundPool? = null
-            private var  sound0:Int =0
-            private var  sound1:Int =0
-            private var  sound2:Int =0
-         private var  sound3:Int =0
-        sound0 = soundPool!!.load(this, R.raw.domdomsnd, 1)
-        sound1 = soundPool!!.load(this, R.raw.errorsnd, 1)
-        sound2 = soundPool!!.load(this, R.raw.fart, 1)
-        sound3 = soundPool!!.load(this, R.raw.yart, 1)
-        soundPool!!.play(sound1, 1f, 1f, 0, 0, 1f);
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
 
-             */
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        sound1 = soundPool?.load(this, R.raw.domdomsnd, 1)!!
 
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
@@ -208,7 +207,8 @@ class FruitCat : AppCompatActivity() {
 
     ////////////////////////////////////////////////////////////////////
     private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
-
+        soundPool?.play(sound1, 1F, 1F, 0, 0, 1F)
+        Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
         reSetForThreeErrors()
     }
     //////////////////////////////////////////////
@@ -288,13 +288,7 @@ class FruitCat : AppCompatActivity() {
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////
-    private fun determineErrorsSnd(): Int {
-        val myRandom = (0..3).random()
-        return myRandom
-    }
-
-     /////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////
   }//end of class
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
