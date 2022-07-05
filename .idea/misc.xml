@@ -5,14 +5,14 @@
       <map>
         <entry key="app/src/main/res/layout-large/activity_fruit_cat.xml" value="0.29513064133016625" />
         <entry key="app/src/main/res/layout/activity_fruit.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_fruit_cat.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_fruit_cat.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_fruit_thai.xml" value="0.24864864864864866" />
-        <entry key="app/src/main/res/layout/activity_grade_for_english.xml" value="0.28425925925925927" />
+        <entry key="app/src/main/res/layout/activity_grade_for_english.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_grades_for_thai.xml" value="0.2798913043478261" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_marks_eng_writing.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_marks_thai_writing.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_thai_cats.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_thai_cats.xml" value="0.375" />
       </map>
     </option>
   </component>

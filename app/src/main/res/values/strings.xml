@@ -22,6 +22,9 @@
     <string name="this_is_right_fucked">this is right fucked</string>
     <string name="disp_thai_word"> dispThaiWord</string>
     <string name="disp_English_word"> dispEnglishWord</string>
+    <string name="textview">TextView</string>
+    <string name="use_these_letters">ใช้ตัวอักษรด้านล่าง</string>
+    <string name="ใช้ตัวอักษรด้านล่าง">ใช้ตัวอักษรด้านล่าง</string>
 
 
 </resources>

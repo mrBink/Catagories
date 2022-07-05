@@ -27,12 +27,12 @@
         android:id="@+id/appleShot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/appleShot"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bg_fruitPics"
-        app:srcCompat="@drawable/durian"
+        app:srcCompat="@drawable/apple"
         tools:ignore="ImageContrastCheck" />
 
     <EditText
@@ -40,9 +40,10 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:hint="@string/enter_english_here"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
 
+        android:hint="@string/enter_english_here"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:singleLine="true"
@@ -52,14 +53,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appleShot"
-        tools:ignore="TextContrastCheck"
-        android:autofillHints="" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/useHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="6dp"
         android:contentDescription="@string/use_the_letters_below"
         android:text="@string/use_the_letters_below"
         android:textAlignment="center"
@@ -76,10 +76,11 @@
         android:id="@+id/scrambledField_e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="6dp"
         android:hint="@string/dynamic"
         android:importantForAutofill="no"
         android:inputType="none"
+        android:textAlignment="center"
         android:textColor="#FFEB3B"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,13 +89,14 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/dispThai_word"
+        android:id="@+id/dispEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="6dp"
         android:hint="@string/dynamic"
         android:importantForAutofill="no"
         android:inputType="none"
+        android:textAlignment="center"
         android:textColor="#182CA1"
         android:textSize="72sp"
         app:layout_constraintEnd_toEndOf="parent"
