@@ -7,10 +7,7 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
@@ -25,6 +22,7 @@ class FruitCat : AppCompatActivity() {
     /////////////////////////////////////////////////////////////////////
     private var soundPool: SoundPool? = null
     private var sound1 = 1
+    private lateinit var sndBtn2:ImageButton
     private lateinit var appleShot:ImageView        //images of fruit in View:
     private lateinit var userEnterE:EditText        //user editText
     private lateinit var scrambledFieldE:TextView   //scrambled text
@@ -69,6 +67,10 @@ class FruitCat : AppCompatActivity() {
         userEnterE = findViewById(R.id.userEnter_E)
         scrambledFieldE = findViewById(R.id.scrambledField_e)
         useHint = findViewById(R.id.useHint)
+        sndBtn2 = findViewById(R.id.sndBtn2)
+        sndBtn2.setOnClickListener {
+           soundPool?.play(sound1, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
         dispEnglishWord.append(myArrays.tthaiFruit[numToInc])
         scrambledFieldE.append(myArrays.escrambledFruits[numToInc])
         scrambledFieldE.alpha =0.toFloat()
