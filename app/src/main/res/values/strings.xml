@@ -25,6 +25,8 @@
     <string name="textview">TextView</string>
     <string name="use_these_letters">ใช้ตัวอักษรด้านล่าง</string>
     <string name="ใช้ตัวอักษรด้านล่าง">ใช้ตัวอักษรด้านล่าง</string>
+    <string name="snd_Btn">sndBtn</string>
+    <string name="sndbtn2">sndbtn2</string>
 
 
 </resources>
