@@ -2,6 +2,11 @@ package com.mango.catagories
 
 class TheArrays {
     var errorSndArr = arrayListOf( R.raw.domdomsnd,R.raw.errorsnd,R.raw.fart,R.raw.yart)
+    var fruitSnds = arrayListOf( R.raw.orange,R.raw.apple,R.raw.avocado,R.raw.banana,
+        R.raw.blueberry,R.raw.cantaloupe,R.raw.cherry,R.raw.grape,
+        R.raw.jackfruit,R.raw.lemon,R.raw.mango,R.raw.watermelon,
+        R.raw.papaya,R.raw.plum,R.raw.pumpkin,R.raw.strawberry,
+        R.raw.tomato,R.raw.coconut,R.raw.mangosteen,R.raw.watermelon)
 
 
                     //LESSON ONE

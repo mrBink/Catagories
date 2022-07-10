@@ -53,7 +53,21 @@ class FruitCat : AppCompatActivity() {
     private var noise5 = 5
     private var noise6 = 6
     private var noise7 = 7
-    private var soundId  = 11
+    private var soundId  = 500
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    private var orange     = 8
+    private var apple      = 9
+    private var avocado    = 10
+    private var banana     = 11
+    private var blueberry  = 12
+    private var cantaloupe = 13
+    private var cherry     = 14
+
+    private  var fruitSnds = arrayListOf( orange,apple,avocado,banana,
+        blueberry,cantaloupe,cherry/*,grape,
+        jackfruit,lemon,mango,watermelon,
+        papaya,plum,pumpkin,strawberry,
+        tomato,coconut,mangosteen,watermelon*/)
 
     ////////////////////////////////////////////////////////////////////
 
@@ -80,6 +94,15 @@ class FruitCat : AppCompatActivity() {
         noise5 = soundPool?.load(this, R.raw.mistake, 1)!!
         noise6 = soundPool?.load(this, R.raw.ohhhh, 1)!!
         noise7 = soundPool?.load(this, R.raw.burp, 1)!!
+        //////////////////////////////////////////////////////
+        orange     = soundPool?.load(this, R.raw.orange, 1)!!
+        apple      = soundPool?.load(this, R.raw.apple, 1)!!
+        avocado    = soundPool?.load(this, R.raw.avocado, 1)!!
+        banana     = soundPool?.load(this, R.raw.banana, 1)!!
+        blueberry  = soundPool?.load(this, R.raw.blueberry, 1)!!
+        cantaloupe = soundPool?.load(this, R.raw.cantaloupe, 1)!!
+        cherry     = soundPool?.load(this, R.raw.cherry, 1)!!
+
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispEnglishWord = findViewById(R.id.dispEnglishWord)
@@ -88,7 +111,8 @@ class FruitCat : AppCompatActivity() {
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
         sndBtn2.setOnClickListener {
-           soundPool?.play(noise7, 1.0f, 1.0f, 0, 0, 1.0f)
+
+            soundPool?.play(fruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
         dispEnglishWord.append(myArrays.tthaiFruit[numToInc])
         scrambledFieldE.append(myArrays.escrambledFruits[numToInc])
@@ -230,7 +254,7 @@ class FruitCat : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////
     private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
 
-       useAWhen(soundId)
+       useAWhen(soundId)// soundId = random number
         Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
        listenForComplete()
     }
@@ -316,10 +340,14 @@ class FruitCat : AppCompatActivity() {
 
     private fun useAWhen(myInt: Int) {
         when (myInt) {
-            1 -> soundPool?.play(noise1, 1.0f, 1.0f, 0, 0, 1.0f)
-            2 -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
-            3 -> soundPool?.play(noise3, 1.0f, 1.0f, 0, 0, 1.0f)
-            4 -> soundPool?.play(noise4, 1.0f, 1.0f, 0, 0, 1.0f)
+            30 -> soundPool?.play(noise1, 1.0f, 1.0f, 0, 0, 1.0f)
+            31 -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
+            32 -> soundPool?.play(noise3, 1.0f, 1.0f, 0, 0, 1.0f)
+            33 -> soundPool?.play(noise4, 1.0f, 1.0f, 0, 0, 1.0f)
+            34 -> soundPool?.play(noise5, 1.0f, 1.0f, 0, 0, 1.0f)
+            35 -> soundPool?.play(noise6, 1.0f, 1.0f, 0, 0, 1.0f)
+            36 -> soundPool?.play(noise7, 1.0f, 1.0f, 0, 0, 1.0f)
+
 
 
             else -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
@@ -327,7 +355,7 @@ class FruitCat : AppCompatActivity() {
     }
     /////////////////////////////////////////////////////////////////////////////////////////////
     private fun determineErrorsSnd():Int {
-        soundId = (1..7).random()
+        soundId = (30..36).random()
         println("$soundId this is myRandom from determineErrorsSnd()")
         return soundId
     }
