@@ -98,5 +98,17 @@
         app:layout_constraintTop_toBottomOf="@+id/scrambledField_e"
         tools:ignore="TextContrastCheck" />
 
+    <ImageButton
+        android:id="@+id/sndBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00F5F5F5"
+        android:contentDescription="@string/sndbtn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/redonebtn" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,12 +5,17 @@ import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var writeEnglish:ImageButton
     private lateinit var writeThai:ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.statusBars())
+        }
         setContentView(R.layout.activity_main)
         writeEnglish = findViewById(R.id.writeEnglish)
         writeThai = findViewById(R.id.writeThai)

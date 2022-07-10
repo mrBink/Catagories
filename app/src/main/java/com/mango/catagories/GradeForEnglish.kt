@@ -8,6 +8,8 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 
 class GradeForEnglish :AppCompatActivity  () {
@@ -22,6 +24,9 @@ class GradeForEnglish :AppCompatActivity  () {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.statusBars())
+        }
         setContentView(R.layout.activity_grade_for_english)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)

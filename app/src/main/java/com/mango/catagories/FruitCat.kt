@@ -5,11 +5,14 @@ import android.content.Intent
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 
 class FruitCat : AppCompatActivity() {
@@ -30,6 +33,7 @@ class FruitCat : AppCompatActivity() {
     private lateinit var dispEnglishWord:TextView      //user Thai Word
     private lateinit var wordInEArray:String        //reference
     private lateinit var marksString:String         //reference
+    private lateinit var timer: CountDownTimer
     private var  wrongEng: ArrayList<String> = ArrayList()
     private var wrongThai: ArrayList<String> = ArrayList()
     private  var sizeOfArray = fruitPhotos.size
@@ -37,18 +41,27 @@ class FruitCat : AppCompatActivity() {
     private var numOfErrorsE:Int = 0     //num for errors
     private var numOfCorrectE:Int = 0     //num for correct
     private var arrayIndex:Int = 0     //num for correct
-    //private var wrongAnswersE:Int = 0     //num for errors
+    //private var errorSndToPlay:Int = 50     //randomSndToPlay
     private var numOfAttempts:Int = 0    //num for number of attempts
     private var myGrades:Double = 0.0
     private var adjustedMark:Double = 0.0
     private val myArrays = TheArrays()
-
-
+    private var noise1 = 1
+    private var noise2 = 2
+    private var noise3 = 3
+    private var noise4 = 4
+    private var noise5 = 5
+    private var noise6 = 6
+    private var noise7 = 7
+    private var soundId  = 11
 
     ////////////////////////////////////////////////////////////////////
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.statusBars())
+        }
         setContentView(R.layout.activity_fruit_cat)
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
@@ -59,8 +72,14 @@ class FruitCat : AppCompatActivity() {
             .setMaxStreams(1)
             .setAudioAttributes(audioAttributes)
             .build()
-        sound1 = soundPool?.load(this, R.raw.domdomsnd, 1)!!
 
+        noise1 = soundPool?.load(this, R.raw.domdomsnd, 1)!!
+        noise2 = soundPool?.load(this, R.raw.fart, 1)!!
+        noise3 = soundPool?.load(this, R.raw.yart, 1)!!
+        noise4 = soundPool?.load(this, R.raw.errorsnd, 1)!!
+        noise5 = soundPool?.load(this, R.raw.mistake, 1)!!
+        noise6 = soundPool?.load(this, R.raw.ohhhh, 1)!!
+        noise7 = soundPool?.load(this, R.raw.burp, 1)!!
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispEnglishWord = findViewById(R.id.dispEnglishWord)
@@ -69,7 +88,7 @@ class FruitCat : AppCompatActivity() {
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
         sndBtn2.setOnClickListener {
-           soundPool?.play(sound1, 1.0f, 1.0f, 0, 0, 1.0f)
+           soundPool?.play(noise7, 1.0f, 1.0f, 0, 0, 1.0f)
         }
         dispEnglishWord.append(myArrays.tthaiFruit[numToInc])
         scrambledFieldE.append(myArrays.escrambledFruits[numToInc])
@@ -78,6 +97,7 @@ class FruitCat : AppCompatActivity() {
         wordInEArray = userEnterE.toString()
         userEnterE.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
+
                 checkWords()
                hideSoftKeyboard()
                 true
@@ -100,7 +120,7 @@ class FruitCat : AppCompatActivity() {
         }
         else{
             numOfAttempts +=1
-            //accumulateErrors(numOfAttempts)//returns var from numOfErrorsE/one var for grades/one var reset = 0 for corrections
+            determineErrorsSnd()
             respondToErrors()
            // println("$numOfAttempts this is numberOfAttempts from else in checkWords()")
         }
@@ -209,9 +229,10 @@ class FruitCat : AppCompatActivity() {
 
     ////////////////////////////////////////////////////////////////////
     private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
-        soundPool?.play(sound1, 1F, 1F, 0, 0, 1F)
+
+       useAWhen(soundId)
         Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
-        reSetForThreeErrors()
+       listenForComplete()
     }
     //////////////////////////////////////////////
     private fun passPeram() // comes from HelperFunctions deals with turnover at 3.6..9.
@@ -289,8 +310,48 @@ class FruitCat : AppCompatActivity() {
             println("$numOfAttempts this is number of attempts called from reSetNumOfAttempts")
         }
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+    private fun useAWhen(myInt: Int) {
+        when (myInt) {
+            1 -> soundPool?.play(noise1, 1.0f, 1.0f, 0, 0, 1.0f)
+            2 -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
+            3 -> soundPool?.play(noise3, 1.0f, 1.0f, 0, 0, 1.0f)
+            4 -> soundPool?.play(noise4, 1.0f, 1.0f, 0, 0, 1.0f)
+
+
+            else -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
+        }
+    }
     /////////////////////////////////////////////////////////////////////////////////////////////
+    private fun determineErrorsSnd():Int {
+        soundId = (1..7).random()
+        println("$soundId this is myRandom from determineErrorsSnd()")
+        return soundId
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    private fun listenForComplete() {
+        timer = object : CountDownTimer(1250, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                println("This is the time left: $millisUntilFinished")
+                determineErrorsSnd()
+            }
+            override fun onFinish() {
+                reSetForThreeErrors()
+                println("This is the timer cancelled")
+                timer.cancel()
+
+            }
+        }
+        timer.start()
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
   }//end of class
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -303,17 +364,31 @@ class FruitCat : AppCompatActivity() {
 
 
 /*
+ private fun listenForComplete() {
+        val timer = object : CountDownTimer(1000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                println("This is the time left: $millisUntilFinished")
+                determineErrorsSnd()
+            }
+            override fun onFinish() {
+                reSetForThreeErrors()
+            }
+        }
+        timer.start()
+    }
+    ////////////////////////////////////////////////////////////
 
   val rasbarry = arrayListOf(sound0,sound1,sound2, sound3)
         val myRandom = (0..3).random()
         val theFart = rasbarry[myRandom]
         soundPool.play(theFart, 1F, 1F, 0, 0, 1F)
 
- private fun determineErrorsSnd(): Int {
+ private fun determineErrorsSnd(identitySnd:Int): Int {
         val myRandom = (0..3).random()
-        return rasbarry[myRandom]
+        return myRandom
     }
-
+ soundId =(1..4).random()
+            println(" this is the soundId $soundId")
 
 private fun getRandonErrorsnd():Int{
     val theSndFile = (0..3).random()

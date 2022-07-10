@@ -3,15 +3,16 @@ package com.mango.catagories
 import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 
 class ThaiCats : AppCompatActivity() {
     private var fruitPhotos=arrayOf(R.drawable.orange,R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
@@ -45,6 +46,9 @@ class ThaiCats : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.statusBars())
+        }
         setContentView(R.layout.activity_thai_cats)
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
