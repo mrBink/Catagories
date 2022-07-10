@@ -24,7 +24,7 @@ class FruitCat : AppCompatActivity() {
     )
     /////////////////////////////////////////////////////////////////////
     private var soundPool: SoundPool? = null
-    private var sound1 = 1
+   // private var sound1 = 1
     private lateinit var sndBtn2:ImageButton
     private lateinit var appleShot:ImageView        //images of fruit in View:
     private lateinit var userEnterE:EditText        //user editText

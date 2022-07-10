@@ -75,8 +75,9 @@ class GradeForEnglish :AppCompatActivity  () {
     @SuppressLint("SetTextI18n")
     fun iterateForMarks(sizeArray:List<String>, engRight:List<String>, thaiRight:List<String>){
         val correctSize =sizeArray.size - 1
-
+          println(" this is $sizeArray.size called from iterate marks")
         correctionField.text = "These are the corrections\n"
+
         for (i in 0..correctSize){
             correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
 
@@ -86,7 +87,11 @@ class GradeForEnglish :AppCompatActivity  () {
         ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         correctionField.setText(ssb)
 
+
+
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////
     }// end of class
