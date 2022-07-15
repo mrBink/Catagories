@@ -1,5 +1,7 @@
 package com.mango.catagories
 
+import android.widget.TextView
+
 class HelperFunctions {
     companion object {
 
@@ -29,11 +31,35 @@ class HelperFunctions {
             }
         }
         ///////////////////////////////////////////////////
+        //@SuppressLint("SetTextI18n")
+
+        ///////////////////////////////////////////////////
     }//end of Companion Object
       ///////////////////////////////////////////////
 }  //end of Class
 
 /*
+
+
+ fun getListSize(eng:List<String>):Int{
+
+        return textEng
+    }
+
+
+ private fun useAWhen(myInt:Int, myErrors:ArrayList<String>, errorField: TextView, reactErrors: (listSomeMistakes:Int) -> Unit, listMistakes:Int) {
+            val brainFarts = myErrors.size - 1
+
+            when (myInt) {
+               // 0 -> errorField.text = "There are no corrections"
+                0 -> "There are no corrections".also { errorField.text = it }
+
+                in 1..brainFarts -> reactErrors(listMistakes)
+
+                else -> println("this is brainFarts")
+            }
+        }
+
  private fun serializeToString(any: Serializable?,anyWord:String,limit:String,missEng:List<String>,eleOne:String){
         var any2 = any
         var anyWord2 = anyWord

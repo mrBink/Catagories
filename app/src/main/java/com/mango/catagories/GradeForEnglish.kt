@@ -21,7 +21,7 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var correctionField: TextView
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    @SuppressLint("SetTextI18n")
+    //@SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowInsetsControllerCompat(window, window.decorView).apply {
@@ -34,21 +34,29 @@ class GradeForEnglish :AppCompatActivity  () {
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")
         val myMarks = intent.getStringExtra("key3")
-        reportCard.text = "This is your mark\n           $myMarks%"
+        val myNumberOfErrorsE = intent.getIntExtra("key4",0)
+        "This is your mark\n           $myMarks%".also { reportCard.text = it }
+        println("this $myMarks is the grade sent from FruitCat")
         element = unSerial.unDoThis(incorrecteList)
-            println("$element  this is element  a string from unSerial" )
         elementTh = unSerial.unDoThis(incorrecteListTh)
         delim = ","
         delimT = ","
        val arr = element.split(delim)
-        println("{$arr[1] } this is arr[1]  a string from arr last thing done this round I want water" )
+        val mistakesEng: Array<String> = arr.toTypedArray()
+        mistakesEng.forEach { println(it) }
+        println("${mistakesEng.size}  this is mistakesEng.size  = arr converted to ArrayList" )
         arr[0].replace("[", "").replace("]", "")
         val arrTh = elementTh.split(delimT)
         arrTh[0].replace("[", "").replace("]", "")
         val noESquareBrace = arrangeEngTextForMarks(arr)
         arrangeEngTextForMarks(arr)
         val noTSquareBrace = arrangeThaiTextForMarks(arrTh)
-        iterateForMarks(arr, noESquareBrace, noTSquareBrace)
+        displayGrades( myNumberOfErrorsE,
+            { thePerfectScore(correctionField) },
+            { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
+        displayGrades(myNumberOfErrorsE, { thePerfectScore(correctionField) } ,
+            { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
+        //iterateForMarks(arr, noESquareBrace, noTSquareBrace)
        }// end of constructor
     //////////////////////////////////////////////////////////////////////////////////////////////
       private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
@@ -71,35 +79,241 @@ class GradeForEnglish :AppCompatActivity  () {
        return thaiNoBracket
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
+    private fun errorsToCorrectionField(sizeArray:List<String>,errorField:TextView,engRight:List<String>,thaiRight:List<String>){
+        val correctSize =sizeArray.size-1
+        "These are the corrections\n".also { errorField.text = it }
+        for (i in 0..correctSize) {
 
-    @SuppressLint("SetTextI18n")
-    fun iterateForMarks(sizeArray:List<String>, engRight:List<String>, thaiRight:List<String>){
-        val correctSize =sizeArray.size - 1
-          println(" this is $sizeArray.size called from iterate marks")
-        correctionField.text = "These are the corrections\n"
-
-        for (i in 0..correctSize){
-            correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
-
+            errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
         }
-        val ssb = SpannableStringBuilder(correctionField.text)
+        val ssb = SpannableStringBuilder(errorField.text)
         val fcsGreen = ForegroundColorSpan(Color.RED)
-        ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        correctionField.setText(ssb)
-
-
-
+        with(ssb) {
+            setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        with(errorField) {
+            ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            text = ssb
+        }
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+    private fun thePerfectScore(myTextView: TextView){
 
-
-    //////////////////////////////////////////////////////////////////////////////////////////////
+        println("called from inside thePerfectScore")
+        //errorField.text = "There are no corrections"
+        println("There are no corrections")
+        "There are no corrections".also {myTextView.text = it }
+    }
+    ////////////////////////////////////////////////////////////////////////
+    private fun displayGrades(tries:Int,idealScore:() -> Unit,someErrors:() -> Unit)
+    {
+        when (tries) {
+            0 -> idealScore() // actual fun thePerfectScore()
+            1 -> someErrors()   // actual fun errorsToCorrectionField()
+            else -> println("called from inside displayGrades")
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////
     }// end of class
 
 
 
 
 /*
+ ///////////////////////////////////////////////////////////////////////////
+                DON'T LOOSE THIS
+
+        correctionField.text = "These are the corrections\n"
+        for (i in 0..correctSize) {
+
+            correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+        }
+         @SuppressLint("SetTextI18n")
+   private fun iterateForMarks(sizeArray:List<String>,engRight:List<String>,thaiRight:List<String>){
+
+        val correctSize =sizeArray.size-1
+        val correctSize2 =engRight.size-1
+
+          println("num of mistakes collected in in engRight $engRight called from iterate marks")
+         val ssb = SpannableStringBuilder(correctionField.text)
+         val fcsGreen = ForegroundColorSpan(Color.RED)
+         with(ssb) {
+         setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+       }
+         with(correctionField) {
+         ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+         text = ssb
+       }
+
+   }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    //@SuppressLint("SetTextI18n")
+    private fun gotOneHundred(noErrorsMade:List<String>,errorField:TextView){
+        val perfect = noErrorsMade.size -1
+        println("num of mistakes collected in in engRight $perfect called from gotOneHundred")
+        if(noErrorsMade.size -1 <= 0)
+        {
+            println("num of mistakes collected in in engRight ${noErrorsMade.size -1} called from inside If expression in gotOneHundred")
+            //errorField.text = "There are no corrections"
+            println("There are no corrections")
+            "There are no corrections".also { errorField.text = it }
+        }
+    }
+
+        ///////////////////////////////////////////////////////////////////////////
+
+        @SuppressLint("SetTextI18n")
+    private fun gotOneHundred(sizeArray:List<String>, engRight:List<String>, thaiRight:List<String>)
+    {
+        val correctSize =sizeArray.size-1
+        if( correctSize == 0)
+        {
+            correctionField.text = "There are no corrections"
+        }else{
+            for (i in 0..correctSize){
+                correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+
+            }
+        }
+    }
+
+
+
+  private fun callGotOneHundred(noErrorsMade:Int,reactErrors:() -> Unit){
+
+        if(noErrorsMade== 0)
+        {
+            reactErrors()
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////
+     private fun thePerfectScore(errorField:TextView){
+
+            println println("called from inside thePerfectScore")
+            //errorField.text = "There are no corrections"
+            println("There are no corrections")
+            "There are no corrections".also { errorField.text = it }
+    }
+    //////////////////////////////////////////////////////////////////////////
+
+private fun displayGrades(tries:Int,perfectScore:() -> Unit,someErrors:() -> Unit)
+{
+ when (tries) {
+            0 -> perfectScore:() -> Unit // actual fun thePerfectScore()
+            1 -> someErrors:() -> Unit   // actual fun errorsToCorrectionField()
+            else -> -1
+            )
+        }
+}
+
+
+
+
+
+
+
+
+
+
+if (perfectMark == true) {
+            println("go no further ")
+
+        }
+
+               //println("{$arr[1] } this is arr[1]  a string from arr last thing done this round I want water" )
+        //var mistakesEng<String>(arr)
+        //println("${mistakesEng.contentToString()}this is mistakesEng[0] without any errors" )
+
+ private fun errorsToCorrectionField(errorField:TextView,theInt:Int){
+        //should be correctionField
+        errorField.text = "These are the corrections\n"
+        for (i in 0..theInt) {
+
+            errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+        }
+              }
+val errorListSize=getListSize(arr)
+ isEmpty(arr)
+        checkArrayContent(arr,noESquareBrace,noTSquareBrace)
+       // oneHundredPercent(arr,correctionField,noESquareBrace,noTSquareBrace)
+       //printUpErrors(arr,noESquareBrace,noTSquareBrace)
+        //iterateForMarks(arr, noESquareBrace, noTSquareBrace)
+
+private fun getListSize(sizeArray:List<String>):Int{
+        val theListSize =sizeArray.size -1
+        return theListSize
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    private fun isEmptyArray(any:Array<String>){
+         if (any.contentToString() == "")
+        {
+            val noContent = true
+            println("There are no corrections")
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    @SuppressLint("SetTextI18n")
+    private fun checkArrayContent(theArrayList:List<String>,engRight:ArrayList<String>, thaiRight:ArrayList<String>) {
+        val list = theArrayList
+
+        val isEmpty = isEmpty(list)
+        if (isEmpty) {
+            correctionField.text = "There are no corrections"
+        } else {
+            for (i in 0..theArrayList.size ) {
+                correctionField.text = "These are the corrections\n"
+                correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+            }
+        }
+    }
+    @SuppressLint("SetTextI18n")
+
+    // parameters = arr,errorListSize,noESquareBrace,noTSquareBrace
+    fun printUpErrors(sizeArray:List<String>,engRight:ArrayList<String>, thaiRight:ArrayList<String>) {
+        //val correctSize = sizeArray.size
+        //println("$correctSize this correctSize without any errors made ")
+        if (sizeArray.size == 0) {
+            println("sizeArray.isEmpty() this sizeArray.size without any errors made in condition incorrectSize == 0")
+            correctionField.text = "There are no corrections"
+        } else if (sizeArray.size > 0){
+            println("${sizeArray.size} this sizeArray.size without any errors made in condition correctSize > 0")
+            for (i in 0..sizeArray.size ) {
+                correctionField.text = "These are the corrections\n"
+                correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+            }
+            }else{
+                println("water buffalo farts")
+            }
+        }
+
+ private fun getListSize(sizeArray:List<String>):Int{
+        val theListSize =sizeArray.size
+        return theListSize
+    }
+ fun printUpErrors(sizeArray:List<String>,engRight:ArrayList<String>, thaiRight:ArrayList<String>){
+        var oneCondition = false
+        val correctSize = sizeArray.size
+        val correctSize2 = sizeArray.size
+        println("$correctSize this correctSize without any errors made")
+        if (correctSize == 0) {
+            println("${engRight[0]} this engRight[0] without any errors made")
+
+            correctionField.text = "There are no corrections"
+        } else if (correctSize2 > 0){
+            println("$correctSize this correctSize with  errors made")
+            for (i in 0..correctSize ) {
+                correctionField.text = "These are the corrections\n"
+                correctionField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+            }
+            }else{
+                println("water buffalo farts")
+            }
+        }
+
+
+
+
+
         println("${noTSquareBrace[1]} this is noTSquareBrace[1] element")
 println("${noESquareBrace[1]} this is noESquareBrace[1] element")
 //println("${arrangeEngTextForMarks(arr)} this is the  arrangeEngTextForMarks function")
@@ -115,10 +329,14 @@ println("${noESquareBrace[1]} this is noESquareBrace[1] element")
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
-      fun iterateForMarks(){
-      val correctSize =arr.size - 1
-        for (i in correctSize downTo 0){
-           correctionField.text = "These are the correction\n${noESquareBrace[i]}   =   ${noTSquareBrace[i]\n}"
+      fun printUpErrors(sizeArray:List<String>,dispResults:TextView ,engRight:List<String>, thaiRight:List<String>){
+      val correctSize =sizeArray.size - 1
+      //println("$correctSize this correctSize without any errors made")
+      if( correctSize == -1){
+          dispResults.text = "There are no corrections"
+      }else{
+            for (i in 0..correctSize){
+            dispResults.append("${engRight[i]}    =    ${thaiRight[i]}\n")
         }
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
