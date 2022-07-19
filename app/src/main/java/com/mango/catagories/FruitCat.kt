@@ -13,18 +13,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import kotlin.math.roundToInt
 
 
 class FruitCat : AppCompatActivity() {
     private var fruitPhotos=arrayOf(
-        R.drawable.orange, R.drawable.apple,/*R.drawable.avocado,R.drawable.banana,
+        R.drawable.orange, R.drawable.apple,R.drawable.avocado/*,R.drawable.banana,
         R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
         R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/
     )
     /////////////////////////////////////////////////////////////////////
     private var soundPool: SoundPool? = null
-   // private var sound1 = 1
     private lateinit var sndBtn2:ImageButton
     private lateinit var appleShot:ImageView        //images of fruit in View:
     private lateinit var userEnterE:EditText        //user editText
@@ -42,9 +42,12 @@ class FruitCat : AppCompatActivity() {
     private var arrayIndex:Int = 0     //num for correct
     private var numOfAttempts:Int = 0    //num for number of attempts
     private var collectWrongAns:Int = 0 //num for tries
+    private var threeWrongsE:Int = 0 //num for tries
+    private var myGoofs:Int = 0 //num for tries
     private var myGrades:Double = 0.0
     private var adjustedMark:Double = 0.0
     private val myArrays = TheArrays()
+    private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
     private var noise1 = 1
     private var noise2 = 2
     private var noise3 = 3
@@ -165,13 +168,9 @@ class FruitCat : AppCompatActivity() {
     private fun checkWords(){
         if(userEnterE.text.toString() == myArrays.efruitTxt[numToInc] && numToInc < sizeOfArray ){
             arrayIndex =findIndex(myArrays.efruitTxt, myArrays.efruitTxt[numToInc])
-            //numOfCorrectE = accumulateCorrect1(arrayIndex,numToInc,numOfCorrectE)
-            //collectRightAns = accumulateCorrect2(arrayIndex,numToInc,collectRightAns)
             getNextFruit()
-           // println("this is $numOfCorrectE  from check words")
         }
         else{
-            //numOfErrorsE +=1
             numOfAttempts +=1
             newIndividualEntryForErrors()
             determineErrorsSnd()
@@ -197,31 +196,23 @@ private fun newIndividualEntryForErrors()
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-private fun individualErrorCount()
+private fun individualErrorCount()    // this is called per array element
 {
-    when (numOfAttempts)
-    {
-        1,2,3 -> numOfErrorsE  = 1
-    }
-    println(" this is $numOfErrorsE errors  called from individualErrorCount()/checkWords()/else")
-    collectWrongAns += numOfErrorsE  // used in results()
-    when (collectWrongAns)           // This to account for 3 goofs in the item
-    {
-        3 -> collectWrongAns  = 1
-    }
-
-    println("$collectWrongAns is collectWrongAns being processed per item..i want to see 2 ??")
+    myGoofs =modifyNumOfErrorsE(numOfAttempts)
+    println(" this is $myGoofs  myGoofs from modifyNumOfErrorsE")
+    setNumberOfIncorrect(collectedIncorrect,numToInc ,myGoofs)//sets index of array element value = 1
+    collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire array ie wrong = 2
+    println(" this is $collectWrongAns after accumulatedErrors  array iterated")
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 private fun respondToErrors() {
-    //println("marksString is being processed per item ??")
     passPeram()
     reSetNumOfAttempts() // if 3 Attempts back to 0
     whenWrongAnswer()
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 private fun whenWrongAnswer(){
-    createArraysForWrongAnswers()             //creates arrays for wrong answers
+    createArraysForWrongAnswers()     //creates arrays for wrong answers
     cleanUpToContinue()
     //println("${numOfErrorsE.toString()} this is numOfErrorsE from whenWrongAnswer")//sets up scrambled field clears incorrect user entry
 }
@@ -238,7 +229,7 @@ scrambledFieldE.alpha =0.toFloat()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 private fun endOfArray() {   // when array done pass intents and change activities "GradeForEnglish"
-   //println("this is $wrongEng this is wrongEng from endOfArray()")
+                             // println("this is $wrongEng this is wrongEng from endOfArray()")
     setErrorResults()        // this should set stage for results()
     results(collectWrongAns) // this should determine marks Perfect or Not So Much
     if (numToInc == sizeOfArray) {
@@ -263,7 +254,6 @@ private fun reSetForThreeErrors(){
     0.toFloat().also { useHint.alpha = it }
     //println("${numOfErrorsE.toString()} this is numOfErrorsE from reSetFruit()=0")
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
    useAWhen(soundId)// soundId = random number
@@ -282,7 +272,6 @@ private fun createArraysForWrongAnswers(){
     if(!result){
         wrongEng.add(aWord)
             }
-    println(result) // true
     val aWordTh = myArrays.tthaiFruit[numToInc]
     val result2 = wrongThai.contains(aWordTh)
     if(!result2){
@@ -297,7 +286,8 @@ private fun createArraysForWrongAnswers(){
         //modifyThreeErrors(collectWrongAns) this can not be here because 3 errors are possible with big array
         println("$collectWrongAns called from getGrade")
         myGrades = (sizeOfArray - collectWrongAns.toDouble()) / sizeOfArray * 100
-        return Math.round(myGrades * 100) / 100.0
+
+        return (myGrades * 100).roundToInt() / 100.0
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -401,6 +391,35 @@ private fun setErrorResults()//called in endOfArray
     }
 }
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    //setNumberOfIncorrect(collectedIncorrect,numToInc ,numOfErrorsE)
+    private fun setNumberOfIncorrect(listOfGoofs:Array<Int>,index:Int,theGoof:Int) {
+        //myNumToInc = listOfGoofs
+        listOfGoofs[index]= theGoof
+        println("{${listOfGoofs.contentToString()}}..... listOgGoofs[0]")
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private fun accumulatedErrors(listOfGoofs:Array<Int>):Int {
+        var gatheredWrong = 0
+        for (item in listOfGoofs)
+        {
+            gatheredWrong += item
+        }
+        return gatheredWrong
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private fun modifyNumOfErrorsE(numOfTries:Int):Int {
+        if (numOfTries == 1) {
+            numOfErrorsE = 1
+        }
+        return numOfErrorsE
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private fun modifyCollectedWrongs(numOfTries:Int) {
+        // this to use in event of three errors in one index  ie. orange = (wrong)*3
+        threeWrongsE  += numOfTries
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////
 
 }//end of class
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -424,21 +443,19 @@ private fun results(allTheWrong:Int)//collectWrongAns
     }
 }
 ///////////////////// written But not used /////////////////////////
-private fun setNumberOfCorrect(numOfTries:Int) {
-
-    if (numOfTries ==0) {
-        numOfCorrectE = +1
-    }
+private fun setNumberOfIncorrect(listOfGoofs:List<Int>,theGoof:Int) {
+//myNumToInc = listOfGoofs
+   listOfGoofs.add(theGoof)
 
 }
 ////////////////////////////////////////////////////////////////////
-private fun accumulateCorrect1(theArrayIndex:Int,myNumToInc:Int,rightAccumulated:Int):Int {
-    var gatheredRight = rightAccumulated
-    if (theArrayIndex == myNumToInc)
+private fun accumulatedErrors(listOfGoofs:List<Int>):Int {
+    var gatheredWrong
+    for (item in == listOfGoofs)
     {
-        gatheredRight += 1
+        gatheredWrong += 1
     }
-    return gatheredRight
+    return gatheredWrong
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 private fun accumulateCorrect2(theArrayIndex:Int,myNumToInc:Int,amountOfRight:Int = 0):Int {
@@ -468,12 +485,10 @@ private fun accumulateCorrect2(theArrayIndex:Int,myNumToInc:Int,amountOfRight:In
         return gatheredWrong
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-private fun setNumberOfCorrect(numOfTries:Int) {
-
-    if (numOfTries ==0) {
-        numOfCorrectE = +1
+private fun modify(numOfTries:Int) {
+    if (numOfTries > 0) {
+        numOfErrorsE = 1
     }
-
 }
 ////////////////////////////////////////////////////////////////////
              "Cut from numOfMistakes()"
@@ -498,6 +513,8 @@ private fun setNumberOfCorrect(numOfTries:Int) {
             println(" this is $goofsShadow collectWrongAns  new number")
         }
     }
+
+        //private val collectedIncorrect:MutableList<Int> = mutableListOf()
     ////////////////////////////////////////////////////////////////////////////////////////////////
  */
 

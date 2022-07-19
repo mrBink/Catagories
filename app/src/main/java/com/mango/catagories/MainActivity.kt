@@ -13,10 +13,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var writeThai:ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         WindowInsetsControllerCompat(window, window.decorView).apply {
             hide(WindowInsetsCompat.Type.statusBars())
         }
         setContentView(R.layout.activity_main)
+
         writeEnglish = findViewById(R.id.writeEnglish)
         writeThai = findViewById(R.id.writeThai)
 

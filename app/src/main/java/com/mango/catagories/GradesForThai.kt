@@ -1,7 +1,11 @@
 package com.mango.catagories
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -15,38 +19,39 @@ class GradesForThai : AppCompatActivity() {
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
-
-
-    @SuppressLint("SetTextI18n")
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowInsetsControllerCompat(window, window.decorView).apply {
         hide(WindowInsetsCompat.Type.statusBars())}
         setContentView(R.layout.activity_grades_for_thai)
         reportCard = findViewById(R.id.reportCard)
+        correctionField = findViewById(R.id.correctionField)
         val unSerial = Deserializer()
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")
         val marksStringT = intent.getStringExtra("key3")
-        println("$incorrecteList  this is incorrecteList" )
-        println("$incorrecteListTh  this is incorrecteListTh" )
+        val myNumberOfErrorsT = intent.getIntExtra("key4",0)
         println(marksStringT)
-        reportCard.text = "This is your mark\n           $marksStringT%"
+        "This is your mark\n           $marksStringT%".also { reportCard.text = it }
         element = unSerial.unDoThis(incorrecteList)
         elementTh = unSerial.unDoThis(incorrecteListTh)
         delim = ","
         delimT = ","
         val arr = element.split(delim)
-        println("{$arr[1] } this is arr[1]  a string from arr last thing done this round I want water" )
+        val mistakesThai: Array<String> = arr.toTypedArray()
+        mistakesThai.forEach { println(it) }
         arr[0].replace("[", "").replace("]", "")
         val arrTh = elementTh.split(delimT)
         arrTh[0].replace("[", "").replace("]", "")
         val noESquareBrace = arrangeEngTextForMarks(arr)
         arrangeEngTextForMarks(arr)
         val noTSquareBrace = arrangeThaiTextForMarks(arrTh)
-        iterateForMarks(arr, noESquareBrace, noTSquareBrace)
-
-
+        displayGrades( myNumberOfErrorsT,
+            { thePerfectScore(correctionField) },
+            { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
+        displayGrades(myNumberOfErrorsT, { thePerfectScore(correctionField) } ,
+            { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
     }// end of constructor
     //////////////////////////////////////////////////////////////////////////////////////////////
     private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
@@ -69,18 +74,38 @@ class GradesForThai : AppCompatActivity() {
         return thaiNoBracket
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
+    private fun errorsToCorrectionField(sizeArray:List<String>,errorField:TextView,engRight:List<String>,thaiRight:List<String>){
+        val correctSize =sizeArray.size-1
+        "These are the corrections\n".also { errorField.text = it }
+        for (i in 0..correctSize) {
 
-    @SuppressLint("SetTextI18n")
-    fun iterateForMarks(sizeArray:List<String>, engRight:List<String>,thaiRight:List<String>){
-        val correctSize =sizeArray.size - 1
-        correctionField.text = "These are the corrections\n"
-        for (i in 0..correctSize){
-            correctionField.append("${thaiRight[i]}    =   ${engRight[i]}\n")
+            errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+        }
+        val ssb = SpannableStringBuilder(errorField.text)
+        val fcsGreen = ForegroundColorSpan(Color.RED)
+        with(ssb) {
+            setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        with(errorField) {
+            ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            text = ssb
         }
     }
-//
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private fun thePerfectScore(myTextView: TextView){
+        "There are no corrections".also {myTextView.text = it }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private fun displayGrades(tries:Int,idealScore:() -> Unit,someErrors:() -> Unit)
+    {
+        when (tries) {
+            0 -> idealScore() // actual fun thePerfectScore()
+            1 -> someErrors()   // actual fun errorsToCorrectionField()
+            else -> println("called from inside displayGrades")
+        }
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////
-}// end of class
+    }// end of class
 
 
 
