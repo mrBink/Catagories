@@ -42,7 +42,6 @@ class FruitCat : AppCompatActivity() {
     private var arrayIndex:Int = 0     //num for correct
     private var numOfAttempts:Int = 0    //num for number of attempts
     private var collectWrongAns:Int = 0 //num for tries
-    private var threeWrongsE:Int = 0 //num for tries
     private var myGoofs:Int = 0 //num for tries
     private var myGrades:Double = 0.0
     private var adjustedMark:Double = 0.0
@@ -414,10 +413,13 @@ private fun setErrorResults()//called in endOfArray
         return numOfErrorsE
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    /*
     private fun modifyCollectedWrongs(numOfTries:Int) {
         // this to use in event of three errors in one index  ie. orange = (wrong)*3
         threeWrongsE  += numOfTries
     }
+
+     */
 
     ////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -83,7 +83,7 @@ class GradeForEnglish :AppCompatActivity  () {
         "These are the corrections\n".also { errorField.text = it }
         for (i in 0..correctSize) {
 
-            errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+            errorField.append("${thaiRight[i]}    =    ${engRight[i]}\n")
         }
         val ssb = SpannableStringBuilder(errorField.text)
         val fcsGreen = ForegroundColorSpan(Color.RED)
