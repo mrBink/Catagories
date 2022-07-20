@@ -78,7 +78,7 @@ class ThaiCats : AppCompatActivity() {
     private var t_rambutan   = 27
 
 
-    private  var fruitSnds = arrayListOf( t_orange,t_apple,t_avocado,t_banana,
+    private  var t_fruitSnds = arrayListOf( t_orange,t_apple,t_avocado,t_banana,
         t_blueberry,t_cantaloupe,t_cherry/*,t_grape,
         t_jackfruit,t_lemon,t_mango,t_watermelon,
         t_papaya,t_plum,t_pumpkin,t_strawberry,
@@ -112,26 +112,26 @@ class ThaiCats : AppCompatActivity() {
         noise6 = soundPool?.load(this, R.raw.ohhhh, 1)!!
         noise7 = soundPool?.load(this, R.raw.burp, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
-        t_orange       = soundPool?.load(this, R.raw.orange, 1)!!
-        t_apple        = soundPool?.load(this, R.raw.apple, 1)!!
-        t_avocado      = soundPool?.load(this, R.raw.avocado, 1)!!
-        t_banana       = soundPool?.load(this, R.raw.banana, 1)!!
-        t_blueberry    = soundPool?.load(this, R.raw.blueberry, 1)!!
-        t_cantaloupe   = soundPool?.load(this, R.raw.cantaloupe, 1)!!
-        t_cherry       = soundPool?.load(this, R.raw.cherry, 1)!!
-        t_grape        = soundPool?.load(this, R.raw.cherry, 1)!!
-        t_jackfruit    = soundPool?.load(this, R.raw.orange, 1)!!
-        t_lemon        = soundPool?.load(this, R.raw.apple, 1)!!
-        t_mango        = soundPool?.load(this, R.raw.avocado, 1)!!
-        t_watermelon   = soundPool?.load(this, R.raw.banana, 1)!!
-        t_papaya       = soundPool?.load(this, R.raw.blueberry, 1)!!
-        t_plum         = soundPool?.load(this, R.raw.cantaloupe, 1)!!
-        t_pumpkin      = soundPool?.load(this, R.raw.cherry, 1)!!
-        t_strawberry   = soundPool?.load(this, R.raw.orange, 1)!!
-        t_tomato       = soundPool?.load(this, R.raw.apple, 1)!!
-        t_coconut      = soundPool?.load(this, R.raw.avocado, 1)!!
-        t_mangosteen   = soundPool?.load(this, R.raw.banana, 1)!!
-        t_rambutan     = soundPool?.load(this, R.raw.blueberry, 1)!!
+        t_orange       = soundPool?.load(this, R.raw.t_orange, 1)!!
+        t_apple        = soundPool?.load(this, R.raw.t_apple, 1)!!
+        t_avocado      = soundPool?.load(this, R.raw.t_avocado, 1)!!
+        t_banana       = soundPool?.load(this, R.raw.t_banana, 1)!!
+        t_blueberry    = soundPool?.load(this, R.raw.t_blueberry, 1)!!
+        t_cantaloupe   = soundPool?.load(this, R.raw.t_cantaloupe, 1)!!
+        t_cherry       = soundPool?.load(this, R.raw.t_cherry, 1)!!
+        t_grape        = soundPool?.load(this, R.raw.t_grape, 1)!!
+        t_jackfruit    = soundPool?.load(this, R.raw.t_jackfruit, 1)!!
+        t_lemon        = soundPool?.load(this, R.raw.t_lemon, 1)!!
+        t_mango        = soundPool?.load(this, R.raw.t_mango, 1)!!
+        t_watermelon   = soundPool?.load(this, R.raw.t_watermelon, 1)!!
+        t_papaya       = soundPool?.load(this, R.raw.t_papaya, 1)!!
+        t_plum         = soundPool?.load(this, R.raw.t_plum, 1)!!
+        t_pumpkin      = soundPool?.load(this, R.raw.t_pumpkin, 1)!!
+        t_strawberry   = soundPool?.load(this, R.raw.t_strawberry, 1)!!
+        t_tomato       = soundPool?.load(this, R.raw.t_tomato, 1)!!
+        t_coconut      = soundPool?.load(this, R.raw.t_coconut, 1)!!
+        t_mangosteen   = soundPool?.load(this, R.raw.t_mangosteen, 1)!!
+        t_rambutan     = soundPool?.load(this, R.raw.t_rambutan, 1)!!
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,7 +144,7 @@ class ThaiCats : AppCompatActivity() {
         sndBtn = findViewById(R.id.sndBtn)
         sndBtn.setOnClickListener {
 
-            soundPool?.play(fruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
+            soundPool?.play(t_fruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
         dispThaiWord.append(myArrays.efruitTxt[numToInc])
         scrambledFieldt.append(myArrays.tscrambleThFruit[numToInc])
