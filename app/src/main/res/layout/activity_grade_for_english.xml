@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#00FFFFFF"
     tools:context=".GradeForEnglish">
 
     <ImageView
@@ -52,5 +53,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reportCard"
         tools:ignore="TextViewEdits" />
+
+    <ImageButton
+        android:id="@+id/backToStart"
+        android:layout_width="114dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:background="#E8EEB1"
+        android:backgroundTint="#B0DEF2"
+        android:contentDescription="@string/back_to_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_round_arrow_back_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

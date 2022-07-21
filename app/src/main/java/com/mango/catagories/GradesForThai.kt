@@ -1,11 +1,13 @@
 package com.mango.catagories
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -19,7 +21,8 @@ class GradesForThai : AppCompatActivity() {
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private lateinit var backToStart_t: ImageButton
+    //////////////////////////////////////////////////////backToStart_t///////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowInsetsControllerCompat(window, window.decorView).apply {
@@ -27,6 +30,12 @@ class GradesForThai : AppCompatActivity() {
         setContentView(R.layout.activity_grades_for_thai)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)
+        backToStart_t = findViewById(R.id.backToStart_t)
+        backToStart_t.setOnClickListener {
+            val intent = Intent(this, Fruit::class.java)
+            startActivity(intent)
+        }
+
         val unSerial = Deserializer()
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")

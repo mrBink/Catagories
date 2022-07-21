@@ -56,33 +56,33 @@ class ThaiCats : AppCompatActivity() {
     private var noise7 = 7
     private var soundId  = 500
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private var t_orange     = 8
-    private var t_apple      = 9
-    private var t_avocado    = 10
-    private var t_banana     = 11
-    private var t_blueberry  = 12
-    private var t_cantaloupe = 13
-    private var t_cherry     = 14
-    private var t_grape      = 15
-    private var t_jackfruit  = 16
-    private var t_lemon      = 17
-    private var t_mango      = 18
-    private var t_watermelon = 19
-    private var t_papaya     = 20
-    private var t_plum       = 21
-    private var t_pumpkin    = 22
-    private var t_strawberry = 23
-    private var t_tomato     = 24
-    private var t_coconut    = 25
-    private var t_mangosteen = 26
-    private var t_rambutan   = 27
+    private var torange     = 8
+    private var tapple      = 9
+    private var tavocado    = 10
+    private var tbanana     = 11
+    private var tblueberry  = 12
+    private var tCantaloupe = 13
+    private var tcherry     = 14
+    private var tgrape      = 15
+    private var tjackfruit  = 16
+    private var tlemon      = 17
+    private var tmango      = 18
+    private var twatermelon = 19
+    private var tpapaya     = 20
+    private var tplum       = 21
+    private var tpumpkin    = 22
+    private var tstrawberry = 23
+    private var ttomato     = 24
+    private var tcoconut    = 25
+    private var tmangosteen = 26
+    private var trambutan   = 27
 
 
-    private  var t_fruitSnds = arrayListOf( t_orange,t_apple,t_avocado,t_banana,
-        t_blueberry,t_cantaloupe,t_cherry/*,t_grape,
-        t_jackfruit,t_lemon,t_mango,t_watermelon,
-        t_papaya,t_plum,t_pumpkin,t_strawberry,
-        t_tomato,t_coconut,t_mangosteen,t_watermelon*/)
+    private  var t_fruitSnds = arrayListOf( torange,tapple,tavocado,tbanana,
+        tblueberry,tCantaloupe,tcherry/*,tgrape,
+        tjackfruit,tlemon,tmango,twatermelon,
+        tpapaya,tplum,tpumpkin,tstrawberry,
+        ttomato,tcoconut,tmangosteen,twatermelon*/)
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -112,26 +112,26 @@ class ThaiCats : AppCompatActivity() {
         noise6 = soundPool?.load(this, R.raw.ohhhh, 1)!!
         noise7 = soundPool?.load(this, R.raw.burp, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
-        t_orange       = soundPool?.load(this, R.raw.t_orange, 1)!!
-        t_apple        = soundPool?.load(this, R.raw.t_apple, 1)!!
-        t_avocado      = soundPool?.load(this, R.raw.t_avocado, 1)!!
-        t_banana       = soundPool?.load(this, R.raw.t_banana, 1)!!
-        t_blueberry    = soundPool?.load(this, R.raw.t_blueberry, 1)!!
-        t_cantaloupe   = soundPool?.load(this, R.raw.t_cantaloupe, 1)!!
-        t_cherry       = soundPool?.load(this, R.raw.t_cherry, 1)!!
-        t_grape        = soundPool?.load(this, R.raw.t_grape, 1)!!
-        t_jackfruit    = soundPool?.load(this, R.raw.t_jackfruit, 1)!!
-        t_lemon        = soundPool?.load(this, R.raw.t_lemon, 1)!!
-        t_mango        = soundPool?.load(this, R.raw.t_mango, 1)!!
-        t_watermelon   = soundPool?.load(this, R.raw.t_watermelon, 1)!!
-        t_papaya       = soundPool?.load(this, R.raw.t_papaya, 1)!!
-        t_plum         = soundPool?.load(this, R.raw.t_plum, 1)!!
-        t_pumpkin      = soundPool?.load(this, R.raw.t_pumpkin, 1)!!
-        t_strawberry   = soundPool?.load(this, R.raw.t_strawberry, 1)!!
-        t_tomato       = soundPool?.load(this, R.raw.t_tomato, 1)!!
-        t_coconut      = soundPool?.load(this, R.raw.t_coconut, 1)!!
-        t_mangosteen   = soundPool?.load(this, R.raw.t_mangosteen, 1)!!
-        t_rambutan     = soundPool?.load(this, R.raw.t_rambutan, 1)!!
+        torange       = soundPool?.load(this, R.raw.torange, 1)!!
+        tapple        = soundPool?.load(this, R.raw.tapple, 1)!!
+        tavocado      = soundPool?.load(this, R.raw.tavocado, 1)!!
+        tbanana       = soundPool?.load(this, R.raw.tbanana, 1)!!
+        tblueberry    = soundPool?.load(this, R.raw.tblueberry, 1)!!
+        tCantaloupe   = soundPool?.load(this, R.raw.tcantaloupe, 1)!!
+        tcherry       = soundPool?.load(this, R.raw.tcherry, 1)!!
+        tgrape        = soundPool?.load(this, R.raw.tgrape, 1)!!
+        tjackfruit    = soundPool?.load(this, R.raw.tjackfruit, 1)!!
+        tlemon        = soundPool?.load(this, R.raw.tlemon, 1)!!
+        tmango        = soundPool?.load(this, R.raw.tmango, 1)!!
+        twatermelon   = soundPool?.load(this, R.raw.twatermelon, 1)!!
+        tpapaya       = soundPool?.load(this, R.raw.tpapaya, 1)!!
+        tplum         = soundPool?.load(this, R.raw.tplum, 1)!!
+        tpumpkin      = soundPool?.load(this, R.raw.tpumpkin, 1)!!
+        tstrawberry   = soundPool?.load(this, R.raw.tstrawberry, 1)!!
+        ttomato       = soundPool?.load(this, R.raw.ttomato, 1)!!
+        tcoconut      = soundPool?.load(this, R.raw.tcoconut, 1)!!
+        tmangosteen   = soundPool?.load(this, R.raw.tmangosteen, 1)!!
+        trambutan     = soundPool?.load(this, R.raw.trambutan, 1)!!
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 

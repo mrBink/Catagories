@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         writeThai = findViewById(R.id.writeThai)
 
         writeEnglish.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Its a toast!", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@MainActivity, "Its a toast!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Fruit::class.java)
             startActivity(intent)
         }

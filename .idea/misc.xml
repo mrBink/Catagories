@@ -3,13 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.1525" />
+        <entry key="app/src/main/res/drawable/ic_baseline_bigarrow_downward_24.xml" value="0.1525" />
+        <entry key="app/src/main/res/drawable/ic_round_arrow_back_24.xml" value="0.2065" />
         <entry key="app/src/main/res/drawable/ic_twotone_play_circle_outline_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/play_sound.xml" value="0.266" />
         <entry key="app/src/main/res/layout-large/activity_fruit_cat.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_fruit.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_fruit_cat.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_fruit_thai.xml" value="0.24864864864864866" />
-        <entry key="app/src/main/res/layout/activity_grade_for_english.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_grade_for_english.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_grades_for_thai.xml" value="0.2798913043478261" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_marks_eng_writing.xml" value="0.335" />

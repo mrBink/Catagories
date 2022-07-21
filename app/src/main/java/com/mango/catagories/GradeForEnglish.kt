@@ -1,10 +1,12 @@
 package com.mango.catagories
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -18,6 +20,7 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
+    private lateinit var backToStart: ImageButton
 
     ///////////////////////////////////////////////////////////////////////////////////////
     //@SuppressLint("SetTextI18n")
@@ -29,13 +32,19 @@ class GradeForEnglish :AppCompatActivity  () {
         setContentView(R.layout.activity_grade_for_english)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)
+        backToStart  = findViewById(R.id.backToStart)
+        backToStart.setOnClickListener {
+                val intent = Intent(this, Fruit::class.java)
+                startActivity(intent)
+            }
+
         val unSerial = Deserializer()
         val incorrecteList = intent.getSerializableExtra("key")
         val incorrecteListTh = intent.getSerializableExtra("key2")
         val myMarks = intent.getStringExtra("key3")
         val myNumberOfErrorsE = intent.getIntExtra("key4",0)
         "This is your mark\n           $myMarks%".also { reportCard.text = it }
-        println("this $myMarks is the grade sent from FruitCat")
+        println("this $myNumberOfErrorsE is the numberOfErrorsE sent from FruitCat")
         element = unSerial.unDoThis(incorrecteList)
         elementTh = unSerial.unDoThis(incorrecteListTh)
         delim = ","
@@ -55,7 +64,7 @@ class GradeForEnglish :AppCompatActivity  () {
             { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
         displayGrades(myNumberOfErrorsE, { thePerfectScore(correctionField) } ,
             { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
-        //iterateForMarks(arr, noESquareBrace, noTSquareBrace)
+        onBackPressed()
        }// end of constructor
     //////////////////////////////////////////////////////////////////////////////////////////////
       private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
@@ -94,6 +103,7 @@ class GradeForEnglish :AppCompatActivity  () {
             ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             text = ssb
         }
+
     }
     ///////////////////////////////////////////////////////////////////////////
     private fun thePerfectScore(myTextView: TextView){
@@ -102,6 +112,7 @@ class GradeForEnglish :AppCompatActivity  () {
         //errorField.text = "There are no corrections"
         println("There are no corrections")
         "There are no corrections".also {myTextView.text = it }
+
     }
     ////////////////////////////////////////////////////////////////////////
     private fun displayGrades(tries:Int,idealScore:() -> Unit,someErrors:() -> Unit)
@@ -113,6 +124,13 @@ class GradeForEnglish :AppCompatActivity  () {
         }
     }
     ///////////////////////////////////////////////////////////////////////////
+
+         override fun onBackPressed() {
+            //super.onBackPressed()
+             println("fuck you too!!")
+        }
+
+
     }// end of class
 
 

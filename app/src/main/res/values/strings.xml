@@ -29,6 +29,8 @@
     <string name="sndbtn2">sndbtn2</string>
     <string name="SสPะEกLดL">spell</string>
     <string name="spell">"SสPะEกLดL"</string>
+    <string name="back_to_start">"backToStart"</string>
+    <string name="back_to_start_t">"backToStart_t"</string>
 
 
 </resources>
