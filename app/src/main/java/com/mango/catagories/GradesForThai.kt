@@ -32,7 +32,7 @@ class GradesForThai : AppCompatActivity() {
         correctionField = findViewById(R.id.correctionField)
         backToStart_t = findViewById(R.id.backToStart_t)
         backToStart_t.setOnClickListener {
-            val intent = Intent(this, Fruit::class.java)
+            val intent = Intent(this, FruitThai::class.java)
             startActivity(intent)
         }
 
