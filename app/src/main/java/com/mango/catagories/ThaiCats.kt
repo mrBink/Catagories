@@ -78,7 +78,8 @@ class ThaiCats : AppCompatActivity() {
     private var trambutan   = 27
 
 
-    private  var t_fruitSnds = arrayListOf( torange,tapple,tavocado,tbanana,
+
+    private  var tFruitSnds = arrayListOf( torange,tapple,tavocado,tbanana,
         tblueberry,tCantaloupe,tcherry/*,tgrape,
         tjackfruit,tlemon,tmango,twatermelon,
         tpapaya,tplum,tpumpkin,tstrawberry,
@@ -144,7 +145,7 @@ class ThaiCats : AppCompatActivity() {
         sndBtn = findViewById(R.id.sndBtn)
         sndBtn.setOnClickListener {
 
-            soundPool?.play(t_fruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
+            soundPool?.play(tFruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
         dispThaiWord.append(myArrays.efruitTxt[numToInc])
         scrambledFieldt.append(myArrays.tscrambleThFruit[numToInc])

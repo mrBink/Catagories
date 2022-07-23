@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 
 
 class GradeForEnglish :AppCompatActivity  () {
+    //marks for writing in English
     private lateinit var element: String
     private lateinit var elementTh: String
     private lateinit var delim: String

@@ -1,6 +1,5 @@
 package com.mango.catagories
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -14,14 +13,14 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
 class GradesForThai : AppCompatActivity() {
-
+    //marks for writing in Thai
     private lateinit var element: String
     private lateinit var elementTh: String
     private lateinit var delim: String
     private lateinit var delimT: String
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
-    private lateinit var backToStart_t: ImageButton
+    private lateinit var backToStartT: ImageButton
     //////////////////////////////////////////////////////backToStart_t///////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +29,8 @@ class GradesForThai : AppCompatActivity() {
         setContentView(R.layout.activity_grades_for_thai)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)
-        backToStart_t = findViewById(R.id.backToStart_t)
-        backToStart_t.setOnClickListener {
+        backToStartT = findViewById(R.id.backToStartT)
+        backToStartT.setOnClickListener {
             val intent = Intent(this, FruitThai::class.java)
             startActivity(intent)
         }
@@ -86,9 +85,9 @@ class GradesForThai : AppCompatActivity() {
     private fun errorsToCorrectionField(sizeArray:List<String>,errorField:TextView,engRight:List<String>,thaiRight:List<String>){
         val correctSize =sizeArray.size-1
         "These are the corrections\n".also { errorField.text = it }
-        for (i in 0..correctSize) {
 
-            errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
+        for (i in 0..correctSize) {
+           errorField.append("${engRight[i]}    =    ${thaiRight[i]}\n")
         }
         val ssb = SpannableStringBuilder(errorField.text)
         val fcsGreen = ForegroundColorSpan(Color.RED)
@@ -99,6 +98,7 @@ class GradesForThai : AppCompatActivity() {
             ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             text = ssb
         }
+
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun thePerfectScore(myTextView: TextView){
@@ -115,6 +115,25 @@ class GradesForThai : AppCompatActivity() {
     }
     //////////////////////////////////////////////////////////////////////////////////////////////
     }// end of class
+
+/*
+       val string = "hello orld".replaceRange(5,13,"=")
+        println(string) //this will print 'hello world'
+
+        fun String.addCharAtIndex(char: Char, index: Int) =
+         StringBuilder(this).apply { insert(index, char) }.toString()
+         var s ="engRight[i]    ".addCharAtIndex('=', 13)
+          var newWord = "   thaiRight[i]"
+          s+=newWord
+          s.toString()
+          println(s)
+         var s2 ="bob           ".addCharAtIndex('=', 13)
+         s2.toString()
+         var newWords = "   ส้ม"
+         s2 += newWords
+println(s2)
+
+         */
 
 
 
