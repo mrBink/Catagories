@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
     tools:context=".FruitThai">
 
     <ImageView
         android:id="@+id/catBtns"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/catBtns"
         android:scaleType="fitXY"
         android:src="@drawable/bg_fruit"
@@ -34,6 +36,6 @@
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/catBtns"
-        app:srcCompat="@drawable/th_start"
+        app:srcCompat="@drawable/thstart"
         tools:ignore="DuplicateSpeakableTextCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

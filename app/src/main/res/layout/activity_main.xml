@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
     tools:context=".MainActivity">
 
     <ImageView
@@ -33,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bgScene"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/scribe_e3"
+        app:srcCompat="@drawable/scribee3"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
