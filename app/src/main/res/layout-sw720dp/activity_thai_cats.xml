@@ -44,7 +44,7 @@
         android:importantForAutofill="no"
         android:inputType="textNoSuggestions"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         android:text="@string/use_the_thai_letters_below"
         android:textAlignment="center"
         android:textColor="#930404"
-        android:textSize="20sp"
+        android:textSize="34sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#FFEB3B"
+        android:textColor="#111A94"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -91,11 +91,12 @@
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
         tools:ignore="TextContrastCheck" />
+
     <ImageButton
         android:id="@+id/sndBtn"
         android:layout_width="wrap_content"
@@ -104,9 +105,12 @@
         android:layout_marginEnd="16dp"
         android:background="#00F5F5F5"
         android:contentDescription="@string/sndbtn"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn" />
+        app:srcCompat="@drawable/redonebtn"
+        tools:ignore="ImageContrastCheck" />
 
 
 

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-xxxhdpi/scribet3.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_downward_24.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/ic_baseline_bigarrow_downward_24.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/ic_round_arrow_back_24.xml" value="0.2065" />
@@ -11,32 +12,33 @@
         <entry key="app/src/main/res/layout-large/activity_fruit_cat.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw320dp/activity_fruit.xml" value="0.2759259259259259" />
         <entry key="app/src/main/res/layout-sw320dp/activity_fruit_cat.xml" value="0.335" />
-        <entry key="app/src/main/res/layout-sw320dp/activity_fruit_thai.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/layout-sw320dp/activity_fruit_thai.xml" value="0.165" />
         <entry key="app/src/main/res/layout-sw320dp/activity_grade_for_english.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw320dp/activity_grades_for_thai.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-sw320dp/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout-sw320dp/activity_main.xml" value="0.24094202898550723" />
         <entry key="app/src/main/res/layout-sw320dp/activity_thai_cats.xml" value="0.335" />
         <entry key="app/src/main/res/layout-sw480dp/activity_fruit.xml" value="0.65125" />
         <entry key="app/src/main/res/layout-sw480dp/activity_fruit_cat.xml" value="0.65125" />
         <entry key="app/src/main/res/layout-sw480dp/activity_fruit_thai.xml" value="0.65125" />
         <entry key="app/src/main/res/layout-sw480dp/activity_grade_for_english.xml" value="0.65125" />
         <entry key="app/src/main/res/layout-sw480dp/activity_grades_for_thai.xml" value="0.65125" />
-        <entry key="app/src/main/res/layout-sw480dp/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw480dp/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout-sw480dp/activity_thai_cats.xml" value="0.65125" />
         <entry key="app/src/main/res/layout-sw600dp/activity_fruit.xml" value="0.2518203883495146" />
         <entry key="app/src/main/res/layout-sw600dp/activity_fruit_cat.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw600dp/activity_fruit_thai.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw600dp/activity_grade_for_english.xml" value="0.23618581907090463" />
         <entry key="app/src/main/res/layout-sw600dp/activity_grades_for_thai.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw600dp/activity_main.xml" value="0.1410757946210269" />
         <entry key="app/src/main/res/layout-sw600dp/activity_thai_cats.xml" value="0.2352078239608802" />
         <entry key="app/src/main/res/layout-sw720dp/activity_fruit.xml" value="0.375" />
-        <entry key="app/src/main/res/layout-sw720dp/activity_fruit_cat.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-sw720dp/activity_fruit_thai.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw720dp/activity_fruit_cat.xml" value="0.375" />
+        <entry key="app/src/main/res/layout-sw720dp/activity_fruit_thai.xml" value="0.375" />
         <entry key="app/src/main/res/layout-sw720dp/activity_grade_for_english.xml" value="0.1" />
         <entry key="app/src/main/res/layout-sw720dp/activity_grades_for_thai.xml" value="0.1" />
-        <entry key="app/src/main/res/layout-sw720dp/activity_main.xml" value="0.375" />
-        <entry key="app/src/main/res/layout-sw720dp/activity_thai_cats.xml" value="0.48125" />
+        <entry key="app/src/main/res/layout-sw720dp/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw720dp/activity_thai_cats.xml" value="0.375" />
+        <entry key="app/src/main/res/layout-sw800dp/activity_main.xml" value="0.45" />
         <entry key="app/src/main/res/layout-w320dp/activity_fruit_thai.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w480dp/activity_fruit.xml" value="0.19212962962962962" />
         <entry key="app/src/main/res/layout-w600dp/activity_grade_for_english.xml" value="0.1" />
@@ -47,7 +49,7 @@
         <entry key="app/src/main/res/layout/activity_fruit_thai.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_grade_for_english.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_grades_for_thai.xml" value="0.125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5324267782426778" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_marks_eng_writing.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_marks_thai_writing.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_thai_cats.xml" value="0.125" />
