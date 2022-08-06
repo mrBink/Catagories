@@ -2,6 +2,12 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+android {
+    testFixtures {
+        enable true
+
+    }
+}
 
 android {
     compileSdk 32

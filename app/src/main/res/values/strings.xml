@@ -2,7 +2,8 @@
     <string name="app_name">Categories</string>
     <string name="bgScene">bgScene</string>
     <string name="scribe_e3">scribe_e3</string>
-    <string name="scribe_t3">scribe_t3</string>
+    <string name="scribee3">scribee3</string>
+    <string name="scribet3">scribet3</string>
     <string name="writeEnglish">writeEnglish</string>
     <string name="writeThai">writeThai</string>
     <string name="fruitBtn">fruitBtn</string>
@@ -19,7 +20,6 @@
     <string name="myHint">Use the letters below</string>
     <string name="use_the_thai_letters_below">Use the Thai letters below</string>
     <string name="reportCard">reportCard</string>
-    <string name="this_is_right_fucked">this is right fucked</string>
     <string name="disp_thai_word"> dispThaiWord</string>
     <string name="disp_English_word"> dispEnglishWord</string>
     <string name="textview">TextView</string>
@@ -29,8 +29,12 @@
     <string name="sndbtn2">sndbtn2</string>
     <string name="SสPะEกLดL">spell</string>
     <string name="spell">"SสPะEกLดL"</string>
-    <string name="back_to_start">"backToStart"</string>
-    <string name="back_to_start_t">"backToStart_t"</string>
+    <string name="back_to_start">backToStart</string>
+    <string name="back_to_start_t">backToStart_t</string>
+    <string name="two_fruit_e">twofruite</string>
+    <string name="thstart">thstart</string>
+    <string name="this_is_learning_thai">this_is_learning_thai</string>
+    <string name="this_is_learning_eng">this_is_learning_eng</string>
 
 
 

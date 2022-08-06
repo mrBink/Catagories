@@ -7,6 +7,7 @@
     android:configChanges="orientation"
     android:screenOrientation="portrait"
     tools:context=".GradesForThai">
+
     <ImageView
         android:id="@+id/marks_bg"
         android:layout_width="0dp"
@@ -21,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/reportCard"
         android:layout_width="wrap_content"
@@ -28,7 +30,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="71dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/this_is_right_fucked"
+        android:text="@string/this_is_learning_thai"
         android:textColor="#BA0404"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,12 +41,12 @@
     <TextView
         android:id="@+id/correctionField"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="449dp"
         android:layout_marginTop="50dp"
-        android:textAlignment="viewStart"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
         android:text="@string/textview"
+        android:textAlignment="viewStart"
         android:textColor="#000000"
         android:textIsSelectable="true"
         android:textSize="30sp"

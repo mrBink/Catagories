@@ -6,6 +6,7 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.StrictMode
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
@@ -16,13 +17,13 @@ import androidx.core.view.WindowInsetsControllerCompat
 import kotlin.math.roundToInt
 
 class ThaiCats : AppCompatActivity() {
-    private var fruitPhotos=arrayOf(R.drawable.orange,R.drawable.apple,R.drawable.avocado/*,R.drawable.banana,
+    private var fruitPhotos=arrayOf(R.drawable.orange2,R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
         R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
         R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
     /////////////////////////////////////////////////////////////////////
-    private var soundPool: SoundPool? = null
-    private lateinit var sndBtn:ImageButton
+    private var mSoundPool: SoundPool? = null
+    private lateinit var sndBtn2:ImageButton
     private lateinit var appleShot: ImageView        //images of fruit in View
     private lateinit var userEntert: EditText        //user editText
     private lateinit var scrambledFieldt: TextView  //scrambled text
@@ -43,8 +44,11 @@ class ThaiCats : AppCompatActivity() {
     private var myGoofs:Int = 0 //num from errorArray
     private var myGradesT:Double = 0.0
     private var adjustedMark:Double = 0.0//number of wrong answers "no repeats"
+    private  var voiceSnd = 0
     private val myArrays = TheArrays()
-    private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
+   // private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
+    //private val collectedIncorrect = Array(3) { 0 }
+   private  var collectedIncorrect: MutableList<Int> = mutableListOf()
 
     /////////////added July 11//////////////////////////////////////////////////////////////////////
     private var noise1 = 1
@@ -90,6 +94,12 @@ class ThaiCats : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        StrictMode.setVmPolicy(
+            StrictMode.VmPolicy.Builder(StrictMode.getVmPolicy())
+                .detectLeakedClosableObjects()
+                .build()
+        )
         WindowInsetsControllerCompat(window, window.decorView).apply {
             hide(WindowInsetsCompat.Type.statusBars())
         }
@@ -100,40 +110,39 @@ class ThaiCats : AppCompatActivity() {
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
             .build()
 
-        soundPool = SoundPool.Builder()
-            .setMaxStreams(1)
+        val spb = SoundPool.Builder()
+        spb.setMaxStreams(1)
             .setAudioAttributes(audioAttributes)
-            .build()
+        mSoundPool=spb.build()
 
-        noise1 = soundPool?.load(this, R.raw.domdomsnd, 1)!!
-        noise2 = soundPool?.load(this, R.raw.fart, 1)!!
-        noise3 = soundPool?.load(this, R.raw.yart, 1)!!
-        noise4 = soundPool?.load(this, R.raw.errorsnd, 1)!!
-        noise5 = soundPool?.load(this, R.raw.mistake, 1)!!
-        noise6 = soundPool?.load(this, R.raw.ohhhh, 1)!!
-        noise7 = soundPool?.load(this, R.raw.burp, 1)!!
+        noise1 = mSoundPool?.load(this, R.raw.domdomsnd, 1)!!
+        noise2 = mSoundPool?.load(this, R.raw.fart, 1)!!
+        noise3 = mSoundPool?.load(this, R.raw.yart, 1)!!
+        noise4 = mSoundPool?.load(this, R.raw.errorsnd, 1)!!
+        noise5 = mSoundPool?.load(this, R.raw.mistake, 1)!!
+        noise6 = mSoundPool?.load(this, R.raw.ohhhh, 1)!!
+        noise7 = mSoundPool?.load(this, R.raw.burp, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
-        torange       = soundPool?.load(this, R.raw.torange, 1)!!
-        tapple        = soundPool?.load(this, R.raw.tapple, 1)!!
-        tavocado      = soundPool?.load(this, R.raw.tavocado, 1)!!
-        tbanana       = soundPool?.load(this, R.raw.tbanana, 1)!!
-        tblueberry    = soundPool?.load(this, R.raw.tblueberry, 1)!!
-        tCantaloupe   = soundPool?.load(this, R.raw.tcantaloupe, 1)!!
-        tcherry       = soundPool?.load(this, R.raw.tcherry, 1)!!
-        tgrape        = soundPool?.load(this, R.raw.tgrape, 1)!!
-        tjackfruit    = soundPool?.load(this, R.raw.tjackfruit, 1)!!
-        tlemon        = soundPool?.load(this, R.raw.tlemon, 1)!!
-        tmango        = soundPool?.load(this, R.raw.tmango, 1)!!
-        twatermelon   = soundPool?.load(this, R.raw.twatermelon, 1)!!
-        tpapaya       = soundPool?.load(this, R.raw.tpapaya, 1)!!
-        tplum         = soundPool?.load(this, R.raw.tplum, 1)!!
-        tpumpkin      = soundPool?.load(this, R.raw.tpumpkin, 1)!!
-        tstrawberry   = soundPool?.load(this, R.raw.tstrawberry, 1)!!
-        ttomato       = soundPool?.load(this, R.raw.ttomato, 1)!!
-        tcoconut      = soundPool?.load(this, R.raw.tcoconut, 1)!!
-        tmangosteen   = soundPool?.load(this, R.raw.tmangosteen, 1)!!
-        trambutan     = soundPool?.load(this, R.raw.trambutan, 1)!!
-
+        torange       = mSoundPool?.load(this, R.raw.torange, 1)!!
+        tapple        = mSoundPool?.load(this, R.raw.tapple, 1)!!
+        tavocado      = mSoundPool?.load(this, R.raw.tavocado, 1)!!
+        tbanana       = mSoundPool?.load(this, R.raw.tbanana, 1)!!
+        tblueberry    = mSoundPool?.load(this, R.raw.tblueberry, 1)!!
+        tCantaloupe   = mSoundPool?.load(this, R.raw.tcantaloupe, 1)!!
+        tcherry       = mSoundPool?.load(this, R.raw.tcherry, 1)!!
+        tgrape        = mSoundPool?.load(this, R.raw.tgrape, 1)!!
+        tjackfruit    = mSoundPool?.load(this, R.raw.tjackfruit, 1)!!
+        tlemon        = mSoundPool?.load(this, R.raw.tlemon, 1)!!
+        tmango        = mSoundPool?.load(this, R.raw. tmango, 1)!!
+        twatermelon   = mSoundPool?.load(this, R.raw.twatermelon, 1)!!
+        tpapaya       = mSoundPool?.load(this, R.raw.tpapaya, 1)!!
+        tplum         = mSoundPool?.load(this, R.raw.tplum, 1)!!
+        tpumpkin      = mSoundPool?.load(this, R.raw.tpumpkin, 1)!!
+        tstrawberry   = mSoundPool?.load(this, R.raw.tstrawberry, 1)!!
+        ttomato       = mSoundPool?.load(this, R.raw.ttomato, 1)!!
+        tcoconut      = mSoundPool?.load(this, R.raw.tcoconut, 1)!!
+        tmangosteen   = mSoundPool?.load(this, R.raw.tmangosteen, 1)!!
+        trambutan     = mSoundPool?.load(this, R.raw.trambutan, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         appleShot = findViewById(R.id.appleShot)
@@ -142,10 +151,10 @@ class ThaiCats : AppCompatActivity() {
         userEntert = findViewById(R.id.userEntert)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)
-        sndBtn = findViewById(R.id.sndBtn)
-        sndBtn.setOnClickListener {
-
-            soundPool?.play(tFruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
+        sndBtn2 = findViewById(R.id.sndBtn2)
+        sndBtn2.setOnClickListener {
+            voiceSnd = 1
+            mSoundPool?.play(tFruitSnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
         dispThaiWord.append(myArrays.efruitTxt[numToInc])
         scrambledFieldt.append(myArrays.tscrambleThFruit[numToInc])
@@ -156,7 +165,8 @@ class ThaiCats : AppCompatActivity() {
         //myErrorSounds = myArrays.errorSndArr
         userEntert.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-                checkWords()
+               checkWords()
+               // tryCatchBlock()
                 hideSoftKeyboard()
                 true
             } else false
@@ -209,7 +219,7 @@ class ThaiCats : AppCompatActivity() {
             //collectWrongAns += numOfErrorsE   // used in results()
             //collectWrongAns =numOfAttempts   // this collects the ones to compute the Grade
             //private val collectedIncorrect:ArrayList<Int> = ArrayList()collectedIncorrect
-            setNumberOfIncorrect(collectedIncorrect,numToInc ,myGoofs)//sets index of array element value = 1
+            setNumberOfIncorrect(collectedIncorrect,myGoofs)//sets index of array element value = 1
             collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire array ie wrong = 2
             modifyCollectedWrongs(numOfAttemptsT)
            // println(" this is $collectWrongAns this is collectWrongAns in collectedIncorrect Array")
@@ -234,7 +244,10 @@ class ThaiCats : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun reSetFruit(){
         endOfArray()
-        appleShot.setImageResource(fruitPhotos[numToInc])
+        if(numToInc <=fruitPhotos.size-1) {
+            appleShot.setImageResource(fruitPhotos[numToInc])
+        }
+        //appleShot.setImageResource(fruitPhotos[numToInc])
         dispThaiWord.text = myArrays. efruitTxt[numToInc]
         with(scrambledFieldt) { text = myArrays.tscrambleThFruit[numToInc] }
         userEntert.setText("")
@@ -243,9 +256,11 @@ class ThaiCats : AppCompatActivity() {
     }
     //////////////////////////////////////////////////////////////////////////////////////
     private fun endOfArray() {    //when array done pass intents and change activities "GradeForEnglish"
-        setErrorResults()
-        results(collectWrongAns)
+        //setErrorResults()....moved inside conditional aug 6
+        //results(collectWrongAns)....moved inside conditional aug 6
         if (numToInc == sizeOfArray) {
+            setErrorResults()
+            results(collectWrongAns)
             println("this is where you switch activities... from FruitCat")
             val intent = Intent(this, GradeForEnglish::class.java)
             intent.putExtra("key", wrongEng)
@@ -257,11 +272,13 @@ class ThaiCats : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun reSetForThreeErrors(){
-        numToInc += 1
-        println("$numToInc this is numToInc from reSetForThreeErrors()")
-        println("$numOfErrorsT this is numToInc from reSetForThreeErrors()")
+        incrementingLimit()
+        //println("$numToInc this is numToInc from reSetForThreeErrors()")
+       // println("$numOfErrorsT this is numToInc from reSetForThreeErrors()")
         endOfArray()
-        appleShot.setImageResource(fruitPhotos[numToInc])
+        if(numToInc <=fruitPhotos.size-1) {
+            appleShot.setImageResource(fruitPhotos[numToInc])
+        }
         dispThaiWord.text = myArrays.tthaiFruit[numToInc]
         with(scrambledFieldt) { text = myArrays.escrambledFruits[numToInc] }
         userEntert.setText("")
@@ -271,7 +288,7 @@ class ThaiCats : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
-        useAWhen(soundId)// soundId = random number
+        useAWhen(determineErrorsSnd())// soundId = random number
         Toast.makeText(this, "Playing sound. . . .", Toast.LENGTH_SHORT).show()
         listenForComplete()
     }
@@ -334,7 +351,7 @@ class ThaiCats : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun cleanUpToContinue()
     {
-        if (numToInc <= sizeOfArray) {
+        if (numToInc <= sizeOfArray-1) {
             userEntert.setText("")
             useHintT.alpha =1.toFloat()
             scrambledFieldt.alpha =1.toFloat()
@@ -351,15 +368,15 @@ class ThaiCats : AppCompatActivity() {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     private fun useAWhen(myInt: Int) {
         when (myInt) {
-            30 -> soundPool?.play(noise1, 1.0f, 1.0f, 0, 0, 1.0f)
-            31 -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
-            32 -> soundPool?.play(noise3, 1.0f, 1.0f, 0, 0, 1.0f)
-            33 -> soundPool?.play(noise4, 1.0f, 1.0f, 0, 0, 1.0f)
-            34 -> soundPool?.play(noise5, 1.0f, 1.0f, 0, 0, 1.0f)
-            35 -> soundPool?.play(noise6, 1.0f, 1.0f, 0, 0, 1.0f)
-            36 -> soundPool?.play(noise7, 1.0f, 1.0f, 0, 0, 1.0f)
+            30 -> mSoundPool?.play(noise1, 1.0f, 1.0f, 0, 0, 1.0f)
+            31 -> mSoundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
+            32 -> mSoundPool?.play(noise3, 1.0f, 1.0f, 0, 0, 1.0f)
+            33 -> mSoundPool?.play(noise4, 1.0f, 1.0f, 0, 0, 1.0f)
+            34 -> mSoundPool?.play(noise5, 1.0f, 1.0f, 0, 0, 1.0f)
+            35 -> mSoundPool?.play(noise6, 1.0f, 1.0f, 0, 0, 1.0f)
+            36 -> mSoundPool?.play(noise7, 1.0f, 1.0f, 0, 0, 1.0f)
 
-            else -> soundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
+            else -> mSoundPool?.play(noise2, 1.0f, 1.0f, 0, 0, 1.0f)
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -370,23 +387,23 @@ class ThaiCats : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun listenForComplete() {
+
         timer = object : CountDownTimer(1250, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 println("This is the time left: $millisUntilFinished")
-                determineErrorsSnd()
             }
             override fun onFinish() {
                 reSetForThreeErrors()
-                println("This is the timer cancelled")
                 timer.cancel()
-
             }
         }
         timer.start()
+
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun getNextFruit(){
-        numToInc +=1      // if spelling correct increments arrays
+        //numToInc +=1      // if spelling correct increments arrays
+        incrementingLimit()
         numOfAttemptsT =0  // reset for next index number
         reSetFruit()
     }
@@ -409,12 +426,13 @@ class ThaiCats : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
      //setNumberOfIncorrect(collectedIncorrect,numToInc ,numOfErrorsT)
-    private fun setNumberOfIncorrect(listOfGoofs:Array<Int>,index:Int,theGoof:Int) {
-    //myNumToInc = listOfGoofs
-    listOfGoofs[index]= theGoof
+    private fun setNumberOfIncorrect(listOfGoofs: MutableList<Int>,theGoof:Int) {
+    listOfGoofs.add(theGoof)
+    println("{${listOfGoofs[0]}}..... listOfGoofs   lzlzlzl")
+
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private fun accumulatedErrors(listOfGoofs:Array<Int>):Int {
+    private fun accumulatedErrors(listOfGoofs: MutableList<Int>):Int {
         var gatheredWrong = 0
         for (item in listOfGoofs)
         {
@@ -434,8 +452,92 @@ class ThaiCats : AppCompatActivity() {
        // this to use in event of three errors in one index  ie. orange = (wrong)*3
          threeWrongs  += numOfTries
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 
+    private fun incrementingLimit() {
+        if (numToInc <= fruitPhotos.size -1)
+        {
+            numToInc += 1
+
+        }
+        println("This is numToInc.... $numToInc called from from incrementingLimit()")
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////
     ////////////////////////////////End of Class////////////////////////////////////////////////////
     }//end of class
+
+/*
+ private fun soundsTimer(){
+        timer = object : CountDownTimer(1250, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                println("This is the time left: $millisUntilFinished")
+                determineErrorsSnd()
+            }
+            override fun onFinish() {
+
+                println("This is the soundsTimer released")
+                releaseSoundPool()
+                reSetForThreeErrors()
+                voiceSnd = 0
+                timer.cancel()
+
+            }
+        }
+        timer.start()
+    }
+    /////////////////////////////////////////////////////////////
+    private fun voiceTimer(){
+        timer2 = object : CountDownTimer(1250, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                println("This is the time left: $millisUntilFinished")
+                determineErrorsSnd()
+            }
+            override fun onFinish() {
+                voiceSnd = 0
+                releaseSoundPool()
+                println("This is the voiceTimer released")
+                timer2.cancel()
+
+
+            }
+        }
+        timer2.start()
+    }
+//////////////////////////////////////////////
+        when (myInt) {
+            1 -> voiceTimer()
+
+            else -> soundsTimer()
+        }
+        ////////////////////////////////////////
+
+private fun tryCatchBlock() {
+
+        try {
+           // checkWords()
+            setNumberOfIncorrect(collectedIncorrect,myGoofs)
+            println("here is not the mess")
+        }
+        catch(e: ArrayIndexOutOfBoundsException)
+        {
+            println("here is the mess 166 checkWords())")
+        }
+       }
+       /////////////////////////////////////////////////////
+       private fun releaseSoundPool() {
+        /*
+        if (mSoundPool != null) {
+            mSoundPool!!.release()
+            mSoundPool = null
+        }
+
+         */
+        mSoundPool!!.release()
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+ */
 
 

@@ -5,12 +5,15 @@
     android:id="@+id/fruitBtn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F6F6"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
     tools:context=".Fruit">
 
     <ImageView
         android:id="@+id/catBtns"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/catBtns"
         android:scaleType="fitXY"
         android:src="@drawable/bg_fruit"
@@ -20,24 +23,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:configChanges="orientation"
-        android:screenOrientation="portrait"
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/toFruits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:background="#1f13EB"
-        android:contentDescription="@string/catBtns"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/catBtns"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:contentDescription="@string/two_fruit_e"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/two_fruit_e"
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

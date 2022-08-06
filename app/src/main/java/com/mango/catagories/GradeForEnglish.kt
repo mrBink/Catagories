@@ -44,7 +44,7 @@ class GradeForEnglish :AppCompatActivity  () {
         val incorrecteListTh = intent.getSerializableExtra("key2")
         val myMarks = intent.getStringExtra("key3")
         val myNumberOfErrorsE = intent.getIntExtra("key4",0)
-        "This is your mark\n           $myMarks%".also { reportCard.text = it }
+        "นี่คือคะแนนของคุณ\n           $myMarks%".also { reportCard.text = it }
         println("this $myNumberOfErrorsE is the numberOfErrorsE sent from FruitCat")
         element = unSerial.unDoThis(incorrecteList)
         elementTh = unSerial.unDoThis(incorrecteListTh)
@@ -90,18 +90,18 @@ class GradeForEnglish :AppCompatActivity  () {
     ///////////////////////////////////////////////////////////////////////////////////////////////
     private fun errorsToCorrectionField(sizeArray:List<String>,errorField:TextView,engRight:List<String>,thaiRight:List<String>){
         val correctSize =sizeArray.size-1
-        "These are the corrections\n".also { errorField.text = it }
+        "นี่คือการแก้ไขของคุณ\n".also { errorField.text = it }
         for (i in 0..correctSize) {
 
-            errorField.append("${thaiRight[i]}    =    ${engRight[i]}\n")
+            errorField.append("${thaiRight[i]} = ${engRight[i]}\n")
         }
         val ssb = SpannableStringBuilder(errorField.text)
         val fcsGreen = ForegroundColorSpan(Color.RED)
         with(ssb) {
-            setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            setSpan(fcsGreen, 0, 21, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
         with(errorField) {
-            ssb.setSpan(fcsGreen, 0, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            ssb.setSpan(fcsGreen, 0, 21, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             text = ssb
         }
 
