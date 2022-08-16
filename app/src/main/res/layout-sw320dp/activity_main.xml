@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="@+id/bgScene"
-        app:layout_constraintVertical_bias="0.773"
+        app:layout_constraintVertical_bias="0.731"
         app:srcCompat="@drawable/scribee3"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
 
@@ -44,17 +44,16 @@
         android:id="@+id/writeThai"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="316dp"
         android:background="#00FFFFFF"
-        android:contentDescription="@string/scribet3"
 
+        android:contentDescription="@string/scribet3"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/bgScene"
         app:layout_constraintDimensionRatio="4:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/bgScene"
-        app:layout_constraintVertical_bias="0.518"
         app:srcCompat="@drawable/scribe_t3"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

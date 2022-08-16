@@ -7,6 +7,7 @@ import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -22,6 +23,7 @@ class GradeForEnglish :AppCompatActivity  () {
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
     private lateinit var backToStart: ImageButton
+    private lateinit var marksbg:ImageView
 
     ///////////////////////////////////////////////////////////////////////////////////////
     //@SuppressLint("SetTextI18n")
@@ -31,6 +33,7 @@ class GradeForEnglish :AppCompatActivity  () {
             hide(WindowInsetsCompat.Type.statusBars())
         }
         setContentView(R.layout.activity_grade_for_english)
+        marksbg = findViewById(R.id.marksbg)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)
         backToStart  = findViewById(R.id.backToStart)

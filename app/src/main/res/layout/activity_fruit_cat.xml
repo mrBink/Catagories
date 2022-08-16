@@ -11,10 +11,10 @@
 
 
     <ImageView
-        android:id="@+id/bg_fruitPics"
+        android:id="@+id/bgFruitPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/bg_fruitPics"
+        android:contentDescription="@string/bgFruitPics"
         android:scaleType="fitXY"
         android:src="@drawable/goldbg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,7 +70,8 @@
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEnter_E" />
+        app:layout_constraintTop_toBottomOf="@+id/userEnter_E"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/scrambledField_e"
@@ -118,7 +119,8 @@
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/redonebtn"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

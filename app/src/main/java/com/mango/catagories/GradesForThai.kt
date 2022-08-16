@@ -7,6 +7,7 @@ import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsCompat
@@ -21,12 +22,14 @@ class GradesForThai : AppCompatActivity() {
     private lateinit var reportCard: TextView
     private lateinit var correctionField: TextView
     private lateinit var backToStartT: ImageButton
+    private lateinit var marksbg:ImageView
     //////////////////////////////////////////////////////backToStart_t///////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowInsetsControllerCompat(window, window.decorView).apply {
         hide(WindowInsetsCompat.Type.statusBars())}
         setContentView(R.layout.activity_grades_for_thai)
+        marksbg = findViewById(R.id.marksbg)
         reportCard = findViewById(R.id.reportCard)
         correctionField = findViewById(R.id.correctionField)
         backToStartT = findViewById(R.id.backToStartT)

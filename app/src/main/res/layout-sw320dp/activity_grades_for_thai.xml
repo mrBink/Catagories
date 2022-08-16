@@ -9,7 +9,7 @@
     tools:context=".GradesForThai">
 
     <ImageView
-        android:id="@+id/marks_bg"
+        android:id="@+id/marksbg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/bg_fruitPics"

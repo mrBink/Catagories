@@ -46,9 +46,9 @@ class ThaiCats : AppCompatActivity() {
     private var adjustedMark:Double = 0.0//number of wrong answers "no repeats"
     private  var voiceSnd = 0
     private val myArrays = TheArrays()
-   // private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
+    // private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
     //private val collectedIncorrect = Array(3) { 0 }
-   private  var collectedIncorrect: MutableList<Int> = mutableListOf()
+    private  var collectedIncorrect: MutableList<Int> = mutableListOf()
 
     /////////////added July 11//////////////////////////////////////////////////////////////////////
     private var noise1 = 1
@@ -165,8 +165,8 @@ class ThaiCats : AppCompatActivity() {
         //myErrorSounds = myArrays.errorSndArr
         userEntert.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-               checkWords()
-               // tryCatchBlock()
+                checkWords()
+                // tryCatchBlock()
                 hideSoftKeyboard()
                 true
             } else false
@@ -210,26 +210,26 @@ class ThaiCats : AppCompatActivity() {
             //1 -> individualErrorCount()//should limit errors per item (fruit))    // this is "apple"
         }
     }
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        private fun individualErrorCount()      // this is called per array element
-        {
-            myGoofs = modifyNumOfErrorsE(numOfAttemptsT)  // if numOfAttemptsT == 1 ..numOfErrorsT  = 1
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    private fun individualErrorCount()      // this is called per array element
+    {
+        myGoofs = modifyNumOfErrorsE(numOfAttemptsT)  // if numOfAttemptsT == 1 ..numOfErrorsT  = 1
 
-            //println(" this is $numOfErrorsT errors  called from individualErrorCount()/checkWords()/else")
-            //collectWrongAns += numOfErrorsE   // used in results()
-            //collectWrongAns =numOfAttempts   // this collects the ones to compute the Grade
-            //private val collectedIncorrect:ArrayList<Int> = ArrayList()collectedIncorrect
-            setNumberOfIncorrect(collectedIncorrect,myGoofs)//sets index of array element value = 1
-            collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire array ie wrong = 2
-            modifyCollectedWrongs(numOfAttemptsT)
-           // println(" this is $collectWrongAns this is collectWrongAns in collectedIncorrect Array")
-            //collectWrongAns =accumulatedErrors(collectedIncorrect)//accumulatedErrors iterates ArrayList
-            //collectWrongAns =accumulatedErrors()//accumulatedErrors iterates ArrayList
-            println(" this is $collectWrongAns after accumulatedErrors  array iterated")
-        }
+        //println(" this is $numOfErrorsT errors  called from individualErrorCount()/checkWords()/else")
+        //collectWrongAns += numOfErrorsE   // used in results()
+        //collectWrongAns =numOfAttempts   // this collects the ones to compute the Grade
+        //private val collectedIncorrect:ArrayList<Int> = ArrayList()collectedIncorrect
+        setNumberOfIncorrect(collectedIncorrect,myGoofs)//sets index of array element value = 1
+        collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire array ie wrong = 2
+        modifyCollectedWrongs(numOfAttemptsT)
+        // println(" this is $collectWrongAns this is collectWrongAns in collectedIncorrect Array")
+        //collectWrongAns =accumulatedErrors(collectedIncorrect)//accumulatedErrors iterates ArrayList
+        //collectWrongAns =accumulatedErrors()//accumulatedErrors iterates ArrayList
+        println(" this is $collectWrongAns after accumulatedErrors  array iterated")
+    }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun respondToErrors() {
-       // adjustedMark = lessThanZero(getGrade())   //numbers below 0 reset to 0.0% for your grade
+        // adjustedMark = lessThanZero(getGrade())   //numbers below 0 reset to 0.0% for your grade
         //marksStringT = markToPass(getGrade())      //"marksString" used in "intent" in endOfArray()
         passPeram()
         reSetNumOfAttempts() // if 3 Attempts back to 0
@@ -274,7 +274,7 @@ class ThaiCats : AppCompatActivity() {
     private fun reSetForThreeErrors(){
         incrementingLimit()
         //println("$numToInc this is numToInc from reSetForThreeErrors()")
-       // println("$numOfErrorsT this is numToInc from reSetForThreeErrors()")
+        // println("$numOfErrorsT this is numToInc from reSetForThreeErrors()")
         endOfArray()
         if(numToInc <=fruitPhotos.size-1) {
             appleShot.setImageResource(fruitPhotos[numToInc])
@@ -425,10 +425,10 @@ class ThaiCats : AppCompatActivity() {
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-     //setNumberOfIncorrect(collectedIncorrect,numToInc ,numOfErrorsT)
+    //setNumberOfIncorrect(collectedIncorrect,numToInc ,numOfErrorsT)
     private fun setNumberOfIncorrect(listOfGoofs: MutableList<Int>,theGoof:Int) {
-    listOfGoofs.add(theGoof)
-    println("{${listOfGoofs[0]}}..... listOfGoofs   lzlzlzl")
+        listOfGoofs.add(theGoof)
+        println("{${listOfGoofs[0]}}..... listOfGoofs   lzlzlzl")
 
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -449,8 +449,8 @@ class ThaiCats : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun modifyCollectedWrongs(numOfTries:Int) {
-       // this to use in event of three errors in one index  ie. orange = (wrong)*3
-         threeWrongs  += numOfTries
+        // this to use in event of three errors in one index  ie. orange = (wrong)*3
+        threeWrongs  += numOfTries
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -467,77 +467,4 @@ class ThaiCats : AppCompatActivity() {
 
 ///////////////////////////////////////////////////////////////
     ////////////////////////////////End of Class////////////////////////////////////////////////////
-    }//end of class
-
-/*
- private fun soundsTimer(){
-        timer = object : CountDownTimer(1250, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                println("This is the time left: $millisUntilFinished")
-                determineErrorsSnd()
-            }
-            override fun onFinish() {
-
-                println("This is the soundsTimer released")
-                releaseSoundPool()
-                reSetForThreeErrors()
-                voiceSnd = 0
-                timer.cancel()
-
-            }
-        }
-        timer.start()
-    }
-    /////////////////////////////////////////////////////////////
-    private fun voiceTimer(){
-        timer2 = object : CountDownTimer(1250, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                println("This is the time left: $millisUntilFinished")
-                determineErrorsSnd()
-            }
-            override fun onFinish() {
-                voiceSnd = 0
-                releaseSoundPool()
-                println("This is the voiceTimer released")
-                timer2.cancel()
-
-
-            }
-        }
-        timer2.start()
-    }
-//////////////////////////////////////////////
-        when (myInt) {
-            1 -> voiceTimer()
-
-            else -> soundsTimer()
-        }
-        ////////////////////////////////////////
-
-private fun tryCatchBlock() {
-
-        try {
-           // checkWords()
-            setNumberOfIncorrect(collectedIncorrect,myGoofs)
-            println("here is not the mess")
-        }
-        catch(e: ArrayIndexOutOfBoundsException)
-        {
-            println("here is the mess 166 checkWords())")
-        }
-       }
-       /////////////////////////////////////////////////////
-       private fun releaseSoundPool() {
-        /*
-        if (mSoundPool != null) {
-            mSoundPool!!.release()
-            mSoundPool = null
-        }
-
-         */
-        mSoundPool!!.release()
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////
- */
-
-
+}//end of class

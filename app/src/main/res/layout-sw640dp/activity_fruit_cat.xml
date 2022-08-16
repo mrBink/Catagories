@@ -9,9 +9,8 @@
     android:screenOrientation="portrait"
     tools:context=".FruitCat">
 
-
     <ImageView
-        android:id="@+id/bg_fruitPics"
+        android:id="@+id/bgFruitPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/bg_fruitPics"

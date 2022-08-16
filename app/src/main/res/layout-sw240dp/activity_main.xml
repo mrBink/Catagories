@@ -28,7 +28,7 @@
         android:id="@+id/writeEnglish"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="8dp"
         android:background="#00FFFFFF"
         android:contentDescription="@string/scribee3"
         android:scaleType="centerCrop"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="@+id/bgScene"
-        app:layout_constraintVertical_bias="0.49"
+        app:layout_constraintVertical_bias="0.663"
         app:srcCompat="@drawable/scribee3"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -46,17 +46,16 @@
         android:id="@+id/writeThai"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="68dp"
         android:background="#00FFFFFF"
-        android:contentDescription="@string/scribet3"
 
+        android:contentDescription="@string/scribet3"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/bgScene"
         app:layout_constraintDimensionRatio="4:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/bgScene"
-        app:layout_constraintVertical_bias="0.618"
         app:srcCompat="@drawable/scribe_t3"
         tools:ignore="SpeakableTextPresentCheck" />
 

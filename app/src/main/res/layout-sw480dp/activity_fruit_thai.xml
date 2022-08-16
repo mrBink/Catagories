@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#000000"
     android:configChanges="orientation"
     android:screenOrientation="portrait"
     tools:context=".FruitThai">
@@ -24,12 +26,13 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageButton
-        android:id="@+id/toFruits"
+        android:id="@+id/toFruitt"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/thstart"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:contentDescription="@string/toFruitt"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -38,6 +41,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/thstart"
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/thaiDigit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:contentDescription="@string/thaiDigit"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/thainumbtn"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,TouchTargetSizeCheck" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -51,6 +72,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

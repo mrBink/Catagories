@@ -9,12 +9,14 @@
     <string name="fruitBtn">fruitBtn</string>
     <string name="catBtns">catBtns</string>
     <string name="toFruits">toFruits</string>
+    <string name="toFruitt">toFruitt</string>
     <string name="bg_fruitPics">bg_fruitPics</string>
+    <string name="bgFruitPics">bgFruitPics</string>
     <string name="appleShot">appleShot</string>
     <string name="enter_english_here">Enter English here</string>
     <string name="dynamic">dynamic</string>
     <string name="Use_the_letters_below">Use_the_letters_below</string>
-    <string name="use_the_letters_below">use the letters below</string>
+    <string name= "use_the_english_letters_below">Use the English letters below</string>
     <string name="enter_thai_here">enter_thai_here</string>
     <string name="i_am_here">i_am_here</string>
     <string name="myHint">Use the letters below</string>
@@ -35,9 +37,18 @@
     <string name="thstart">thstart</string>
     <string name="this_is_learning_thai">this_is_learning_thai</string>
     <string name="this_is_learning_eng">this_is_learning_eng</string>
-
-
-
+    <string name="one_thousand_nine_hundred_fifty_three">one thousand nine hundred fifty three</string>
+    <string name="numbers">numbers</string>
+    <string name="engNumbers">engNumbers</string>enter_engnum_here
+    <string name="enter_engnum_here">enter engnum here</string>
+    <string name="marksbg">marksbg</string>
+    <string name="numPics">numPics</string>
+    <string name="thaiNumPics">thaiNumPics</string>
+    <string name="thaiNumbers">thaiNumbers</string>
+    <string name="displayEngTxt">displayEngTxt</string>
+    <string name="displayThaiLetters">displayThaiLetters</string>
+    <string name="thaiDigit">thaiDigit</string>
+    <string name="applePicture">applePicture</string>
 
 
 </resources>
