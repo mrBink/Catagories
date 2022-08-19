@@ -80,7 +80,7 @@
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#C20545"
+        android:textColor="#151582"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"

@@ -14,7 +14,7 @@
         android:id="@+id/bgFruitPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/bg_fruitPics"
+        android:contentDescription="@string/bgFruitPics"
         android:scaleType="fitXY"
         android:src="@drawable/goldbg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
         android:id="@+id/appleShot"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/appleShot"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -44,14 +44,14 @@
         android:id="@+id/userEnter_E"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/enter_english_here"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
         android:text=""
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,27 +62,28 @@
         android:id="@+id/useHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/ใช้ตัวอักษรด้านล่าง"
         android:textAlignment="center"
         android:textColor="#930404"
-        android:textSize="36sp"
+        android:textSize="12sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEnter_E" />
+        app:layout_constraintTop_toBottomOf="@+id/userEnter_E"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/scrambledField_e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/dynamic"
+        android:layout_marginTop="4dp"
+        android:hint="@string/english_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
         android:textColor="#C20545"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,12 +94,12 @@
         android:id="@+id/dispEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/dynamic"
+        android:layout_marginTop="4dp"
+        android:hint="@string/enter_thai_here"
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="34sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledField_e"
@@ -118,21 +119,22 @@
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/redonebtn"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3125" />
+        app:layout_constraintGuide_percent="0.4125" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6875" />
+        app:layout_constraintGuide_percent="0.5875" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

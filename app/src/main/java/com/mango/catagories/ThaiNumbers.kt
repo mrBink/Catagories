@@ -21,9 +21,9 @@ class ThaiNumbers : AppCompatActivity() {
 
     private var arabicNumarals=arrayOf(
         R.drawable.e1400, R.drawable.e4, R.drawable.eeleven, R.drawable.e1000000,
-        R.drawable.e2, R.drawable.e624, R.drawable.e1000, R.drawable.e8, R.drawable.e7, R.drawable.eten,
+        R.drawable.e2, R.drawable.e624/*, R.drawable.e1000, R.drawable.e8, R.drawable.e7, R.drawable.eten,
         R.drawable.e100000, R.drawable.e9, R.drawable.e10000, R.drawable.e54, R.drawable.ethreehundredthirtythree,
-        R.drawable.e5, R.drawable.eseventyonethousand, R.drawable.ezero, R.drawable.e3, R.drawable.e6)
+        R.drawable.e5, R.drawable.eseventyonethousand, R.drawable.ezero, R.drawable.e3, R.drawable.e6*/)
 
     /////////////////////////////////////////////////////////////////////
 
@@ -158,7 +158,7 @@ class ThaiNumbers : AppCompatActivity() {
         wordInEArray = userEntert.toString()
         userEntert.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-
+                println("this is ${arabicNumarals.size} arabicNumarals.size" )
                 checkWords()
                 //tryCatchBlock()
                 hideSoftKeyboard()
@@ -313,11 +313,11 @@ class ThaiNumbers : AppCompatActivity() {
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-//private fun getGrade():Double
+//private fun getGrade():Double//wrongThai.size
     private fun getGrade(): Double {
         //modifyThreeErrors(collectWrongAns) this can not be here because 3 errors are possible with big array
         // println("$collectWrongAns called from getGrade")
-        myGrades = (sizeOfArray - collectWrongAns.toDouble()) / sizeOfArray * 100
+        myGrades = (sizeOfArray - wrongThai.size.toDouble()) / sizeOfArray * 100
 
         return (myGrades * 100).roundToInt() / 100.0
     }

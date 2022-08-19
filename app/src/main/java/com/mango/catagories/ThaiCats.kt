@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsControllerCompat
 import kotlin.math.roundToInt
 
 class ThaiCats : AppCompatActivity() {
-    private var fruitPhotos=arrayOf(R.drawable.orange2,R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
-        R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
+    private var fruitPhotos=arrayOf(R.drawable.orange2,R.drawable.apple,R.drawable.avocado,R.drawable.banana,
+        R.drawable.blueberry/*,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
         R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
     /////////////////////////////////////////////////////////////////////
@@ -314,11 +314,11 @@ class ThaiCats : AppCompatActivity() {
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private fun getGrade():Double
+    private fun getGrade():Double//wrongThai.size
     {
         //println("$numOfCorrectE this is numOfCorrect from getGrade()")
         //myGradesT = (numOfErrorsT.toDouble()/sizeOfArray)*100
-        myGradesT = (sizeOfArray- collectWrongAns.toDouble()) / sizeOfArray * 100
+        myGradesT = (sizeOfArray- wrongThai.size.toDouble()) / sizeOfArray * 100
         return (myGradesT * 100).roundToInt() / 100.0
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////

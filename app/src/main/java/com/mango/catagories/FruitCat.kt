@@ -20,8 +20,8 @@ import kotlin.math.roundToInt
 
 class FruitCat : AppCompatActivity() {
     private var fruitPhotos=arrayOf(
-        R.drawable.orange2, R.drawable.apple/*,R.drawable.avocado,R.drawable.banana,
-        R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
+        R.drawable.orange2, R.drawable.apple,R.drawable.avocado,R.drawable.banana,
+        R.drawable.blueberry/*,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
         R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/
     )
@@ -231,11 +231,11 @@ class FruitCat : AppCompatActivity() {
     private fun individualErrorCount()    // this is called per array element
     {
         myGoofs = modifyNumOfErrorsE(numOfAttempts)
-        println(" this is $myGoofs  myGoofs from modifyNumOfErrorsE")
-        println(" this is ${myArrays.efruitTxt[numToInc]} efruitTxt[numToInc] from individualErrorCount")
         setNumberOfIncorrect(collectedIncorrect,myGoofs)//
         collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire
-        println(" this is $collectWrongAns after accumulatedErrors  array iterated")
+        //println(" this is $collectWrongAns after accumulatedErrors  array iterated")
+        // println(" this is $myGoofs  myGoofs from modifyNumOfErrorsE")
+        // println(" this is ${myArrays.efruitTxt[numToInc]} efruitTxt[numToInc] from individualErrorCount")
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun respondToErrors() {
@@ -319,11 +319,11 @@ class FruitCat : AppCompatActivity() {
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-//private fun getGrade():Double
+//private fun getGrade():Double wrongEng.size
     private fun getGrade(): Double {
         //modifyThreeErrors(collectWrongAns) this can not be here because 3 errors are possible with big array
         // println("$collectWrongAns called from getGrade")
-        myGrades = (sizeOfArray - collectWrongAns.toDouble()) / sizeOfArray * 100
+        myGrades = (sizeOfArray - wrongEng.size.toDouble()) / sizeOfArray * 100
 
         return (myGrades * 100).roundToInt() / 100.0
     }

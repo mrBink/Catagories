@@ -22,9 +22,9 @@ class ArabicNum : AppCompatActivity() {
 
     private var thaiNumarals=arrayOf(
         R.drawable.t1400, R.drawable.t4, R.drawable.t11, R.drawable.t1000000,
-        R.drawable.t2, R.drawable.t624, R.drawable.t1000, R.drawable.t8, R.drawable.t7, R.drawable.t10,
+        R.drawable.t2, R.drawable.t624/*, R.drawable.t1000, R.drawable.t8, R.drawable.t7, R.drawable.t10,
         R.drawable.t100000, R.drawable.t9, R.drawable.t10000, R.drawable.t54, R.drawable.t333,
-        R.drawable.t5, R.drawable.t71000, R.drawable.t0, R.drawable.t3, R.drawable.t6)
+        R.drawable.t5, R.drawable.t71000, R.drawable.t0, R.drawable.t3, R.drawable.t6*/)
 
     /////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
@@ -103,7 +103,7 @@ class ArabicNum : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_arabic_num)
-        //println("this is ${fruitPhotos.size} fruitPhotos.size" )
+
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -161,8 +161,9 @@ class ArabicNum : AppCompatActivity() {
         wordInEArray = userEnterE.toString()
         userEnterE.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-
+                println("this is ${thaiNumarals.size} thaiNumarals.size" )
                 checkWords()
+
                 //tryCatchBlock()
                 hideSoftKeyboard()
                 true
@@ -308,20 +309,21 @@ class ArabicNum : AppCompatActivity() {
         val result = wrongEng.contains(aWord)
         if(!result){
             wrongEng.add(aWord)
+            println(wrongEng)
         }
         val aWordTh = myArrays.thaiNums[numToInc]
         val result2 = wrongThai.contains(aWordTh)
         if(!result2){
             wrongThai.add(aWordTh)
-            //println(wrongThai)
+            println(wrongThai)
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-//private fun getGrade():Double
+//private fun getGrade():Double//wrongEng.size
     private fun getGrade(): Double {
         //modifyThreeErrors(collectWrongAns) this can not be here because 3 errors are possible with big array
         // println("$collectWrongAns called from getGrade")
-        myGrades = (sizeOfArray - collectWrongAns.toDouble()) / sizeOfArray * 100
+        myGrades = (sizeOfArray - wrongEng.size.toDouble()) / sizeOfArray * 100
 
         return (myGrades * 100).roundToInt() / 100.0
     }

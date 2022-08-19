@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
             //Toast.makeText(this@MainActivity, "Its a toast!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Fruit::class.java)
             startActivity(intent)
-            println("The eng scribe is clicked from Main")
+           // println("The eng scribe is clicked from Main")
         }
 
         writeThai.setOnClickListener {
             Toast.makeText(this@MainActivity, "Its a toast!", Toast.LENGTH_SHORT).show()
             val intent1 = Intent(this, FruitThai::class.java)
             startActivity(intent1)
-           println("The Thai scribe is from Main")
+           //println("The Thai scribe is from Main")
         }
 
 

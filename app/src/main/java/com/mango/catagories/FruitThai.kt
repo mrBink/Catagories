@@ -25,7 +25,7 @@ class FruitThai : AppCompatActivity() {
         Toast.makeText(this@FruitThai, "Its a FruitThai class!", Toast.LENGTH_SHORT).show()
         thaiDigit = findViewById(R.id.thaiDigit)
         thaiDigit.setOnClickListener {
-            println("thaiDigit button clicked should see action spell ThaiNumbers  page")
+           // println("thaiDigit button clicked should see action spell ThaiNumbers  page")
             val intent1 = Intent(this, ThaiNumbers::class.java)
             startActivity(intent1)
         }

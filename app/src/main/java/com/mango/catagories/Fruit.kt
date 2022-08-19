@@ -20,14 +20,14 @@ class Fruit : AppCompatActivity() {
         setContentView(R.layout.activity_fruit)
         toFruits = findViewById(R.id.toFruits)
         toFruits.setOnClickListener {
-            println("toFruits button clicked should see action fruit spell eng page")
+            //println("toFruits button clicked should see action fruit spell eng page")
             val intent = Intent(this, FruitCat::class.java)
             startActivity(intent)
         }
         catBtns = findViewById(R.id.catBtns)
         numbers = findViewById(R.id.numbers)
         numbers.setOnClickListener {
-            println("numbers button clicked should see action  num  eng page")
+            //println("numbers button clicked should see action  num  eng page")
            val intent1 = Intent(this, ArabicNum::class.java)
             startActivity(intent1)
         }
