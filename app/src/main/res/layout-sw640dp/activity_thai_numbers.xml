@@ -38,13 +38,13 @@
 
 
     <EditText
-        android:id="@+id/userEntert"
+        android:id="@+id/userEnterEng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#ffffff"
         android:backgroundTint="#00FFFFFF"
-        android:hint="@string/displayEngTxt"
+        android:hint="@string/enter_english_here"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -70,7 +70,7 @@
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEntert" />
+        app:layout_constraintTop_toBottomOf="@+id/userEnterEng" />
 
     <TextView
         android:id="@+id/scrambledFieldt"
@@ -98,7 +98,7 @@
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="48sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"

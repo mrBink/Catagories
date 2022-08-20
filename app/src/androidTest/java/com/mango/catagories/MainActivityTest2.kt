@@ -62,7 +62,7 @@ class MainActivityTest2 {
 
         val appCompatEditText = onView(
             allOf(
-                withId(R.id.userEnter_E),
+                withId(R.id.userEnterE),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -80,7 +80,7 @@ class MainActivityTest2 {
 
         val appCompatEditText2 = onView(
             allOf(
-                withId(R.id.userEnter_E), withText("orange"),
+                withId(R.id.userEnterE), withText("orange"),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -98,7 +98,7 @@ class MainActivityTest2 {
 
         val appCompatEditText3 = onView(
             allOf(
-                withId(R.id.userEnter_E),
+                withId(R.id.userEnterE),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -116,7 +116,7 @@ class MainActivityTest2 {
 
         val appCompatEditText4 = onView(
             allOf(
-                withId(R.id.userEnter_E),
+                withId(R.id.userEnterE),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -134,7 +134,7 @@ class MainActivityTest2 {
 
         val appCompatEditText5 = onView(
             allOf(
-                withId(R.id.userEnter_E), withText("a"),
+                withId(R.id.userEnterE), withText("a"),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -152,7 +152,7 @@ class MainActivityTest2 {
 
         val appCompatEditText6 = onView(
             allOf(
-                withId(R.id.userEnter_E),
+                withId(R.id.userEnterE),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -170,7 +170,7 @@ class MainActivityTest2 {
 
         val appCompatEditText7 = onView(
             allOf(
-                withId(R.id.userEnter_E),
+                withId(R.id.userEnterE),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),
@@ -188,7 +188,7 @@ class MainActivityTest2 {
 
         val appCompatEditText8 = onView(
             allOf(
-                withId(R.id.userEnter_E), withText("apple"),
+                withId(R.id.userEnterE), withText("apple"),
                 childAtPosition(
                     allOf(
                         withId(R.id.userField),

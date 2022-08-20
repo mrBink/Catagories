@@ -53,6 +53,8 @@
     <string name="thaiDigit">thaiDigit</string>
     <string name="english_scram">English Scram</string>
     <string name="thai_scram">Thai Scram</string>
+    <string name="userEnter_Eng">user Enter Eng</string>
+    <string name="userEnter_Thai">user Enter Thai</string>
 
 
 </resources>

@@ -32,7 +32,7 @@ class ThaiNumbers : AppCompatActivity() {
     private lateinit var sndBtn2:ImageButton//bg_fruitPics useHintT
     private lateinit var thaiNumbers:ImageView
     private lateinit var thaiNumPics:ImageView        //images of fruit in View:
-    private lateinit var userEntert:EditText        //user editText  userEntert
+    private lateinit var userEnterEng:EditText        //user editText  userEntert
     private lateinit var scrambledFieldt:TextView   //scrambled text
     private lateinit var useHintT:TextView           //instruction foe letter use
     private lateinit var dispThaiWord:TextView      //user Thai Word
@@ -143,7 +143,7 @@ class ThaiNumbers : AppCompatActivity() {
         thaiNumPics = findViewById(R.id.thaiNumPics)
         thaiNumPics.setImageResource(arabicNumarals[numToInc])
         dispThaiWord = findViewById(R.id.dispThaiWord)
-        userEntert = findViewById(R.id.userEntert)
+        userEnterEng = findViewById(R.id.userEnterEng)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)
         sndBtn2 = findViewById(R.id.sndBtn2)
@@ -155,8 +155,8 @@ class ThaiNumbers : AppCompatActivity() {
         scrambledFieldt.append(myArrays.scramThaiNums[numToInc])
         scrambledFieldt.alpha =0.toFloat()
         useHintT.alpha =0.toFloat()
-        wordInEArray = userEntert.toString()
-        userEntert.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
+        wordInEArray = userEnterEng.toString()
+        userEnterEng.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 println("this is ${arabicNumarals.size} arabicNumarals.size" )
                 checkWords()
@@ -175,7 +175,7 @@ class ThaiNumbers : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun checkWords(){
-        if(userEntert.text.toString() == myArrays.thaiNums[numToInc] && numToInc < sizeOfArray ){
+        if(userEnterEng.text.toString() == myArrays.thaiNums[numToInc] && numToInc < sizeOfArray ){
             arrayIndex =findIndex(myArrays.thaiNums, myArrays.thaiNums[numToInc])
             getNextFruit()
         }
@@ -251,11 +251,11 @@ class ThaiNumbers : AppCompatActivity() {
         }
         dispThaiWord.text = myArrays.arabicNumerals[numToInc]
         with(scrambledFieldt) { text = myArrays.scramThaiNums[numToInc] }
-        userEntert.setText("")
+        userEnterEng.setText("")
         scrambledFieldt.alpha =0.toFloat()
         0.toFloat().also { useHintT.alpha = it }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////userEntert/////////////////////////////////////////////////////////
 
     private fun endOfArray() {   // when array done pass intents and change activities "GradeForEnglish"
         if (numToInc == sizeOfArray) {
@@ -281,7 +281,7 @@ class ThaiNumbers : AppCompatActivity() {
         }
         dispThaiWord.text = myArrays.arabicNumerals[numToInc]
         with(scrambledFieldt) { text = myArrays.scramThaiNums[numToInc] }
-        userEntert.setText("")
+        userEnterEng.setText("")
         scrambledFieldt.alpha =0.toFloat()
         0.toFloat().also { useHintT.alpha = it }
         timer.cancel()
@@ -356,7 +356,7 @@ class ThaiNumbers : AppCompatActivity() {
         if (numToInc <= sizeOfArray-1) {
 
             println(" this is numToInc $numToInc andthis is arrayIndex $arrayIndex from cleanUpToContinue")
-            userEntert.setText("")
+            userEnterEng.setText("")
             useHintT.alpha =1.toFloat()
             scrambledFieldt.alpha =1.toFloat()
         }
@@ -469,7 +469,6 @@ private fun setErrorResults()
 {
     adjustedMark = lessThanZero(getGrade()) //may not need below 0 not possible if everything works
     marksString = markToPass(getGrade())    //"marksString" used in "intent" in endOfArray()
-
 }
 /////////////////////////////////////////////////////
 private fun results(allTheWrong:Int)//collectWrongAns
@@ -483,7 +482,6 @@ private fun results(allTheWrong:Int)//collectWrongAns
 private fun setNumberOfIncorrect(listOfGoofs:List<Int>,theGoof:Int) {
 //myNumToInc = listOfGoofs
    listOfGoofs.add(theGoof)
-
 }
 ////////////////////////////////////////////////////////////////////
 private fun accumulatedErrors(listOfGoofs:List<Int>):Int {
@@ -530,19 +528,16 @@ private fun incrementingLimit) {
 }
 ////////////////////////////////////////////////////////////////////
              "Cut from numOfMistakes()"
-
         //oneHundredPercent = true
         //val intent = Intent(this, GradeForEnglish::class.java)
         //intent.putExtra("key3", marksString)
        // intent.putExtra("key4", oneHundredPercent)
         //startActivity(intent)
 ///////////////////////////////////////////////////////////////////
-
 ///////////////////////" cut from private fun respondToErrors() ///////////////////////////////
         adjustedMark = lessThanZero(getGrade())   //numbers below 0 reset to 0.0% for your grade
        marksString = markToPass(getGrade())      //"marksString" used in "intent" in endOfArray()
        /////////////////////////////////////////////////////////////////////////////////////////
-
        private fun modifyThreeErrors(goofs:Int) { //collectWrongAns ,fruitPhotos
         if (collectWrongAns >= 3)
         {
@@ -551,7 +546,6 @@ private fun incrementingLimit) {
             println(" this is $goofsShadow collectWrongAns  new number")
         }
     }
-
         //private val collectedIncorrect:MutableList<Int> = mutableListOf()
     ////////////////////////////////////////////////////////////////////////////////////////////////
      private fun tryCatchBlock() {
@@ -565,31 +559,20 @@ private fun incrementingLimit) {
       }
     }
     /////////////////////////////////////////////////////////
-
     private fun releaseSoundPool() {
-
         if(mSoundPool != null)
         {
           mSoundPool!!.release()
           mSoundPool = null
         }
-
-
         mSoundPool!!.release()
     }
  //println(" this is $arrayIndex the current index called from newIndividualEntryForErrors")
     //println(" this is ${fruitPhotos.size-1} the fruitPhotos.size-1")
-
     when (findIndex(myArrays.efruitTxt, myArrays.efruitTxt[numToInc]))
     {
         in 0..fruitPhotos.size-1 -> individualErrorCount()//should limit errors per item (fruit))// this is "orange"
         //1 -> individualErrorCount()//should limit errors per item (fruit))    // this is "apple"
         //2 -> individualErrorCount()//should limit errors per item (fruit))// this is "avocado"
     }
-
  */
-
-
-
-
-

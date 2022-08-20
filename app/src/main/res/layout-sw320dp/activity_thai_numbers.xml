@@ -38,19 +38,18 @@
 
 
     <EditText
-        android:id="@+id/userEntert"
+        android:id="@+id/userEnterEng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/enter_english_here"
+        android:hint="@string/userEnter_Thai"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="textNoSuggestions"
         android:textAlignment="center"
         android:textColor="#0B0051"
-        android:textSize="24sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thaiNumPics"
         tools:ignore="TextContrastCheck" />
@@ -60,26 +59,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/use_the_english_letters_below"
+        android:text="@string/use_the_thai_letters_below"
         android:textAlignment="center"
         android:textColor="#930404"
-        android:textSize="20sp"
-
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEntert" />
+        app:layout_constraintTop_toBottomOf="@+id/userEnterEng" />
 
     <TextView
         android:id="@+id/scrambledFieldt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="@string/english_scram"
+        android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
         android:textColor="#151582"
-        android:textSize="24sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +93,7 @@
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"

@@ -37,7 +37,7 @@
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <EditText
-        android:id="@+id/userEnter_E"
+        android:id="@+id/userEnterThai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -62,21 +62,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="@string/ใช้ตัวอักษรด้านล่าง"
+        android:text="@string/use_the_thai_letters_below"
         android:textAlignment="center"
         android:textColor="#930404"
         android:textSize="12sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEnter_E" />
+        app:layout_constraintTop_toBottomOf="@+id/userEnterThai" />
 
     <TextView
         android:id="@+id/scrambledField_e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/dynamic"
+        android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
@@ -93,12 +93,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/dynamic"
+        android:hint="@string/displayEngTxt"
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledField_e"
         tools:ignore="TextContrastCheck" />

@@ -48,10 +48,6 @@ class FruitCat : AppCompatActivity() {
     private var myGrades:Double = 0.0
     private var adjustedMark:Double = 0.0
     private val myArrays = TheArrays()
-
-    //private val collectedIncorrect = Array(fruitPhotos.size-1) { 0 }
-    //private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
-    //private val collectedIncorrect  = Array(3) { 0 }
     private  var collectedIncorrect: MutableList<Int> = mutableListOf()
     private var noise1 = 1
     private var noise2 = 2
@@ -105,7 +101,6 @@ class FruitCat : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_fruit_cat)
-        //println("this is ${fruitPhotos.size} fruitPhotos.size" )
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -148,7 +143,7 @@ class FruitCat : AppCompatActivity() {
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispEnglishWord = findViewById(R.id.dispEnglishWord)
-        userEnterE = findViewById(R.id.userEnter_E)
+        userEnterE = findViewById(R.id.userEnterThai)
         scrambledFieldE = findViewById(R.id.scrambledField_e)
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
@@ -163,9 +158,7 @@ class FruitCat : AppCompatActivity() {
         wordInEArray = userEnterE.toString()
         userEnterE.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
-
                 checkWords()
-                //tryCatchBlock()
                 hideSoftKeyboard()
                 true
             } else false
@@ -233,9 +226,6 @@ class FruitCat : AppCompatActivity() {
         myGoofs = modifyNumOfErrorsE(numOfAttempts)
         setNumberOfIncorrect(collectedIncorrect,myGoofs)//
         collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire
-        //println(" this is $collectWrongAns after accumulatedErrors  array iterated")
-        // println(" this is $myGoofs  myGoofs from modifyNumOfErrorsE")
-        // println(" this is ${myArrays.efruitTxt[numToInc]} efruitTxt[numToInc] from individualErrorCount")
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun respondToErrors() {
@@ -247,7 +237,6 @@ class FruitCat : AppCompatActivity() {
     private fun whenWrongAnswer(){
         createArraysForWrongAnswers()     //creates arrays for wrong answers
         cleanUpToContinue()
-        //println("${numOfErrorsE.toString()} this is numOfErrorsE from whenWrongAnswer")//sets up scrambled field clears incorrect user entry
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun reSetFruit(){
@@ -291,7 +280,6 @@ class FruitCat : AppCompatActivity() {
         scrambledFieldE.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }
         timer.cancel()
-        //println("${numOfErrorsE.toString()} this is numOfErrorsE from reSetFruit()=0")
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun threeErrors (){   //when errors = 3 - 6 - 9 etc
@@ -315,14 +303,10 @@ class FruitCat : AppCompatActivity() {
         val result2 = wrongThai.contains(aWordTh)
         if(!result2){
             wrongThai.add(aWordTh)
-            //println(wrongThai)
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-//private fun getGrade():Double wrongEng.size
     private fun getGrade(): Double {
-        //modifyThreeErrors(collectWrongAns) this can not be here because 3 errors are possible with big array
-        // println("$collectWrongAns called from getGrade")
         myGrades = (sizeOfArray - wrongEng.size.toDouble()) / sizeOfArray * 100
 
         return (myGrades * 100).roundToInt() / 100.0
@@ -330,7 +314,6 @@ class FruitCat : AppCompatActivity() {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private fun lessThanZero(allWrong:Double):Double {//changed from double
-        // println("${numOfErrorsE.toString()} this is numOfErrorsE from lessThanZero")
         if (allWrong < 0.0){
             myGrades = 0.0
         }
@@ -338,7 +321,6 @@ class FruitCat : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun markToPass(allWrong:Double):String { //changed from double
-        // println("${numOfErrorsE.toString()} this is numOfErrorsE from markToPass")
         myGrades = if (allWrong >= 0.0){
             getGrade()
         } else{
@@ -349,7 +331,6 @@ class FruitCat : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun numOfMistakes()
     {
-        //if (numOfErrorsE == 0 && numToInc == sizeOfArray) {
         if (numOfErrorsE == 0 && numToInc == sizeOfArray-1) {
             marksString = markToPass(getGrade())
             println(" $marksString this is marksString" )
@@ -358,7 +339,6 @@ class FruitCat : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun cleanUpToContinue()
     {
-        // if (numToInc <= sizeOfArray) {
         if (numToInc <= sizeOfArray-1) {
 
             println(" this is numToInc $numToInc andthis is arrayIndex $arrayIndex from cleanUpToContinue")
@@ -390,12 +370,11 @@ class FruitCat : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun determineErrorsSnd():Int {
         soundId = (30..36).random()
-        //println("$soundId this is myRandom from determineErrorsSnd()")
         return soundId
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun listenForComplete() {
-        timer = object : CountDownTimer(1100, 1000) {
+        timer = object : CountDownTimer(1250, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 println("This is the time left: $millisUntilFinished")
             }

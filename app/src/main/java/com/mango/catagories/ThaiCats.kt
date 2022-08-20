@@ -46,8 +46,6 @@ class ThaiCats : AppCompatActivity() {
     private var adjustedMark:Double = 0.0//number of wrong answers "no repeats"
     private  var voiceSnd = 0
     private val myArrays = TheArrays()
-    // private val collectedIncorrect = Array(fruitPhotos.size) { 0 }
-    //private val collectedIncorrect = Array(3) { 0 }
     private  var collectedIncorrect: MutableList<Int> = mutableListOf()
 
     /////////////added July 11//////////////////////////////////////////////////////////////////////
@@ -148,7 +146,7 @@ class ThaiCats : AppCompatActivity() {
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispThaiWord= findViewById(R.id.dispThaiWord)
-        userEntert = findViewById(R.id.userEntert)
+        userEntert = findViewById(R.id.userEnterThai)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)
         sndBtn2 = findViewById(R.id.sndBtn2)
@@ -162,11 +160,9 @@ class ThaiCats : AppCompatActivity() {
         scrambledFieldt.alpha =0.toFloat()
         wordInTArray = userEntert.toString()
 
-        //myErrorSounds = myArrays.errorSndArr
         userEntert.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 checkWords()
-                // tryCatchBlock()
                 hideSoftKeyboard()
                 true
             } else false
@@ -181,7 +177,6 @@ class ThaiCats : AppCompatActivity() {
     private fun checkWords(){
         if(userEntert.text.toString() == myArrays.tthaiFruit[numToInc] && numToInc < sizeOfArray ){
             findIndex(myArrays.efruitTxt, myArrays.efruitTxt[numToInc])
-            //checkIndividualEntry()
             getNextFruit()
         }
         else{
@@ -214,23 +209,15 @@ class ThaiCats : AppCompatActivity() {
     private fun individualErrorCount()      // this is called per array element
     {
         myGoofs = modifyNumOfErrorsE(numOfAttemptsT)  // if numOfAttemptsT == 1 ..numOfErrorsT  = 1
-
-        //println(" this is $numOfErrorsT errors  called from individualErrorCount()/checkWords()/else")
-        //collectWrongAns += numOfErrorsE   // used in results()
-        //collectWrongAns =numOfAttempts   // this collects the ones to compute the Grade
-        //private val collectedIncorrect:ArrayList<Int> = ArrayList()collectedIncorrect
         setNumberOfIncorrect(collectedIncorrect,myGoofs)//sets index of array element value = 1
         collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire array ie wrong = 2
         modifyCollectedWrongs(numOfAttemptsT)
-        // println(" this is $collectWrongAns this is collectWrongAns in collectedIncorrect Array")
-        //collectWrongAns =accumulatedErrors(collectedIncorrect)//accumulatedErrors iterates ArrayList
-        //collectWrongAns =accumulatedErrors()//accumulatedErrors iterates ArrayList
         println(" this is $collectWrongAns after accumulatedErrors  array iterated")
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     private fun respondToErrors() {
-        // adjustedMark = lessThanZero(getGrade())   //numbers below 0 reset to 0.0% for your grade
-        //marksStringT = markToPass(getGrade())      //"marksString" used in "intent" in endOfArray()
+        // adjustedMark = lessThanZero(getGrade())//numbers below 0 reset to 0.0% for your grade
+        //marksStringT = markToPass(getGrade())//"marksString" used in "intent" in endOfArray()
         passPeram()
         reSetNumOfAttempts() // if 3 Attempts back to 0
         whenWrongAnswer()
@@ -247,7 +234,6 @@ class ThaiCats : AppCompatActivity() {
         if(numToInc <=fruitPhotos.size-1) {
             appleShot.setImageResource(fruitPhotos[numToInc])
         }
-        //appleShot.setImageResource(fruitPhotos[numToInc])
         dispThaiWord.text = myArrays. efruitTxt[numToInc]
         with(scrambledFieldt) { text = myArrays.tscrambleThFruit[numToInc] }
         userEntert.setText("")
@@ -273,8 +259,6 @@ class ThaiCats : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun reSetForThreeErrors(){
         incrementingLimit()
-        //println("$numToInc this is numToInc from reSetForThreeErrors()")
-        // println("$numOfErrorsT this is numToInc from reSetForThreeErrors()")
         endOfArray()
         if(numToInc <=fruitPhotos.size-1) {
             appleShot.setImageResource(fruitPhotos[numToInc])
@@ -303,21 +287,17 @@ class ThaiCats : AppCompatActivity() {
         val result = wrongEng.contains(aWord)
         if(!result){
             wrongEng.add(aWord)
-            //println(wrongEng)
         }
         println(result) // true
         val aWordTh = myArrays.tthaiFruit[numToInc]
         val result2 = wrongThai.contains(aWordTh)
         if(!result2){
             wrongThai.add(aWordTh)
-            //println(wrongThai)
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun getGrade():Double//wrongThai.size
     {
-        //println("$numOfCorrectE this is numOfCorrect from getGrade()")
-        //myGradesT = (numOfErrorsT.toDouble()/sizeOfArray)*100
         myGradesT = (sizeOfArray- wrongThai.size.toDouble()) / sizeOfArray * 100
         return (myGradesT * 100).roundToInt() / 100.0
     }
@@ -462,9 +442,5 @@ class ThaiCats : AppCompatActivity() {
         }
         println("This is numToInc.... $numToInc called from from incrementingLimit()")
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////
     ////////////////////////////////End of Class////////////////////////////////////////////////////
-}//end of class
+  }//end of class
