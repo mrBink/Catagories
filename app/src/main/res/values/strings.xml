@@ -16,7 +16,7 @@
     <string name="enter_english_here">Enter English here</string>
     <string name="dynamic">dynamic</string>
     <string name="Use_the_letters_below">Use_the_letters_below</string>
-    <string name= "use_the_english_letters_below">Use the English letters below</string>
+    <string name="use_the_english_letters_below">Use the English letters below</string>
     <string name="enter_thai_here">Enter Thai here</string>
     <string name="i_am_here">i_am_here</string>
     <string name="myHint">Use the letters below</string>
@@ -55,6 +55,8 @@
     <string name="thai_scram">Thai Scram</string>
     <string name="userEnter_Eng">user Enter Eng</string>
     <string name="userEnter_Thai">user Enter Thai</string>
+    <string name="e_Body">eBody</string>
+    <string name="t_Body">tBody</string>
 
 
 </resources>

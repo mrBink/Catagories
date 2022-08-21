@@ -25,10 +25,7 @@
         android:id="@+id/numPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:alpha="100"
-        android:background="@color/white"
-        android:backgroundTint="#00FFFFFF"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/numPics"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -44,13 +41,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/enter_thai_here"
+        android:background="#ffffff"
+        android:backgroundTint="#00FFFFFF"
+        android:hint="@string/userEnter_Eng"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="48dp"
         android:text=""
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -63,13 +62,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="@string/use_the_thai_letters_below"
+        android:text="@string/use_the_english_letters_below"
         android:textAlignment="center"
         android:textColor="#930404"
         android:textSize="12sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userEnterThai" />
 
@@ -78,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/thai_scram"
+        android:hint="@string/english_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
@@ -101,6 +99,7 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledField_e"
         tools:ignore="TextContrastCheck" />
@@ -128,32 +127,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.41" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.59" />
+        app:layout_constraintGuide_percent="0.57" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.98" />
-
-
-
-
+        app:layout_constraintGuide_percent="0.97" />
 
 
 

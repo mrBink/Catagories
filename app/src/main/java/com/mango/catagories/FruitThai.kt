@@ -9,8 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 
 class FruitThai : AppCompatActivity() {
-    private lateinit var toFruitt: ImageButton//thaiDigit
+    private lateinit var toFruitt: ImageButton//tBody
     private lateinit var thaiDigit: ImageButton
+    private lateinit var tBody: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowInsetsControllerCompat(window, window.decorView).apply {
@@ -29,6 +30,14 @@ class FruitThai : AppCompatActivity() {
             val intent1 = Intent(this, ThaiNumbers::class.java)
             startActivity(intent1)
         }
+        tBody = findViewById(R.id.tBody)
+
+          tBody.setOnClickListener {
+            //println("numbers button clicked should see action  num  eng page")
+           val intent3 = Intent(this, AnatomyT::class.java)
+            startActivity(intent3)
+        }
+
 
     }
     /////////////////////////////////////////////////////////////////////////

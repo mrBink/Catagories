@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AnatomyT"
+            android:exported="false" />
+        <activity
+            android:name=".AnatomyE"
+            android:exported="false" />
         <activity
             android:name=".ThaiNumbers"
             android:exported="false" />
