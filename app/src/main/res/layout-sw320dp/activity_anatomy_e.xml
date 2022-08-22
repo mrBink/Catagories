@@ -7,19 +7,19 @@
     tools:context=".AnatomyE">
 
     <ImageView
-        android:id="@+id/goldBackGround"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/gold_Back_Ground"
-        android:scaleType="fitXY"
-        android:src="@drawable/goldbg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ImageContrastCheck" />
+    android:id="@+id/goldBackGround"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:contentDescription="@string/gold_Back_Ground"
+    android:scaleType="fitXY"
+    android:src="@drawable/goldbg"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"
+    tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/bodyView"

@@ -28,7 +28,8 @@ class FruitCat : AppCompatActivity() {
     /////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
     private lateinit var sndBtn2:ImageButton
-    private lateinit var appleShot:ImageView        //images of fruit in View:
+    private lateinit var appleShot:ImageView        //images of fruit in View:bgFruitPics
+    private lateinit var bgFruitPics:ImageView
     private lateinit var userEnterE:EditText        //user editText
     private lateinit var scrambledFieldE:TextView   //scrambled text
     private lateinit var useHint:TextView           //instruction foe letter use
@@ -98,8 +99,6 @@ class FruitCat : AppCompatActivity() {
         WindowInsetsControllerCompat(window, window.decorView).apply {
             hide(WindowInsetsCompat.Type.statusBars())
         }
-
-
         setContentView(R.layout.activity_fruit_cat)
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_GAME)
@@ -140,7 +139,8 @@ class FruitCat : AppCompatActivity() {
         mangosteen   = mSoundPool?.load(this, R.raw.banana, 1)!!
         rambutan     = mSoundPool?.load(this, R.raw.blueberry, 1)!!
 
-        appleShot = findViewById(R.id.appleShot)
+        bgFruitPics = findViewById(R.id.bgFruitPics)
+        appleShot = findViewById(R.id.appleShot)//bgFruitPics
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispEnglishWord = findViewById(R.id.dispEnglishWord)
         userEnterE = findViewById(R.id.userEnterThai)

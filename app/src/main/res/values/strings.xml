@@ -57,6 +57,8 @@
     <string name="userEnter_Thai">user Enter Thai</string>
     <string name="e_Body">eBody</string>
     <string name="t_Body">tBody</string>
+    <string name="gold_Back_Ground">gold Back Ground</string>
+    <string name="body_View">bodyView</string>
 
 
 </resources>
