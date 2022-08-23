@@ -40,12 +40,7 @@ class Fruit : AppCompatActivity() {
            val intent2 = Intent(this, AnatomyE::class.java)
             startActivity(intent2)
         }
-/*
-        tBody.setOnClickListener {
-            //println("numbers button clicked should see action  num  eng page")
-           val intent3 = Intent(this, AnatomyT::class.java)
-            startActivity(intent3)
-        */
+
 
     }
 } //end of class

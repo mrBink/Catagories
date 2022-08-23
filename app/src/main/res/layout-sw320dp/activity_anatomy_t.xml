@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:configChanges="orientation"
-    android:screenOrientation="portrait"
-    tools:context=".ThaiCats">
+    tools:context=".AnatomyT">
 
     <ImageView
-        android:id="@+id/bgFruitPics"
+        android:id="@+id/goldBackGround"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/bg_fruitPics"
+        android:contentDescription="@string/gold_Back_Ground"
         android:scaleType="fitXY"
         android:src="@drawable/goldbg"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,40 +22,41 @@
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/appleShot"
+        android:id="@+id/bodyView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="@string/appleShot"
+        android:contentDescription="@string/body_View"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/apple"
+        app:srcCompat="@drawable/back"
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
-
 
     <EditText
         android:id="@+id/userEntert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/enter_thai_here"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
-        android:inputType="textNoSuggestions"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:text=""
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="#930404"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appleShot"
+        app:layout_constraintTop_toBottomOf="@+id/bodyView"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/useHintT"
+        android:id="@+id/useHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -71,36 +70,37 @@
         app:layout_constraintTop_toBottomOf="@+id/userEntert" />
 
     <TextView
-        android:id="@+id/scrambledFieldt"
+        android:id="@+id/scrambledFieldT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#1515B2"
-        android:textSize="34sp"
+        android:textColor="#C20545"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/useHintT"
+        app:layout_constraintTop_toBottomOf="@+id/useHint"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThaiWord"
+        android:id="@+id/dispEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="@string/enter_english_here"
+        android:layout_marginTop="8dp"
+        android:hint="@string/disp_english_word"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
+        app:layout_constraintTop_toBottomOf="@+id/scrambledFieldT"
         tools:ignore="TextContrastCheck" />
+
     <ImageButton
         android:id="@+id/sndBtn2"
         android:layout_width="0dp"
@@ -136,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.81" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -146,7 +146,8 @@
         app:layout_constraintGuide_percent="0.97" />
 
 
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

@@ -20,22 +20,22 @@ class FruitThai : AppCompatActivity() {
         setContentView(R.layout.activity_fruit_thai)
         toFruitt = findViewById(R.id.toFruitt)
         toFruitt.setOnClickListener {
-            val intent = Intent(this, ThaiCats::class.java)
-            startActivity(intent)
+            val intent7 = Intent(this, ThaiCats::class.java)
+            startActivity(intent7)
         }
         Toast.makeText(this@FruitThai, "Its a FruitThai class!", Toast.LENGTH_SHORT).show()
         thaiDigit = findViewById(R.id.thaiDigit)
         thaiDigit.setOnClickListener {
            // println("thaiDigit button clicked should see action spell ThaiNumbers  page")
-            val intent1 = Intent(this, ThaiNumbers::class.java)
-            startActivity(intent1)
+            val intent6 = Intent(this, ThaiNumbers::class.java)
+            startActivity(intent6)
         }
         tBody = findViewById(R.id.tBody)
 
           tBody.setOnClickListener {
-            //println("numbers button clicked should see action  num  eng page")
-           val intent3 = Intent(this, AnatomyT::class.java)
-            startActivity(intent3)
+           println("numbers button clicked should see action  num  tBody")
+           val intent5 = Intent(this, AnatomyT::class.java)
+            startActivity(intent5)
         }
 
 

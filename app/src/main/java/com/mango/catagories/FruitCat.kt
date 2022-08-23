@@ -81,11 +81,9 @@ class FruitCat : AppCompatActivity() {
     private var rambutan   = 27
 
 
-    private  var fruitSnds = arrayListOf( orange,apple,avocado,banana,
-        blueberry,cantaloupe,cherry/*,grape,
-        jackfruit,lemon,mango,watermelon,
-        papaya,plum,pumpkin,strawberry,
-        tomato,coconut,mangosteen,watermelon*/)
+    private  var fruitSnds = arrayListOf( orange,apple,avocado,banana, blueberry,
+        cantaloupe,cherry,grape, jackfruit,lemon,mango,watermelon, papaya,plum,
+        pumpkin,strawberry, tomato,coconut,mangosteen,rambutan )
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,26 +123,26 @@ class FruitCat : AppCompatActivity() {
         blueberry    = mSoundPool?.load(this, R.raw.blueberry, 1)!!
         cantaloupe   = mSoundPool?.load(this, R.raw.cantaloupe, 1)!!
         cherry       = mSoundPool?.load(this, R.raw.cherry, 1)!!
-        grape        = mSoundPool?.load(this, R.raw.cherry, 1)!!
-        jackfruit    = mSoundPool?.load(this, R.raw.orange, 1)!!
-        lemon        = mSoundPool?.load(this, R.raw.apple, 1)!!
-        mango        = mSoundPool?.load(this, R.raw.avocado, 1)!!
-        watermelon   = mSoundPool?.load(this, R.raw.banana, 1)!!
-        papaya       = mSoundPool?.load(this, R.raw.blueberry, 1)!!
-        plum         = mSoundPool?.load(this, R.raw.cantaloupe, 1)!!
-        pumpkin      = mSoundPool?.load(this, R.raw.cherry, 1)!!
-        strawberry   = mSoundPool?.load(this, R.raw.orange, 1)!!
-        tomato       = mSoundPool?.load(this, R.raw.apple, 1)!!
-        coconut      = mSoundPool?.load(this, R.raw.avocado, 1)!!
-        mangosteen   = mSoundPool?.load(this, R.raw.banana, 1)!!
-        rambutan     = mSoundPool?.load(this, R.raw.blueberry, 1)!!
+        grape        = mSoundPool?.load(this, R.raw.grape, 1)!!
+        jackfruit    = mSoundPool?.load(this, R.raw.jackfruit, 1)!!
+        lemon        = mSoundPool?.load(this, R.raw.lemon, 1)!!
+        mango        = mSoundPool?.load(this, R.raw.mango, 1)!!
+        watermelon   = mSoundPool?.load(this, R.raw.watermelon, 1)!!
+        papaya       = mSoundPool?.load(this, R.raw.papaya, 1)!!
+        plum         = mSoundPool?.load(this, R.raw.plum, 1)!!
+        pumpkin      = mSoundPool?.load(this, R.raw.pumpkin, 1)!!
+        strawberry   = mSoundPool?.load(this, R.raw.strawberry, 1)!!
+        tomato       = mSoundPool?.load(this, R.raw.tomato, 1)!!
+        coconut      = mSoundPool?.load(this, R.raw.coconut, 1)!!
+        mangosteen   = mSoundPool?.load(this, R.raw.mangosteen, 1)!!
+        rambutan     = mSoundPool?.load(this, R.raw.rambutan, 1)!!
 
         bgFruitPics = findViewById(R.id.bgFruitPics)
         appleShot = findViewById(R.id.appleShot)//bgFruitPics
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispEnglishWord = findViewById(R.id.dispEnglishWord)
-        userEnterE = findViewById(R.id.userEnterThai)
-        scrambledFieldE = findViewById(R.id.scrambledField_e)
+        userEnterE = findViewById(R.id.thaigoeshere)
+        scrambledFieldE = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
         sndBtn2.setOnClickListener {
