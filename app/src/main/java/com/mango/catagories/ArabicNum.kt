@@ -146,9 +146,9 @@ class ArabicNum : AppCompatActivity() {
         engNumbers = findViewById(R.id.engNumbers)
         numPics = findViewById(R.id.numPics)
         numPics.setImageResource(thaiNumarals[numToInc])
-        dispEnglishWord = findViewById(R.id.dispEnglishWord)
-        userEnterThai = findViewById(R.id.userEnterThai)
-        scrambledFieldE = findViewById(R.id.scrambledField_e)
+        dispEnglishWord = findViewById(R.id.dispThai)
+        userEnterThai = findViewById(R.id.thaigoeshere)
+        scrambledFieldE = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
         sndBtn2.setOnClickListener {

@@ -59,6 +59,15 @@
     <string name="t_Body">tBody</string>
     <string name="gold_Back_Ground">gold Back Ground</string>
     <string name="body_View">bodyView</string>
+    <string name="thai_goes_here">Thai Goes Here</string>
+    <string name="engmonths">engmonths</string>
+    <string name="dispThai">dispThai</string>
+    <string name="scrambledE">scrambledE</string>
+    <string name="seeMonths">seeMonths</string>
+    <string name="seeEngMonths">seeEngMonths</string>
+    <string name="scrambledT">scrambledT</string>
+    <string name="dispEnglish">dispEnglish</string>
+    <string name="engDays">engDays</string>
 
 
 </resources>

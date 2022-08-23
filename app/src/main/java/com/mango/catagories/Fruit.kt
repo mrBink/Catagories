@@ -12,7 +12,8 @@ class Fruit : AppCompatActivity() {
     private lateinit var toFruits:ImageButton
     private lateinit var numbers:ImageButton
     private lateinit var eBody:ImageButton
-    private lateinit var tBody:ImageButton
+    private lateinit var engmonths:ImageButton
+    //private lateinit var tBody:ImageButton
     private lateinit var catBtns: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,7 @@ class Fruit : AppCompatActivity() {
         catBtns = findViewById(R.id.catBtns)
         numbers = findViewById(R.id.numbers)
         eBody = findViewById(R.id.eBody)
+        engmonths = findViewById(R.id.engmonths)
         numbers.setOnClickListener {
             //println("numbers button clicked should see action  num  eng page")
            val intent1 = Intent(this, ArabicNum::class.java)
@@ -40,12 +42,13 @@ class Fruit : AppCompatActivity() {
            val intent2 = Intent(this, AnatomyE::class.java)
             startActivity(intent2)
         }
-/*
-        tBody.setOnClickListener {
-            //println("numbers button clicked should see action  num  eng page")
-           val intent3 = Intent(this, AnatomyT::class.java)
+
+         engmonths.setOnClickListener {
+            println("numbers   eBody clicked should see action EnglishMonths")
+           val intent3 = Intent(this, EnglishMonths::class.java)
             startActivity(intent3)
-        */
+        }
+
 
     }
 } //end of class

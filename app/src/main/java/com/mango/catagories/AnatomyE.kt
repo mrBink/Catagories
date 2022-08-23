@@ -21,14 +21,14 @@ class AnatomyE : AppCompatActivity() {
         R.drawable.ear,R.drawable.tthumb,R.drawable.head, R.drawable.tfinger,R.drawable.toes,
         R.drawable.tongue,R.drawable.tneck, R.drawable.lips,R.drawable.nose,R.drawable.hand,
         R.drawable.teeth,R.drawable.legs, R.drawable.knee,R.drawable.eye, R.drawable.hair,
-        R.drawable.feet,R.drawable.eyelash, R.drawable.tchin,R.drawable.stomach,
+        R.drawable.feet,R.drawable.eyelash, R.drawable.tback,R.drawable.stomach,
         R.drawable.fingernail)
     /////////////////////////////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
     private lateinit var sndBtn2: ImageButton
     private lateinit var bodyView: ImageView        //images of fruit in View:
     private lateinit var goldBackGround: ImageView
-    private lateinit var userEnterE: EditText
+    private lateinit var enterEng: EditText
     private lateinit var scrambledFieldE: TextView   //scrambled text
     private lateinit var useHint: TextView           //instruction foe letter use
     private lateinit var dispEnglishWord: TextView      //user Thai Word
@@ -68,19 +68,19 @@ class AnatomyE : AppCompatActivity() {
     private var nose       = 16
     private var hand       = 17
     private var teeth      = 18
-    private var leg       = 19
+    private var legs       = 19
     private var knee       = 20
     private var eye        = 21
     private var hair       = 22
     private var feet       = 23
     private var eyelash    = 24
-    private var chin      = 25
+    private var tback      = 25
     private var stomach    = 26
     private var fingernail   = 27
 
 
-    private  var bodySnds = arrayListOf( ear ,thumb,head ,finger,toes,tongue,neck,lips,nose,hand,teeth,leg,
-        knee,eye,hair,feet,eyelash,chin,stomach,fingernail)
+    private  var bodySnds = arrayListOf( ear,thumb,head ,finger,toes,tongue,neck,lips,nose,hand,teeth,legs,
+        knee,eye,hair,feet,eyelash,tback,stomach,fingernail)
 
     //////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,22 +124,22 @@ class AnatomyE : AppCompatActivity() {
         nose      = mSoundPool?.load(this, R.raw.nose, 1)!!
         hand      = mSoundPool?.load(this, R.raw.hand, 1)!!
         teeth     = mSoundPool?.load(this, R.raw.teeth, 1)!!
-        leg       = mSoundPool?.load(this, R.raw.leg, 1)!!
-        knee      = mSoundPool?.load(this, R.raw.knees, 1)!!
+        legs       = mSoundPool?.load(this, R.raw.legs, 1)!!
+        knee      = mSoundPool?.load(this, R.raw.knee, 1)!!
         eye       = mSoundPool?.load(this, R.raw.eye, 1)!!
         hair      = mSoundPool?.load(this, R.raw.hair, 1)!!
         feet      = mSoundPool?.load(this, R.raw.feet, 1)!!
         eyelash   = mSoundPool?.load(this, R.raw.eyelash, 1)!!
-        chin      = mSoundPool?.load(this, R.raw.chin, 1)!!
+        tback      = mSoundPool?.load(this, R.raw.tback, 1)!!
         stomach   = mSoundPool?.load(this, R.raw.stomach, 1)!!
         fingernail = mSoundPool?.load(this, R.raw.fingernail, 1)!!
 
         goldBackGround = findViewById(R.id.goldBackGround)
         bodyView = findViewById(R.id.bodyView)
         bodyView.setImageResource(anatomyT[numToInc])
-        dispEnglishWord = findViewById(R.id.dispEnglishWord)
-        userEnterE = findViewById(R.id.userEnterThai)
-        scrambledFieldE = findViewById(R.id.scrambledField_e)
+        dispEnglishWord = findViewById(R.id.dispThai)
+        enterEng = findViewById(R.id.enterEng)
+        scrambledFieldE = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)
         sndBtn2 = findViewById(R.id.sndBtn2)
         sndBtn2.setOnClickListener {
@@ -150,8 +150,8 @@ class AnatomyE : AppCompatActivity() {
         scrambledFieldE.append(myArrays.tScramBody[numToInc])
         scrambledFieldE.alpha =0.toFloat()
         useHint.alpha =0.toFloat()
-        wordInEArray = userEnterE.toString()
-        userEnterE.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
+        wordInEArray = enterEng.toString()
+        enterEng.setOnEditorActionListener { _, actionId, _ ->//activates "done keyboard"
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 checkWords()
                 hideSoftKeyboard()
@@ -166,7 +166,7 @@ class AnatomyE : AppCompatActivity() {
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
     private fun checkWords(){
-        if(userEnterE.text.toString() == myArrays.eAnatomy[numToInc] && numToInc < sizeOfArray ){
+        if(enterEng.text.toString() == myArrays.eAnatomy[numToInc] && numToInc < sizeOfArray ){
             arrayIndex =findIndex(myArrays.eAnatomy, myArrays.eAnatomy[numToInc])
             getNextFruit()
 
@@ -185,7 +185,6 @@ class AnatomyE : AppCompatActivity() {
             inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
         }
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////
     private fun newIndividualEntryForErrors()
     {
         arrayIndex = findIndex(myArrays.eAnatomy, myArrays.eAnatomy[numToInc])
@@ -220,7 +219,8 @@ class AnatomyE : AppCompatActivity() {
         setNumberOfIncorrect(collectedIncorrect,myGoofs)//
         collectWrongAns= accumulatedErrors(collectedIncorrect) // this returns all the wrong ans in entire
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////// ////////////////////////////////////////////////////////////////////////////////////////////////
+
     private fun respondToErrors() {
         passPeram()
         reSetNumOfAttempts() // if 3 Attempts back to 0
@@ -239,7 +239,7 @@ class AnatomyE : AppCompatActivity() {
         }
         dispEnglishWord.text = myArrays.tAnatomy[numToInc]
         with(scrambledFieldE) { text = myArrays.tScramBody[numToInc] }
-        userEnterE.setText("")
+        enterEng.setText("")
         scrambledFieldE.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }
     }
@@ -268,7 +268,7 @@ private fun endOfArray() {   // when array done pass intents and change activiti
         }
         dispEnglishWord.text = myArrays.tAnatomy[numToInc]
         with(scrambledFieldE) { text = myArrays.tScramBody[numToInc] }
-        userEnterE.setText("")
+        enterEng.setText("")
         scrambledFieldE.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }
         timer.cancel()
@@ -333,7 +333,7 @@ private fun lessThanZero(allWrong:Double):Double {//changed from double
         if (numToInc <= sizeOfArray-1) {
 
             println(" this is numToInc $numToInc andthis is arrayIndex $arrayIndex from cleanUpToContinue")
-            userEnterE.setText("")
+            enterEng.setText("")
             useHint.alpha =1.toFloat()
             scrambledFieldE.alpha =1.toFloat()
         }

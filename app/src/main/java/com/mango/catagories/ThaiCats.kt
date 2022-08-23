@@ -17,7 +17,8 @@ import androidx.core.view.WindowInsetsControllerCompat
 import kotlin.math.roundToInt
 
 class ThaiCats : AppCompatActivity() {
-    private var fruitPhotos=arrayOf(R.drawable.orange2,R.drawable.apple,R.drawable.avocado,R.drawable.banana,
+    private var fruitPhotos=arrayOf(
+        R.drawable.orange2,R.drawable.apple,R.drawable.avocado,R.drawable.banana,
         R.drawable.blueberry/*,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
         R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
         R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
@@ -79,20 +80,14 @@ class ThaiCats : AppCompatActivity() {
     private var tmangosteen = 26
     private var trambutan   = 27
 
-
-
     private  var tFruitSnds = arrayListOf( torange,tapple,tavocado,tbanana,
-        tblueberry,tCantaloupe,tcherry/*,tgrape,
+        tblueberry,tCantaloupe,tcherry,tgrape,
         tjackfruit,tlemon,tmango,twatermelon,
         tpapaya,tplum,tpumpkin,tstrawberry,
-        ttomato,tcoconut,tmangosteen,twatermelon*/)
-
+        ttomato,tcoconut,tmangosteen,trambutan)
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         StrictMode.setVmPolicy(
             StrictMode.VmPolicy.Builder(StrictMode.getVmPolicy())
                 .detectLeakedClosableObjects()
@@ -142,11 +137,10 @@ class ThaiCats : AppCompatActivity() {
         tmangosteen   = mSoundPool?.load(this, R.raw.tmangosteen, 1)!!
         trambutan     = mSoundPool?.load(this, R.raw.trambutan, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
-
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
         dispThaiWord= findViewById(R.id.dispThaiWord)
-        userEntert = findViewById(R.id.userEnterThai)
+        userEntert = findViewById(R.id.userEntert)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)
         sndBtn2 = findViewById(R.id.sndBtn2)
