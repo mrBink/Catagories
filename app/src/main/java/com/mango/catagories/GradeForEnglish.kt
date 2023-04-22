@@ -68,7 +68,7 @@ class GradeForEnglish :AppCompatActivity  () {
             { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
         displayGrades(myNumberOfErrorsE, { thePerfectScore(correctionField) } ,
             { errorsToCorrectionField(arr,correctionField,noESquareBrace,noTSquareBrace) })
-        onBackPressed()
+
        }// end of constructor
     //////////////////////////////////////////////////////////////////////////////////////////////
       private fun arrangeEngTextForMarks(eng: List<String>):ArrayList<String>{
@@ -129,10 +129,7 @@ class GradeForEnglish :AppCompatActivity  () {
     }
     ///////////////////////////////////////////////////////////////////////////
 
-         override fun onBackPressed() {
-            //super.onBackPressed()
-             println("fuck you too!!")
-        }
+
 
 
     }// end of class

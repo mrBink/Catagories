@@ -27,7 +27,7 @@
         android:id="@+id/appleShot"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/appleShot"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -41,15 +41,16 @@
 
     <EditText
         android:id="@+id/userEntert"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:hint="@string/enter_thai_here"
+        android:textColor="#000000"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="textNoSuggestions"
         android:textAlignment="center"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,13 +59,13 @@
 
     <TextView
         android:id="@+id/useHintT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="@string/use_the_thai_letters_below"
+        android:text="@string/Unscramble_the_thai_letters_below"
         android:textAlignment="center"
-        android:textColor="#930404"
-        android:textSize="12sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,15 +73,15 @@
 
     <TextView
         android:id="@+id/scrambledFieldt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#052072"
-        android:textSize="12sp"
+        android:textColor="#000000"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,15 +89,15 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThaiWord"
-        android:layout_width="wrap_content"
+        android:id="@+id/dispEngWord"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:hint="@string/enter_english_here"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
@@ -105,7 +106,7 @@
         android:id="@+id/sndBtn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="#00F5F5F5"
         android:contentDescription="@string/sndbtn2"
         android:scaleType="centerCrop"
@@ -137,14 +138,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.85" />
 
 
 

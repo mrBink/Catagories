@@ -25,7 +25,7 @@
         android:id="@+id/numPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/numPics"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -38,9 +38,9 @@
 
     <EditText
         android:id="@+id/thaigoeshere"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:background="#ffffff"
         android:backgroundTint="#00FFFFFF"
         android:hint="@string/userEnter_Eng"
@@ -50,7 +50,7 @@
         android:text=""
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,13 +59,13 @@
 
     <TextView
         android:id="@+id/useHint"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/use_the_english_letters_below"
+        android:layout_marginTop="2dp"
+        android:text="@string/ถอดรหัสตัวอักษรด้านล่าง"
         android:textAlignment="center"
-        android:textColor="#930404"
-        android:textSize="12sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,15 +73,15 @@
 
     <TextView
         android:id="@+id/scrambledFieldT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:hint="@string/english_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#151582"
-        android:textSize="12sp"
+        android:textColor="#000000"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,15 +89,15 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThai"
-        android:layout_width="wrap_content"
+        android:id="@+id/showThaiWord"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:hint="@string/displayEngTxt"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
         android:id="@+id/sndBtn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="#00F5F5F5"
         android:contentDescription="@string/sndbtn2"
         android:scaleType="centerCrop"
@@ -141,14 +141,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.85" />
 
 
 

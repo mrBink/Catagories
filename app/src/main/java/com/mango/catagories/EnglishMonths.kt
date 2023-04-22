@@ -141,7 +141,7 @@ class EnglishMonths : AppCompatActivity() {
         goldBackGround = findViewById(R.id.goldBackGround)
         seeMonths = findViewById(R.id.seeMonths)
         seeMonths.setImageResource(monthsPhotos[numToInc])
-        dispThai = findViewById(R.id.dispThai)
+        dispThai = findViewById(R.id.showThaiWord)
         enterEng = findViewById(R.id.enterEng)
         scrambledE = findViewById(R.id.scrambledE)
         useHint = findViewById(R.id.useHint)

@@ -23,9 +23,9 @@ class ArabicNum : AppCompatActivity() {
 
     private var thaiNumarals=arrayOf(
         R.drawable.t1400, R.drawable.t4, R.drawable.t11, R.drawable.t1000000,
-        R.drawable.t2, R.drawable.t624/*, R.drawable.t1000, R.drawable.t8, R.drawable.t7, R.drawable.t10,
+        R.drawable.t2, R.drawable.t624, R.drawable.t1000, R.drawable.t8, R.drawable.t7, R.drawable.t10,
         R.drawable.t100000, R.drawable.t9, R.drawable.t10000, R.drawable.t54, R.drawable.t333,
-        R.drawable.t5, R.drawable.t71000, R.drawable.t0, R.drawable.t3, R.drawable.t6*/)
+        R.drawable.t5, R.drawable.t71000, R.drawable.t0, R.drawable.t3, R.drawable.t6)
 
     /////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
@@ -146,7 +146,7 @@ class ArabicNum : AppCompatActivity() {
         engNumbers = findViewById(R.id.engNumbers)
         numPics = findViewById(R.id.numPics)
         numPics.setImageResource(thaiNumarals[numToInc])
-        dispEnglishWord = findViewById(R.id.dispThai)
+        dispEnglishWord = findViewById(R.id.showThaiWord)
         userEnterThai = findViewById(R.id.thaigoeshere)
         scrambledFieldE = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)

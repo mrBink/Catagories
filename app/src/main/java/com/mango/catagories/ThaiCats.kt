@@ -19,9 +19,9 @@ import kotlin.math.roundToInt
 class ThaiCats : AppCompatActivity() {
     private var fruitPhotos=arrayOf(
         R.drawable.orange2,R.drawable.apple,R.drawable.avocado,R.drawable.banana,
-        R.drawable.blueberry/*,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
-        R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.plum,R.drawable.pumpkin,
-        R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.rambutan*/)
+        R.drawable.blueberry,R.drawable.cantaloupe,R.drawable.cherry,R.drawable.grape,R.drawable.jackfruit,
+        R.drawable.lemon,R.drawable.mango,R.drawable.watermelon,R.drawable.papaya,R.drawable.twocherries,R.drawable.pumpkin,
+        R.drawable.strawberry,R.drawable.tomato,R.drawable.coconut,R.drawable.mangosteen,R.drawable.threemangos )
     /////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
     private lateinit var sndBtn2:ImageButton
@@ -72,19 +72,19 @@ class ThaiCats : AppCompatActivity() {
     private var tmango      = 18
     private var twatermelon = 19
     private var tpapaya     = 20
-    private var tplum       = 21
+    private var ttwocherries       = 21
     private var tpumpkin    = 22
     private var tstrawberry = 23
     private var ttomato     = 24
     private var tcoconut    = 25
     private var tmangosteen = 26
-    private var trambutan   = 27
+    private var tthreemangos   = 27
 
     private  var tFruitSnds = arrayListOf( torange,tapple,tavocado,tbanana,
         tblueberry,tCantaloupe,tcherry,tgrape,
         tjackfruit,tlemon,tmango,twatermelon,
-        tpapaya,tplum,tpumpkin,tstrawberry,
-        ttomato,tcoconut,tmangosteen,trambutan)
+        tpapaya,ttwocherries,tpumpkin,tstrawberry,
+        ttomato,tcoconut,tmangosteen,tthreemangos)
     ////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -129,17 +129,17 @@ class ThaiCats : AppCompatActivity() {
         tmango        = mSoundPool?.load(this, R.raw. tmango, 1)!!
         twatermelon   = mSoundPool?.load(this, R.raw.twatermelon, 1)!!
         tpapaya       = mSoundPool?.load(this, R.raw.tpapaya, 1)!!
-        tplum         = mSoundPool?.load(this, R.raw.tplum, 1)!!
+        ttwocherries  = mSoundPool?.load(this, R.raw.ttwocherries, 1)!!
         tpumpkin      = mSoundPool?.load(this, R.raw.tpumpkin, 1)!!
         tstrawberry   = mSoundPool?.load(this, R.raw.tstrawberry, 1)!!
         ttomato       = mSoundPool?.load(this, R.raw.ttomato, 1)!!
         tcoconut      = mSoundPool?.load(this, R.raw.tcoconut, 1)!!
         tmangosteen   = mSoundPool?.load(this, R.raw.tmangosteen, 1)!!
-        trambutan     = mSoundPool?.load(this, R.raw.trambutan, 1)!!
+        tthreemangos  = mSoundPool?.load(this, R.raw.tthreemangos, 1)!!
         ////////////////////////////////////////////////////////////////////////////////////////////
         appleShot = findViewById(R.id.appleShot)
         appleShot.setImageResource(fruitPhotos[numToInc])
-        dispThaiWord= findViewById(R.id.dispThaiWord)
+        dispThaiWord= findViewById(R.id.dispEngWord)
         userEntert = findViewById(R.id.userEntert)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)

@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Categories</string>
     <string name="bgScene">bgScene</string>
     <string name="scribe_e3">scribe_e3</string>
@@ -13,6 +14,7 @@
     <string name="bg_fruitPics">bg_fruitPics</string>
     <string name="bgFruitPics">bgFruitPics</string>
     <string name="appleShot">appleShot</string>
+    <string name="stringbluebg">stringbluebg</string>
     <string name="enter_english_here">Enter English here</string>
     <string name="dynamic">dynamic</string>
     <string name="Use_the_letters_below">Use_the_letters_below</string>
@@ -20,7 +22,7 @@
     <string name="enter_thai_here">Enter Thai here</string>
     <string name="i_am_here">i_am_here</string>
     <string name="myHint">Use the letters below</string>
-    <string name="use_the_thai_letters_below">Use the Thai letters below</string>
+    <string name="Unscramble_the_thai_letters_below">Unscramble the Thai letters below</string>
     <string name="reportCard">reportCard</string>
     <string name="disp_thai_word"> dispThaiWord</string>
     <string name="disp_english_word"> disp English Word</string>
@@ -30,6 +32,7 @@
     <string name="textview">TextView</string>
     <string name="use_these_letters">ใช้ตัวอักษรด้านล่าง</string>
     <string name="ใช้ตัวอักษรด้านล่าง">ใช้ตัวอักษรด้านล่าง</string>
+    <string name="ถอดรหัสตัวอักษรด้านล่าง">ถอดรหัสตัวอักษรด้านล่าง</string>
     <string name="sndbtn">sndBtn</string>
     <string name="sndbtn2">sndbtn2</string>
     <string name="SสPะEกLดL">spell</string>
@@ -57,6 +60,7 @@
     <string name="userEnter_Thai">user Enter Thai</string>
     <string name="e_Body">eBody</string>
     <string name="t_Body">tBody</string>
+    <string name="t_calendar">t_calendar</string>
     <string name="gold_Back_Ground">gold Back Ground</string>
     <string name="body_View">bodyView</string>
     <string name="thai_goes_here">Thai Goes Here</string>
@@ -68,6 +72,57 @@
     <string name="scrambledT">scrambledT</string>
     <string name="dispEnglish">dispEnglish</string>
     <string name="engDays">engDays</string>
+    <string name="bluebg">blueBG</string>
+    <string name="unscramble_the_thai_letters_below">Unscramble the Thai letters below</string>
+    <string name="hello_world">Hello World</string>
+    <string name="thaitime">thaitime</string>
+    <string name="thTimeWords">thTimeWords</string>
+    <string name="eng_time">engTime</string>
+    <string name="eng_time_words">engTimeWords</string>
+    <string name="thai_time">thaiTime</string>
+    <string name="userInputEng">user_input_eng</string>
+    <string name="userInputThai">user_input_thai</string>
+    <string name="dispEng">dispEng</string>
+    <string name="engTime">engTime</string>
+    <string name="spellBtn">spellBtn</string>
+    <string name="backToMenu">backToMenu</string>
+    <string name="backtomenu">backToMenu</string>
+    <string name="infobg3">infobg3</string>
+    <string name="bluebackarrow">bluebackarrow</string>
+    <string name="myInstruction">myInstruction</string>
+    <string name="instructionField">instructionField</string>
+    <string name="myinstruction">myInstruction</string>
+    <string name="spellBtnEng">spellBtnEng</string>
+    <string name="thpointat">thpointat</string>
+    <string name="instructionFieldThai">instructionFieldThai</string>
+    <string name="toCash">toCash</string>
+    <string name="toCashth">toCashth</string>
+    <string name="what_do_you_want">What do you want</string>
+    <string name="viewcashimage">viewcashimage</string>
+    <string name="enterThaiHere">enterThaiHere</string>
+    <string name="thweatherbtn">thweatherbtn</string>
+    <string name="imagesClimateWords">imagesClimateWords</string>
+    <string name="engWeatherStartBtn">engWeatherStartBtn</string>
+    <string name="transengStartBtn">transengStartBtn</string>
+    <string name="imagesTransportWords">imagesTransportWords</string>
+    <string name="imagesVehicleWords">imagesVehicleWords</string>
+    <string name="useHintinEng">useHintinEng</string>
+    <string name="transthai">transthai</string>
+    <string name="displayEnglish">displayEnglish</string>
+    <string name="showThaiWord">showThaiWord</string>
+    <string name="compassWords">compassWords</string>
+    <string name="compassengStartBtn">compassengStartBtn</string>
+    <string name="compassThStartBtn">compassThStartBtn</string>
+    <string name="compassWordsTh">compassWordsTh</string>
+    <string name="postalWordsEng">postalWordsEng"</string>
+    <string name="postalWordsTh">postalWordsTh</string>
+    <string name="engmailstart">engmailstart</string>
+    <string name="startThaiMail">startThaiMail</string>
+    <string name="thaiWords">thaiWords</string>
+    <string name="toCashth2">toCashth2</string>
+    <string name="familyMemberEng">familyMemberEng</string>
+    <string name="familyMemberTh">familyMemberTh</string>
+    <string name="toCash2">toCash2</string>
 
 
 </resources>

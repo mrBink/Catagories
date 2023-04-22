@@ -1,150 +1,1018 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bluebg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:configChanges="orientation"
-    android:screenOrientation="portrait"
-    tools:context=".FruitThai">
+    android:scrollbarAlwaysDrawVerticalTrack="true">
 
-    <ImageView
-        android:id="@+id/catBtns"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/catBtns"
-        android:scaleType="fitXY"
-        android:src="@drawable/bg_fruit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/toFruitt"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        android:background="#000000"
-        android:contentDescription="@string/toFruitt"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/thstart"
-        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
-
-    <ImageButton
-        android:id="@+id/thaiDigit"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        android:background="#000000"
-        android:backgroundTint="#000000"
-        android:contentDescription="@string/thaiDigit"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@id/guideline4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/thainumbtn"
-        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,TouchTargetSizeCheck" />
-
-
-    <ImageButton
-        android:id="@+id/tBody"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="40dp"
-        android:background="#FCFCFC"
-        android:backgroundTint="#B4EA92"
-        android:contentDescription="@string/t_Body"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="@id/guideline6"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guideline5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tbodyicon"
-        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.02" />
+        android:backgroundTint="#513824"
+        android:configChanges="orientation"
+        android:screenOrientation="portrait"
+        tools:context=".FruitThai">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.18" />
+        <ImageView
+            android:id="@+id/catBtns"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/catBtns"
+            android:scaleType="fitXY"
+            android:src="@drawable/bluebg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="ImageContrastCheck" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.22" />
+        <ImageButton
+            android:id="@+id/toFruitt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="#000000"
+            android:backgroundTint="#0A0B0A"
+            android:contentDescription="@string/toFruitt"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/thstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.38" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.42" />
+        <ImageButton
+            android:id="@+id/thaiDigit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thaiDigit"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/thainumbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.58" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.62" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.78" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.98" />
+        <ImageButton
+            android:id="@+id/tBody"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="#FCFCFC"
+            android:backgroundTint="#B4EA92"
+            android:contentDescription="@string/t_Body"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tbodyicon"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
 
+        <ImageButton
+            android:id="@+id/t_calendar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="#FCFCFC"
+            android:backgroundTint="#B4EA92"
+            android:contentDescription="@string/engDays"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/t_calendar"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thaitime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="#FCFCFC"
+            android:contentDescription="@string/thaitime"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/thaitime_icon"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toFruitt"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash"
+            app:srcCompat="@drawable/startfamilyth"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/toCash3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash2"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash3"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash4"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash5"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash6"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/toCash9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash7"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/toCash9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/toCash"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toCash8"
+            app:srcCompat="@drawable/thaipiggy"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thaiDigit"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn2"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn3"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn4"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn5"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn6"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/thweatherbtn9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn7"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/thweatherbtn9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/thweatherbtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toBottomOf="@+id/thweatherbtn8"
+            app:srcCompat="@drawable/thweatherbtn"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/tBody"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai2"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai3"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai4"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai5"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai6"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/transthai9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai7"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/transthai9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/transthai"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/transthai8"
+            app:srcCompat="@drawable/transthai"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+        <ImageButton
+            android:id="@+id/compassThStartBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/t_calendar"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn2"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn3"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn4"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn5"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn6"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/compassThStartBtn9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn7"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/compassThStartBtn9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/compassThStartBtn"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/compassThStartBtn8"
+            app:srcCompat="@drawable/thwhere"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/thaitime"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail2"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail3"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail6"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail4"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail7"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail5"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail8"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail6"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/startThaiMail9"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail7"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/startThaiMail9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:background="#000000"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/startThaiMail"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline10"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/startThaiMail8"
+            app:srcCompat="@drawable/thmailstart"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+
+
+
+
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.18" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.22" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.58" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.62" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.78" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.98" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+

@@ -39,7 +39,7 @@
 
     <EditText
         android:id="@+id/userEnterEng"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#ffffff"
@@ -50,22 +50,22 @@
         android:inputType="text"
         android:text=""
         android:textAlignment="center"
-        android:textColor="#0B0051"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thaiNumPics"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/useHintT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/use_the_thai_letters_below"
+        android:text="@string/Unscramble_the_thai_letters_below"
         android:textAlignment="center"
-        android:textColor="#930404"
-        android:textSize="24sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="25sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,30 +73,30 @@
 
     <TextView
         android:id="@+id/scrambledFieldt"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#151582"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/useHintT"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThaiWord"
-        android:layout_width="wrap_content"
+        android:id="@+id/dispEngWord"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/enter_thai_here"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="36sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
@@ -124,14 +124,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3125" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6875" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

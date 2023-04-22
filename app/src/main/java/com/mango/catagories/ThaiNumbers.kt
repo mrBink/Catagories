@@ -21,9 +21,9 @@ class ThaiNumbers : AppCompatActivity() {
 
     private var arabicNumarals=arrayOf(
         R.drawable.e1400, R.drawable.e4, R.drawable.eeleven, R.drawable.e1000000,
-        R.drawable.e2, R.drawable.e624/*, R.drawable.e1000, R.drawable.e8, R.drawable.e7, R.drawable.eten,
+        R.drawable.e2, R.drawable.e624, R.drawable.e1000, R.drawable.e8, R.drawable.e7, R.drawable.eten,
         R.drawable.e100000, R.drawable.e9, R.drawable.e10000, R.drawable.e54, R.drawable.ethreehundredthirtythree,
-        R.drawable.e5, R.drawable.eseventyonethousand, R.drawable.ezero, R.drawable.e3, R.drawable.e6*/)
+        R.drawable.e5, R.drawable.eseventyonethousand, R.drawable.ezero, R.drawable.e3, R.drawable.e6)
 
     /////////////////////////////////////////////////////////////////////
 
@@ -142,7 +142,7 @@ class ThaiNumbers : AppCompatActivity() {
         thaiNumbers = findViewById(R.id.thaiNumbers)
         thaiNumPics = findViewById(R.id.thaiNumPics)
         thaiNumPics.setImageResource(arabicNumarals[numToInc])
-        dispThaiWord = findViewById(R.id.dispThaiWord)
+        dispThaiWord = findViewById(R.id.dispEngWord)
         userEnterEng = findViewById(R.id.userEnterEng)
         scrambledFieldt = findViewById(R.id.scrambledFieldt)
         useHintT = findViewById(R.id.useHintT)

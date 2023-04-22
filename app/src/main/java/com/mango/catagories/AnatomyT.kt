@@ -19,9 +19,9 @@ import kotlin.math.roundToInt
 class AnatomyT : AppCompatActivity() {
     private var anatomyE=arrayOf(
         R.drawable.ear,R.drawable.ethumb,R.drawable.head, R.drawable.efinger,R.drawable.toes,
-        R.drawable.tongue,R.drawable.eneck, R.drawable.lips,R.drawable.nose,R.drawable.hand,
+        R.drawable.tongue,R.drawable.eneck, R.drawable.elips,R.drawable.nose,R.drawable.hand,
         R.drawable.teeth,R.drawable.legs, R.drawable.knee,R.drawable.eye, R.drawable.hair,
-        R.drawable.feet,R.drawable.eyelash, R.drawable.back,R.drawable.stomach,
+        R.drawable.feet,R.drawable.eyelash, R.drawable.eback,R.drawable.stomach,
         R.drawable.fingernail)
     ////////////////////////////////////////////////////////////////////////////////
     private var mSoundPool: SoundPool? = null
@@ -31,7 +31,7 @@ class AnatomyT : AppCompatActivity() {
     private lateinit var userEntert:EditText
     private lateinit var scrambledFieldT: TextView   //scrambled text
     private lateinit var useHint: TextView
-    private lateinit var dispEnglishWord: TextView      //user Thai Word
+    private lateinit var demoEngWord: TextView      //user Thai Word
     private lateinit var wordInEArray:String        //reference
     private lateinit var marksString:String         //reference
     private lateinit var timer: CountDownTimer
@@ -137,7 +137,7 @@ class AnatomyT : AppCompatActivity() {
         goldBackGround = findViewById(R.id.goldBackGround)
         bodyView = findViewById(R.id.bodyView)
         bodyView.setImageResource(anatomyE[numToInc])
-        dispEnglishWord = findViewById(R.id.dispThai)
+        demoEngWord = findViewById(R.id.demoEngWord)
         userEntert = findViewById(R.id.userEntert)
         scrambledFieldT = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)
@@ -146,8 +146,8 @@ class AnatomyT : AppCompatActivity() {
 
             mSoundPool?.play(bodySnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
-        dispEnglishWord.append(myArrays.eAnatomy[numToInc])
-        scrambledFieldT.append(myArrays.eAnatomy[numToInc])
+        demoEngWord.append(myArrays.eAnatomy[numToInc])
+        scrambledFieldT.append(myArrays.tScramBody[numToInc])
         scrambledFieldT.alpha =0.toFloat()
         useHint.alpha =0.toFloat()
         wordInEArray = userEntert.toString()
@@ -236,7 +236,7 @@ class AnatomyT : AppCompatActivity() {
         if(numToInc <=anatomyE.size-1) {
             bodyView.setImageResource(anatomyE[numToInc])
         }
-        dispEnglishWord.text = myArrays.eAnatomy[numToInc]
+        demoEngWord.text = myArrays.eAnatomy[numToInc]
         with(scrambledFieldT) { text = myArrays.tScramBody[numToInc] }
         userEntert.setText("")
         scrambledFieldT.alpha =0.toFloat()
@@ -265,8 +265,8 @@ private fun endOfArray() {   // when array done pass intents and change activiti
         if(numToInc <=anatomyE.size-1) {
             bodyView.setImageResource(anatomyE[numToInc])
         }
-        dispEnglishWord.text = myArrays.eAnatomy[numToInc]
-        with(scrambledFieldT) { text = myArrays.eScramBody[numToInc] }
+        demoEngWord.text = myArrays.eAnatomy[numToInc]
+        with(scrambledFieldT) { text = myArrays.tScramBody[numToInc] }
         userEntert.setText("")
         scrambledFieldT.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }

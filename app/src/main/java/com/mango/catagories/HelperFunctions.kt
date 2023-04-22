@@ -1,7 +1,5 @@
 package com.mango.catagories
 
-import android.widget.TextView
-
 class HelperFunctions {
     companion object {
 

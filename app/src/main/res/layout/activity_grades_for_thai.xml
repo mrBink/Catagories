@@ -30,7 +30,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/this_is_learning_thai"
         android:textColor="#BA0404"
-        android:textSize="48sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,15 +47,16 @@
         android:text="@string/textview"
         android:textColor="#000000"
         android:textIsSelectable="true"
-        android:textSize="30sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reportCard"
         tools:ignore="TextViewEdits" />
+
     <ImageButton
         android:id="@+id/backToStartT"
-        android:layout_width="114dp"
-        android:layout_height="80dp"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="16dp"
         android:background="#E8EEB1"
         android:backgroundTint="#B0DEF2"

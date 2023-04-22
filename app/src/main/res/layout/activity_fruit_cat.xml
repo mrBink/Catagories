@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:hint="@string/enter_english_here"
+        android:textColor="#000000"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -65,7 +66,7 @@
         android:layout_marginTop="4dp"
         android:text="@string/ใช้ตัวอักษรด้านล่าง"
         android:textAlignment="center"
-        android:textColor="#930404"
+        android:textColor="@color/design_default_color_primary_dark"
         android:textSize="12sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +83,7 @@
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#C20545"
+        android:textColor="#000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -91,14 +92,14 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThai"
+        android:id="@+id/showThaiWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:hint="@string/enter_thai_here"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/design_default_color_primary_dark"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +110,7 @@
         android:id="@+id/sndBtn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="#00F5F5F5"
         android:contentDescription="@string/sndbtn2"
         android:scaleType="centerCrop"
@@ -141,14 +142,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.85" />
 
 
 

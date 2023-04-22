@@ -38,7 +38,7 @@
 
     <EditText
         android:id="@+id/thaigoeshere"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#ffffff"
@@ -50,7 +50,7 @@
         android:text=""
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="46sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,13 +59,13 @@
 
     <TextView
         android:id="@+id/useHint"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/use_the_english_letters_below"
+        android:text="@string/ถอดรหัสตัวอักษรด้านล่าง"
         android:textAlignment="center"
-        android:textColor="#930404"
-        android:textSize="50sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="45sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,15 +73,15 @@
 
     <TextView
         android:id="@+id/scrambledFieldT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/english_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#151592"
-        android:textSize="46sp"
+        android:textColor="#000000"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,15 +89,15 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispThai"
-        android:layout_width="wrap_content"
+        android:id="@+id/showThaiWord"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/displayEngTxt"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldT"
@@ -126,14 +126,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.324" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6875"  />
+        app:layout_constraintGuide_percent="0.75"  />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

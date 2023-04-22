@@ -19,7 +19,7 @@ import kotlin.math.roundToInt
 class AnatomyE : AppCompatActivity() {
     private var anatomyT=arrayOf(
         R.drawable.ear,R.drawable.tthumb,R.drawable.head, R.drawable.tfinger,R.drawable.toes,
-        R.drawable.tongue,R.drawable.tneck, R.drawable.lips,R.drawable.nose,R.drawable.hand,
+        R.drawable.tongue,R.drawable.tneck, R.drawable.tlips,R.drawable.nose,R.drawable.hand,
         R.drawable.teeth,R.drawable.legs, R.drawable.knee,R.drawable.eye, R.drawable.hair,
         R.drawable.feet,R.drawable.eyelash, R.drawable.tback,R.drawable.stomach,
         R.drawable.fingernail)
@@ -31,7 +31,7 @@ class AnatomyE : AppCompatActivity() {
     private lateinit var enterEng: EditText
     private lateinit var scrambledFieldE: TextView   //scrambled text
     private lateinit var useHint: TextView           //instruction foe letter use
-    private lateinit var dispEnglishWord: TextView      //user Thai Word
+    private lateinit var showThaiWord: TextView      //user Thai Word
     private lateinit var wordInEArray:String        //reference
     private lateinit var marksString:String         //reference
     private lateinit var timer: CountDownTimer
@@ -64,7 +64,7 @@ class AnatomyE : AppCompatActivity() {
     private var toes       = 12
     private var tongue     = 13
     private var neck      = 14
-    private var lips       = 15
+    private var tlips       = 15
     private var nose       = 16
     private var hand       = 17
     private var teeth      = 18
@@ -74,13 +74,15 @@ class AnatomyE : AppCompatActivity() {
     private var hair       = 22
     private var feet       = 23
     private var eyelash    = 24
-    private var tback      = 25
+    private var eback      = 25
     private var stomach    = 26
     private var fingernail   = 27
 
 
-    private  var bodySnds = arrayListOf( ear,thumb,head ,finger,toes,tongue,neck,lips,nose,hand,teeth,legs,
-        knee,eye,hair,feet,eyelash,tback,stomach,fingernail)
+
+
+    private  var bodySnds = arrayListOf( ear,thumb,head ,finger,toes,tongue,neck,tlips,nose,hand,teeth,legs,
+        knee,eye,hair,feet,eyelash,eback,stomach,fingernail)
 
     //////////////////////////////////////////////////////////////////////////////////////////
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,7 +122,7 @@ class AnatomyE : AppCompatActivity() {
         toes      = mSoundPool?.load(this, R.raw.toes, 1)!!
         tongue    = mSoundPool?.load(this, R.raw.tongue, 1)!!
         neck      = mSoundPool?.load(this, R.raw.neck, 1)!!
-        lips      = mSoundPool?.load(this, R.raw.lips, 1)!!
+        tlips      = mSoundPool?.load(this, R.raw.tlips, 1)!!
         nose      = mSoundPool?.load(this, R.raw.nose, 1)!!
         hand      = mSoundPool?.load(this, R.raw.hand, 1)!!
         teeth     = mSoundPool?.load(this, R.raw.teeth, 1)!!
@@ -130,14 +132,13 @@ class AnatomyE : AppCompatActivity() {
         hair      = mSoundPool?.load(this, R.raw.hair, 1)!!
         feet      = mSoundPool?.load(this, R.raw.feet, 1)!!
         eyelash   = mSoundPool?.load(this, R.raw.eyelash, 1)!!
-        tback      = mSoundPool?.load(this, R.raw.tback, 1)!!
+        eback      = mSoundPool?.load(this, R.raw.tback, 1)!!
         stomach   = mSoundPool?.load(this, R.raw.stomach, 1)!!
         fingernail = mSoundPool?.load(this, R.raw.fingernail, 1)!!
-
         goldBackGround = findViewById(R.id.goldBackGround)
         bodyView = findViewById(R.id.bodyView)
         bodyView.setImageResource(anatomyT[numToInc])
-        dispEnglishWord = findViewById(R.id.dispThai)
+        showThaiWord = findViewById(R.id.showThaiWord)
         enterEng = findViewById(R.id.enterEng)
         scrambledFieldE = findViewById(R.id.scrambledFieldT)
         useHint = findViewById(R.id.useHint)
@@ -146,8 +147,8 @@ class AnatomyE : AppCompatActivity() {
 
             mSoundPool?.play(bodySnds[numToInc], 1.0f, 1.0f, 0, 0, 1.0f)
         }
-        dispEnglishWord.append(myArrays.tAnatomy[numToInc])
-        scrambledFieldE.append(myArrays.tScramBody[numToInc])
+        showThaiWord.append(myArrays.tAnatomy[numToInc])
+        scrambledFieldE.append(myArrays.eScramBody[numToInc])
         scrambledFieldE.alpha =0.toFloat()
         useHint.alpha =0.toFloat()
         wordInEArray = enterEng.toString()
@@ -167,7 +168,7 @@ class AnatomyE : AppCompatActivity() {
     ////////////////////////////////////////////////////////////////////////////////////////////
     private fun checkWords(){
         if(enterEng.text.toString() == myArrays.eAnatomy[numToInc] && numToInc < sizeOfArray ){
-            arrayIndex =findIndex(myArrays.eAnatomy, myArrays.eAnatomy[numToInc])
+            arrayIndex =findIndex(myArrays.eAnatomy, myArrays.tAnatomy[numToInc])
             getNextFruit()
 
         }
@@ -237,8 +238,8 @@ class AnatomyE : AppCompatActivity() {
         if(numToInc <=anatomyT.size-1) {
             bodyView.setImageResource(anatomyT[numToInc])
         }
-        dispEnglishWord.text = myArrays.tAnatomy[numToInc]
-        with(scrambledFieldE) { text = myArrays.tScramBody[numToInc] }
+        showThaiWord.text = myArrays.tAnatomy[numToInc]
+        with(scrambledFieldE) { text = myArrays.eScramBody[numToInc] }
         enterEng.setText("")
         scrambledFieldE.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }
@@ -266,8 +267,8 @@ private fun endOfArray() {   // when array done pass intents and change activiti
         if(numToInc <=anatomyT.size-1) {
             bodyView.setImageResource(anatomyT[numToInc])
         }
-        dispEnglishWord.text = myArrays.tAnatomy[numToInc]
-        with(scrambledFieldE) { text = myArrays.tScramBody[numToInc] }
+        showThaiWord.text = myArrays.tAnatomy[numToInc]
+        with(scrambledFieldE) { text = myArrays.eScramBody[numToInc] }
         enterEng.setText("")
         scrambledFieldE.alpha =0.toFloat()
         0.toFloat().also { useHint.alpha = it }
