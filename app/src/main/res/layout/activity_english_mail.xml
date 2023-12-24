@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Compass">
+    tools:context=".EnglishMail">
 
     <ImageView
         android:id="@+id/bgFruitPics"
@@ -42,7 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:hint="@string/userEnter_Eng"
+        android:hint="@string/เขียนเป็นภาษาอังกฤษที่นี่"
         android:textColor="#000000"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
@@ -104,19 +104,19 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline

@@ -89,11 +89,11 @@
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/dispEngWord"
+        android:id="@+id/useThaiHere"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="@string/enter_english_here"
+        android:hint="@string/เขียนเป็นภาษาอังกฤษที่นี่"
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
@@ -103,52 +103,47 @@
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldt"
         tools:ignore="TextContrastCheck" />
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4125" />
+        app:layout_constraintGuide_percent="0.36" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5875" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.68" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
-
-
-
-
+        app:layout_constraintGuide_percent="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

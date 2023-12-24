@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlacesEng">
+
+    <ImageView
+        android:id="@+id/bgFruitPics"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/bg_fruitPics"
+        android:scaleType="fitXY"
+        android:src="@drawable/goldbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/localsEng"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/localsEng"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="3:2"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home"
+        tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+
+    <EditText
+        android:id="@+id/userInputEng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="@string/เขียนเป็นภาษาอังกฤษที่นี่"
+        android:textColor="#000000"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textNoSuggestions"
+        android:textAlignment="center"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localsEng"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/useHintinThai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="@string/ใช้ตัวอักษรด้านล่าง"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
+        app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInputEng" />
+
+    <TextView
+        android:id="@+id/scrambledFieldinEng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="@string/english_scram"
+        android:importantForAutofill="no"
+        android:inputType="none"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/useHintinThai"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/dispThaiHereWord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:hint="@string/enter_thai_here"
+        android:importantForAutofill="no"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrambledFieldinEng"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/speakerbtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="#00F5F5F5"
+        android:contentDescription="@string/speakerbtn"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/speakerbtn"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

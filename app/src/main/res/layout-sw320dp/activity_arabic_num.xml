@@ -25,7 +25,7 @@
         android:id="@+id/numPics"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="75dp"
         android:contentDescription="@string/numPics"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -33,21 +33,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/e1400"
+        app:srcCompat="@drawable/t333"
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
     <EditText
         android:id="@+id/thaigoeshere"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="@string/userEnter_Eng"
+        android:layout_marginTop="2dp"
+        android:hint="@string/เขียนเป็นภาษาอังกฤษที่นี่"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="textNoSuggestions"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,10 +61,11 @@
         android:layout_marginTop="4dp"
         android:text="@string/ถอดรหัสตัวอักษรด้านล่าง"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="25sp"
+        android:textColor="#0E2F91"
+        android:textSize="22sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thaigoeshere" />
 
@@ -72,7 +73,7 @@
         android:id="@+id/scrambledFieldT"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:background="#ffffff"
         android:backgroundTint="#00FFFFFF"
         android:hint="@string/english_scram"
@@ -91,48 +92,62 @@
         android:id="@+id/showThaiWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="@string/displayEngTxt"
+        android:layout_marginTop="2dp"
+        android:hint="@string/displayThaiLetters"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="#0E2F91"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledFieldT"
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="150dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
 
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/numAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-1764819666519183/1711878783"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/engNumbers" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

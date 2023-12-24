@@ -40,12 +40,13 @@
         android:id="@+id/enterEng"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:hint="@string/enter_english_here"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/เขียนเป็นภาษาอังกฤษที่นี่"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="15dp"
         android:text=""
         android:textAlignment="center"
         android:textColor="#000000"
@@ -60,7 +61,9 @@
         android:id="@+id/useHint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/ใช้ตัวอักษรด้านล่าง"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
@@ -74,7 +77,9 @@
         android:id="@+id/scrambledE"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/english_scram"
         android:importantForAutofill="no"
         android:inputType="none"
@@ -91,7 +96,9 @@
         android:id="@+id/showThaiWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/enter_thai_here"
         android:importantForAutofill="no"
         android:textAlignment="center"
@@ -104,48 +111,50 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.41" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.57" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.92" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

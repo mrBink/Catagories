@@ -24,12 +24,26 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/cellBannerE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:adSize="FULL_BANNER"
+        app:adUnitId="ca-app-pub-1764819666519183/1711878783"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/marksbg"/>
+
     <TextView
         android:id="@+id/reportCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="90dp"
         android:layout_marginEnd="32dp"
         android:text="@string/this_is_learning_eng"
         android:textColor="#BA0404"
@@ -41,9 +55,11 @@
 
     <TextView
         android:id="@+id/correctionField"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="900dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="16dp"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
         android:text="@string/textview"

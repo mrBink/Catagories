@@ -25,7 +25,7 @@
         android:id="@+id/bodyView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="88dp"
         android:contentDescription="@string/body_View"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -64,7 +64,7 @@
         android:layout_marginBottom="4dp"
         android:text="@string/Unscramble_the_thai_letters_below"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="#0E2F91"
         android:textSize="18sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +98,7 @@
         android:hint="@string/disp_english_word"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="#0E2F91"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,18 +107,34 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/sndBtn2"
-        android:layout_width="49dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/speakerbtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="128dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
-        tools:ignore="ImageContrastCheck" />
+        app:srcCompat="@drawable/speakerbtn"
+        tools:ignore="ImageContrastCheck,TouchTargetSizeCheck" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/anatomyBannerT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-1764819666519183/1711878783"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/goldBackGround" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"

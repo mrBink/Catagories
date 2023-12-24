@@ -21,11 +21,12 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
 
+
     <ImageView
         android:id="@+id/seeEngMonths"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/seeEngMonths"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
@@ -38,17 +39,18 @@
 
     <EditText
         android:id="@+id/enterEng"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/enter_thai_here"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="48dp"
         android:text=""
         android:textAlignment="center"
-        android:textColor="#930404"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -58,13 +60,15 @@
 
     <TextView
         android:id="@+id/useHint"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="@string/ใช้ตัวอักษรด้านล่าง"
+        android:layout_marginEnd="8dp"
+        android:text="@string/Unscramble_the_thai_letters_below"
         android:textAlignment="center"
-        android:textColor="#930404"
-        android:textSize="24sp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="18sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,15 +76,17 @@
 
     <TextView
         android:id="@+id/scrambledT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/scrambledT"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
-        android:textColor="#C20545"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,67 +95,72 @@
 
     <TextView
         android:id="@+id/dispEnglish"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/dispEnglish"
         android:importantForAutofill="no"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="40sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrambledT"
         tools:ignore="TextContrastCheck" />
 
+
+
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.324" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.676" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.81" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.92" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 

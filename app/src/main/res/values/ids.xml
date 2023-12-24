@@ -3,4 +3,9 @@
 
     <item name="useHintThaiLanguage" type="id" />
     <item name="dispEnglishHere" type="id" />
+    <item name="hasColorPics" type="id" />
+    <item name="allThUtilityPics" type="id" />
+    <item name="allMedicalPics" type="id" />
+    <item name="adSize" type="id" />
+
 </resources>

@@ -21,13 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/reportCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/this_is_learning_thai"
         android:textColor="#BA0404"
         android:textSize="11sp"
@@ -38,10 +39,11 @@
 
     <TextView
         android:id="@+id/correctionField"
-        android:layout_width="wrap_content"
-        android:layout_height="500dp"
-        android:layout_marginTop="50dp"
-        android:textAlignment="viewStart"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
         android:text="@string/textview"

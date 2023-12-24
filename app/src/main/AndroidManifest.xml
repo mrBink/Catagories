@@ -2,125 +2,362 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/spell"
+        android:label="@string/การเขียนตามคำบอก"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="33">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1764819666519183~5447943818" />
+
+
+
+
+
+        <activity
+            android:name=".ThaiPlurals"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishPlurals"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiRetail"
+            android:configChanges="orientation"
+            android:exported="false"
+           android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishRetail"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiBedroom"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishBedroom"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ThaiKitchen"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishKitchen"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ThaiBathroom"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishBathroom"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiCountry"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishCountry"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiAmble"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishAmble2"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TwoThaiWords"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TwoEngWords"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiMedAids"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MedAids"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiUtility"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EnglishUtility"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiColourClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ColourClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiClothing"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClothingClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AllThaiPronouns"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AllEnglishPronouns"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AnimalsMasterThai"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AnimalsMasterClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MoreThaiVerbClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MoreEngVerbClass"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiModifier"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EngModifier"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiAction"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EngAction"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ThaiProfession"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EngProfession"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlacesThai"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlacesEng"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FamilyTh"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Family"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ThaiMail"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".EnglishMail"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".CompassThai"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Compass"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TransportThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".TransportEnglish"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ClimateWordsEng"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ClimateWordsTH"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MoneyThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Money"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".InfoPageThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".InfoPage"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SpellInEnglish"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SpellInThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ThaiMonths"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".EnglishMonths"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AnatomyT"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AnatomyE"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ThaiNumbers"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ArabicNum"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".GradesForThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".GradeForEnglish"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ThaiCats"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FruitThai"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FruitCat"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Fruit"
+            android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

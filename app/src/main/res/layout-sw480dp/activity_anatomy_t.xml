@@ -15,106 +15,108 @@
         android:src="@drawable/goldbg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/bodyView"
         android:layout_width="217dp"
         android:layout_height="235dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="75dp"
         android:contentDescription="@string/body_View"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/userEntert"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ear"
         tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
+
     <EditText
         android:id="@+id/userEntert"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/enter_thai_here"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:minHeight="48dp"
+
         android:text=""
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/useHint"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyView"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/useHint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/Unscramble_the_thai_letters_below"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="#0E2F91"
         android:textSize="36sp"
         app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24"
-        app:layout_constraintBottom_toTopOf="@+id/scrambledFieldT"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userEntert" />
 
     <TextView
         android:id="@+id/scrambledFieldT"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/thai_scram"
         android:importantForAutofill="no"
         android:inputType="none"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/demoEngWord"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/useHint"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/demoEngWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="368dp"
+        android:layout_marginTop="4dp"
         android:hint="@string/disp_english_word"
         android:importantForAutofill="no"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="#0E2F91"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrambledFieldT"
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/sndBtn2"
+        android:id="@+id/speakerbtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="136dp"
         android:background="#00F5F5F5"
-        android:contentDescription="@string/sndbtn2"
+        android:contentDescription="@string/speakerbtn"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/redonebtn"
+        app:srcCompat="@drawable/speakerbtn"
         tools:ignore="ImageContrastCheck" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -122,6 +124,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.324" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/anatomyBannerT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        app:adSize="FULL_BANNER"
+        app:adUnitId="ca-app-pub-1764819666519183/1711878783"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/goldBackGround" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
